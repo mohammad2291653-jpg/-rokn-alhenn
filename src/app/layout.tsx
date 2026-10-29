@@ -4,6 +4,7 @@ import '@fontsource/tajawal/500.css';
 import '@fontsource/tajawal/700.css';
 import '@fontsource/amiri/400.css';
 import './globals.css';
+import './final-product-images.css';
 export const metadata: Metadata = {
   title: { default: 'ركن الحناء | عناية بالشعر من أصالة التراث', template: '%s | ركن الحناء' },
   description: 'ركن الحناء، علامة فلسطينية للعناية بالشعر والحناء والسدر والمشاط. نوصل إلى الضفة الغربية والداخل الفلسطيني. الدفع عند الاستلام.',
