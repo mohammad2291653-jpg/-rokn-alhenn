@@ -1,10 +1,11 @@
 import { randomBytes, randomUUID } from 'node:crypto';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { hashPassword } from 'better-auth/crypto';
 import { expect, test } from '@playwright/test';
-import finalMedia from '../../config/final-product-media-2026-10-29.json';
+type FinalPhoto = { slug: string; alt: string; url: string; width: number; height: number; file: string };
+
 
 test.describe('final owner-approved single-photo catalog review', () => {
   test.skip(!process.env.TEST_DATABASE_URL, 'Requires isolated test_rokn and matching QA server.');
@@ -27,6 +28,8 @@ test.describe('final owner-approved single-photo catalog review', () => {
   });
 
   test('shows seven exact approved JPEGs without old assets, galleries or unpictured products', async ({ page, request }) => {
+    const finalMedia = JSON.parse(await readFile('config/final-product-media-2026-10-29.json', 'utf8')) as { images: FinalPhoto[] };
+    expect(finalMedia.images).toHaveLength(7);
     const anonymous = await request.get('/admin/catalog-review');
     expect(new URL(anonymous.url()).pathname).toBe('/admin');
     await page.goto('/admin');
