@@ -1,0 +1,26 @@
+name: Install final product photos (staging only)
+on:
+  push:
+    branches:
+      - work/store-product-images-2026-10-29
+    paths:
+      - incoming/final-product-images.zip
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check seven photos byte-for-byte and extract
+        run: python3 scripts/install-final-product-images.py
+      - name: Commit the verified originals onto the staging branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/final-product-images/2026-10-29
+          if ! git diff --cached --quiet; then
+            git commit -m "Install seven verified final product photos [skip ci]"
+            git push
+          fi

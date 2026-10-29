@@ -7,11 +7,11 @@ import { requirePreviewReadAccess } from '@/lib/free-preview';
 export const publicProductSelect = {
   id: true, slug: true, name: true, weightGrams: true, priceAgorot: true, available: true, stockTracked: true, stockQuantity: true, featured: true, description: true, ingredients: true, usage: true, warnings: true,
   category: { select: { id: true, name: true, slug: true } },
-  images: { select: { id: true, url: true, alt: true, position: true }, orderBy: { position: 'asc' as const } },
+  images: { select: { id: true, url: true, alt: true, position: true }, orderBy: { position: 'asc' as const }, take: 1 },
 } satisfies Prisma.ProductSelect;
 export const visibleProducts = { status: 'PUBLISHED' as const, nameNeedsConfirmation: false, images: { some: {} } };
 export async function catalogProductFilter(): Promise<Prisma.ProductWhereInput> {
-  return await requirePreviewReadAccess() ? {} : visibleProducts;
+  return await requirePreviewReadAccess() ? { images: { some: {} } } : visibleProducts;
 }
 export async function getStoreSettings() {
   // Keep administrative source audits out of public-page queries and payloads.

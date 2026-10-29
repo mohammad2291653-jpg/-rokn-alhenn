@@ -42,6 +42,6 @@ describe('catalog read capability', () => {
     cookieValue.mockReturnValue({ value: createPreviewSession(secret) });
     findProducts.mockResolvedValueOnce([{ id: 'draft', available: true, stockTracked: true, stockQuantity: 0 }]);
     await expect(getProducts()).resolves.toEqual([{ id: 'draft', available: false }]);
-    expect(findProducts).toHaveBeenCalledWith(expect.objectContaining({ where: {} }));
+    expect(findProducts).toHaveBeenCalledWith(expect.objectContaining({ where: { images: { some: {} } } }));
   });
 });

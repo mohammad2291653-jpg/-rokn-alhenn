@@ -17,10 +17,10 @@ export default async function StorePreviewProductPage({ params }: { params: Prom
   await ensureAdminPage();
   const { slug } = await params;
   const record = await db.product.findUnique({ where: { slug }, select: { ...publicProductSelect, status: true, nameNeedsConfirmation: true } });
-  if (!record) notFound();
+  if (!record || !record.images.length) notFound();
   const { status, nameNeedsConfirmation, ...selected } = record;
   const product = toPublicProduct(selected);
-  const related = (await db.product.findMany({ where: { categoryId: product.category.id, id: { not: product.id } }, select: publicProductSelect, orderBy: { createdAt: 'asc' }, take: 4 })).map(toPublicProduct);
+  const related = (await db.product.findMany({ where: { categoryId: product.category.id, id: { not: product.id }, images: { some: {} } }, select: publicProductSelect, orderBy: { createdAt: 'asc' }, take: 4 })).map(toPublicProduct);
   return (
     <div className="store-preview preview-detail">
       <aside className="preview-banner" aria-label="حالة المعاينة"><LockKeyhole size={20} /><div><strong>معاينة خاصة للإدارة — الشراء معطّل</strong><p>حالة المنتج: {statusLabels[status]}.{nameNeedsConfirmation ? ' الاسم بحاجة إلى تأكيد قبل النشر.' : ''}</p></div><Link href={`/admin/products/${product.id}`}>تعديل بيانات المنتج</Link></aside>

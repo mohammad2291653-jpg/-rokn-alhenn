@@ -7,8 +7,8 @@ import { expect, test } from '@playwright/test';
 
 type Manifest = {
   products: { slug: string; catalogName: string; ingredients?: string | null; usage?: string | null; warnings?: string | null; pages: number[] }[];
-  images: { page: number; url: string }[];
 };
+type FinalMedia = { images: { slug: string; url: string; alt: string }[] };
 
 test.describe('private storefront preview', () => {
   test.skip(!process.env.TEST_DATABASE_URL, 'Requires isolated test_rokn and matching QA server.');
@@ -34,6 +34,7 @@ test.describe('private storefront preview', () => {
     ]);
     countsBefore = { products: await db.product.count(), users: await db.user.count(), orders: await db.order.count() };
     const manifest = JSON.parse(await readFile('config/catalog-media-review-2026-10-29.json', 'utf8')) as Manifest;
+    const finalMedia = JSON.parse(await readFile('config/final-product-media-2026-10-29.json', 'utf8')) as FinalMedia;
     const category = await db.category.create({ data: { name: 'معاينة اختبارية معزولة', slug: `qa-preview-${randomUUID()}` } });
     categoryId = category.id;
     for (const [sourceSlug, priceAgorot, weightGrams, zeroTrackedStock] of [
@@ -42,11 +43,9 @@ test.describe('private storefront preview', () => {
     ] as const) {
       const source = manifest.products.find(p => p.slug === sourceSlug);
       if (!source) throw new Error(`Missing approved source for ${sourceSlug}.`);
-      const sourceImages = source.pages.slice(0, 2).map(page => {
-        const image = manifest.images.find(i => i.page === page);
-        if (!image) throw new Error('Missing original source image.');
-        return { url: image.url, alt: `${source.catalogName} — صورة أصلية في اختبار معاينة معزول`, originalKey: 'qa-preview-isolated', position: 0 };
-      });
+      const photo = finalMedia.images.find(image => image.slug === sourceSlug);
+      if (!photo) throw new Error('Missing final approved photo for the source product.');
+      const sourceImages = [{ url: photo.url, alt: photo.alt, originalKey: 'qa-preview-isolated', position: 0 }];
       const product = await db.product.create({ data: {
         categoryId, slug: `qa-preview-${randomUUID()}`, name: `${source.catalogName} — اختبار معاينة معزول`,
         status: 'DRAFT', nameNeedsConfirmation: true, available: true, priceAgorot, weightGrams,
@@ -123,8 +122,7 @@ test.describe('private storefront preview', () => {
     await expect(page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true })).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true })).not.toBeVisible();
-    await page.getByRole('button', { name: 'عرض الصورة 2', exact: true }).click();
-    await expect(page.getByRole('button', { name: 'عرض الصورة 2', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('.gallery-thumbs')).toHaveCount(0);
     const detailViewports = [];
     for (const width of [1440, 390, 320]) {
       await page.setViewportSize({ width, height: 1000 });
@@ -139,7 +137,7 @@ test.describe('private storefront preview', () => {
     expect(await db.siteSetting.findMany({ orderBy: { key: 'asc' } })).toEqual(settingsBefore);
     evidence.viewports = viewports;
     evidence.detailViewports = detailViewports;
-    evidence.checks = { anonymousListAndDetailBlocked: true, publicPreviewQueryCannotExposeDrafts: true, noStoreAndNoIndex: true, databasePriceAndWeightDisplayed: true, zeroTrackedStockShownUnavailableWithoutCount: true, internalInventoryAndOriginalKeysNotSerialized: true, originalImagesLoad: true, confirmedHennaUsageDisplayed: true, galleryAndZoomWork: true, purchaseAndWhatsAppActionsAbsent: true, localCartUnchanged: true, productsRemainDraft: true, settingsAndOrdersUnchanged: true };
+    evidence.checks = { anonymousListAndDetailBlocked: true, publicPreviewQueryCannotExposeDrafts: true, noStoreAndNoIndex: true, databasePriceAndWeightDisplayed: true, zeroTrackedStockShownUnavailableWithoutCount: true, internalInventoryAndOriginalKeysNotSerialized: true, originalImagesLoad: true, confirmedHennaUsageDisplayed: true, oneImageAndZoomWork: true, purchaseAndWhatsAppActionsAbsent: true, localCartUnchanged: true, productsRemainDraft: true, settingsAndOrdersUnchanged: true };
     evidence.result = 'passed';
   });
 

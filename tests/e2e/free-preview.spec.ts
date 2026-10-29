@@ -71,7 +71,7 @@ test.describe('authenticated read-only free hosting preview', () => {
     published = await db.product.create({ data: {
       categoryId, slug: `qa-preview-published-${marker}`, name: `منتج اختبار منشور ${marker.slice(0, 8)}`,
       status: 'PUBLISHED', nameNeedsConfirmation: false, weightGrams: 500, priceAgorot: 7500, available: true,
-      images: { create: { url: '/catalog-media/2026-10-29/page-23.webp', originalKey: 'qa-free-preview-only', alt: 'صورة في اختبار معزول فقط' } },
+      images: { create: { url: '/final-product-images/2026-10-29/03_complete_henna_mix.jpeg', originalKey: 'qa-free-preview-only', alt: 'صورة في اختبار معزول فقط' } },
     }, select: { id: true, slug: true, name: true } });
     for (const key of ['returns', 'privacy', 'terms']) await db.siteSetting.upsert({ where: { key }, create: { key, value: { approved: true, body: 'سياسة اختبار معزول فقط' } }, update: { value: { approved: true, body: 'سياسة اختبار معزول فقط' } } });
     await db.siteSetting.upsert({ where: { key: 'checkoutEnabled' }, create: { key: 'checkoutEnabled', value: true }, update: { value: true } });
@@ -82,7 +82,7 @@ test.describe('authenticated read-only free hosting preview', () => {
       name: `مسودة معاينة معزولة ${marker.slice(0, 8)}`, status: 'DRAFT', nameNeedsConfirmation: true,
       weightGrams: 500, priceAgorot: 7500, available: true, stockTracked: true, stockQuantity: 0,
       usage: 'تعليمات اختبارية معزولة للمراجعة فقط.',
-      images: { create: { url: '/catalog-media/2026-10-29/page-23.webp', originalKey: 'qa-free-preview-only', alt: 'صورة أصلية في اختبار معاينة معزول' } },
+      images: { create: { url: '/final-product-images/2026-10-29/03_complete_henna_mix.jpeg', originalKey: 'qa-free-preview-only', alt: 'صورة أصلية في اختبار معاينة معزول' } },
     }, select: { id: true, slug: true, name: true } });
     missingPhoto = await db.product.create({ data: {
       categoryId, slug: `qa-free-no-photo-${marker}`,
@@ -140,7 +140,7 @@ test.describe('authenticated read-only free hosting preview', () => {
     await expect(draftCard).toContainText('500 غرام');
     await expect(draftCard.locator('.product-price strong')).toHaveText(`${new Intl.NumberFormat('ar-PS').format(75)} ₪`);
     await expect(draftCard.locator('.availability')).toHaveText('غير متوفر');
-    await expect(noPhotoCard).toContainText('صورة المنتج لم تُرفع بعد');
+    await expect(noPhotoCard).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'أضيفي إلى السلة', exact: true })).toHaveCount(0);
     await expect(page.locator('.product-card-actions, .quantity-control, .site-header a[href="/cart"]')).toHaveCount(0);
     const html = await page.content();
@@ -170,8 +170,8 @@ test.describe('authenticated read-only free hosting preview', () => {
     await page.getByRole('button', { name: 'تكبير صورة المنتج', exact: true }).click();
     await expect(page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true })).toBeVisible();
     const zoomImage = page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true }).locator('img');
-    await expect.poll(() => zoomImage.evaluate(img => (img as HTMLImageElement).naturalWidth)).toBe(1600);
-    expect(new URL(await zoomImage.getAttribute('src') || '', page.url()).pathname).toBe('/catalog-media/2026-10-29/page-23.webp');
+    await expect.poll(() => zoomImage.evaluate(img => (img as HTMLImageElement).naturalWidth)).toBe(1122);
+    expect(new URL(await zoomImage.getAttribute('src') || '', page.url()).pathname).toBe('/final-product-images/2026-10-29/03_complete_henna_mix.jpeg');
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true })).not.toBeVisible();
     for (const path of ['/cart', '/checkout', '/order-status']) {
@@ -187,7 +187,7 @@ test.describe('authenticated read-only free hosting preview', () => {
     expect(adminResponse.status()).toBe(401);
     expect((await db.product.findUniqueOrThrow({ where: { id: draft.id } })).status).toBe('DRAFT');
     uiChecksPassed = true;
-    evidence.ui = { draftsBlockedWithoutCookie: true, duplicateAndInvalidTokensRejected: true, derivedHttpOnlyLaxCookie: true, eightHourCookie: true, fullStoreHomeAvailable: true, stockFieldsNotSerialized: true, zeroStockShownUnavailable: true, missingOriginalImageShownExplicitly: true, originalPhotoLoaded: true, draftStructuredDataSuppressed: true, noPurchaseControlsOrForms: true, localCartPreserved: true, previewCookieDoesNotGrantAdmin: true, viewports };
+    evidence.ui = { draftsBlockedWithoutCookie: true, duplicateAndInvalidTokensRejected: true, derivedHttpOnlyLaxCookie: true, eightHourCookie: true, fullStoreHomeAvailable: true, stockFieldsNotSerialized: true, zeroStockShownUnavailable: true, missingUnpicturedProductHidden: true, originalPhotoLoaded: true, draftStructuredDataSuppressed: true, noPurchaseControlsOrForms: true, localCartPreserved: true, previewCookieDoesNotGrantAdmin: true, viewports };
   });
 
   test('rejects orders, quotes and tracking despite enabled checkout and policies', async ({ request, baseURL }) => {

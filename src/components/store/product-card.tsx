@@ -18,7 +18,7 @@ export function ProductCard({ product: p, readOnly = false, href = `/products/${
   return (
     <article className="product-card">
       <Link href={href} className="product-image">
-        {mainImage ? <Image src={mainImage.url} alt={mainImage.alt || p.name} width={600} height={700} sizes="(max-width: 650px) 45vw, (max-width: 850px) 45vw, 23vw" loading="lazy" /> : <span className="preview-no-photo">صورة المنتج لم تُرفع بعد</span>}
+        {mainImage ? <Image unoptimized src={mainImage.url} alt={mainImage.alt || p.name} width={1122} height={1402} sizes="(max-width: 650px) 45vw, (max-width: 850px) 45vw, 23vw" loading="lazy" /> : null}
         <span className={p.available ? 'availability' : 'availability unavailable'}>{p.available ? 'متوفر' : 'غير متوفر'}</span>
         <span className="product-image-arrow" aria-hidden="true"><ArrowUpLeft size={20} /></span>
       </Link>
