@@ -81,5 +81,13 @@
   "adminAccountCreated": false,
   "secretValuesIncluded": false,
   "privateAccessUrlIncluded": false,
-  "personalDataIncluded": false
+  "personalDataIncluded": false,
+  "sourceVerification": {
+    "commit": "c3e6eb1e13d5dbc5c36ccdca1c9e7a28a646a2d9",
+    "ciRunId": 40844591589,
+    "conclusion": "success",
+    "unitAndIntegrationPassed": 199,
+    "browserScenariosPassed": 100,
+    "deployedToRender": false
+  }
 }

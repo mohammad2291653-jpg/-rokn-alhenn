@@ -4,6 +4,8 @@
 
 ## أحدث تحقق: وضع Render المجاني للمعاينة الخاصة
 
+نجحت [جولة GitHub النهائية](https://github.com/mohammad2291653-jpg/-rokn-alhenn/actions/runs/40844591589) على الإصدار `c3e6eb1e13d5dbc5c36ccdca1c9e7a28a646a2d9`: **199** اختبارًا وحدويًا وتكامليًا و**100** اختبار متصفح، منها10للمعاينة الإنتاجية عبرHTTPSاختباري محلي. نجحتTypeScript وESLint والبناءان وتدقيق الاعتمادات بصفر ثغرات معروفة مرصودة. [الدليل المنقح](artifacts/github-free-preview-ci-verification.json). هذا لا يثبت نشرRenderأو TLSسحابيًا أو اعتماد البيع.
+
 أُعدّ وضع مستقل يعرض واجهة المتجر والمسودات لجلسة قراءة موقعة فقط، ويرفض الطلبات والتسعير والمتابعة ورفع الصور من الخادم. لا يمنح رمز المعاينة جلسة إدارة. يستخدم تهيئة آمنة لقاعدة مجانية مستقلة، ترفض وجود طلبات وتحفظ علامة نجاح تمنع تكرار seed واستيراد الصور فوق تعديلات لاحقة.
 
 | الفحص المنفذ محليًا | النتيجة |
@@ -21,7 +23,7 @@
 
 في أول محاولة Playwright تعذّر جمع الملف لأن إعداد trace/screenshot كان داخل describe؛ نُقل إلى مستوى الملف. ثم كشفت جولة المتصفحات خمس حالات تؤكد GET على endpoint يدعم POST فقط (405 بدل401)؛ استُبدل بفحص GET لمسار تصدير الطلبات المحمي. نجحت إعادة العشرة كاملة. لم يكن هذا تجاوزًا للمصادقة. أُجريت مراجعة مصدر مستقلة ولم تجد تجاوزًا ملموسًا ضمن المسارات التي راجعتها؛ ليست اختبار اختراق شاملًا.
 
-الأدلة المنقحة: [free-preview-local-verification.json](artifacts/free-preview-local-verification.json)، و[فحص تشغيل الإنتاج](artifacts/free-preview-production-smoke.json)، وملفات free-preview-verification لكل متصفح. لقطات فعلية للصفحة الرئيسية [390px](artifacts/free-preview-home-390.png) و[1440px](artifacts/free-preview-home-1440.png)، و[الكتالوج](artifacts/free-preview-products-390.png) و[المنتج](artifacts/free-preview-product-390.png). هذه نتائج loopback محلية. أُنشئت قاعدة وخدمة Render مجانيتان بعد تأكيد My Workspace، لكن DATABASE_URL لم يضبط بعد، ولم يصل النشر إلى live. الجولة السحابية الأولى للمعاينة فشلت154/155 بسبب خطأP2034 في الإرسال المتزامن؛ أُصلح مسار إعادة المعاملة وأضاف تحققًا حتميًا لتعارض PostgreSQL وثماني نسخ بنفس المفتاح مع حجز المخزون مرة واحدة. نجحت199/199 محليًا بعد الإصلاح. [دليل الفشل الأول](artifacts/github-free-preview-ci-first-attempt.json) يحفظ الحدود؛ إعادة CI السحابية مطلوبة. لا تدّعي هذه الجولة اختبار أجهزة فعلية أو أداء استضافة Render.
+الأدلة المنقحة: [free-preview-local-verification.json](artifacts/free-preview-local-verification.json)، و[فحص تشغيل الإنتاج](artifacts/free-preview-production-smoke.json)، وملفات free-preview-verification لكل متصفح. لقطات فعلية للصفحة الرئيسية [390px](artifacts/free-preview-home-390.png) و[1440px](artifacts/free-preview-home-1440.png)، و[الكتالوج](artifacts/free-preview-products-390.png) و[المنتج](artifacts/free-preview-product-390.png). هذه نتائج loopback محلية. أُنشئت قاعدة وخدمة Render مجانيتان بعد تأكيد My Workspace، لكن DATABASE_URL لم يضبط بعد، ولم يصل النشر إلى live. الجولة السحابية الأولى للمعاينة فشلت154/155 بسبب خطأP2034 في الإرسال المتزامن؛ أُصلح مسار إعادة المعاملة وأضاف تحققًا حتميًا لتعارض PostgreSQL وثماني نسخ بنفس المفتاح مع حجز المخزون مرة واحدة. نجحت199/199 محليًا بعد الإصلاح. [دليل الفشل الأول](artifacts/github-free-preview-ci-first-attempt.json) يحفظ الحدود؛ نجحت إعادةCIالسحابية علىالإصدارc3e6eb1:199اختبارًا وحدويًاوتكامليًا و100اختبارمتصفح دونفشل؛ انظر [الدليل](artifacts/github-free-preview-ci-verification.json). لا تدّعي هذه الجولة اختبار أجهزة فعلية أو أداء استضافة Render.
 
 الجولات التالية سجل سابق؛ لا تعني نتائجها التاريخية أن نسخة مجانية نُشرت أو أن الإطلاق التجاري اعتُمد.
 

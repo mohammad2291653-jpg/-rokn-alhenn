@@ -1,0 +1,154 @@
+{
+  "verifiedAt": "2026-10-29T08:55:08.048736+00:00",
+  "repository": "mohammad2291653-jpg/-rokn-alhenn",
+  "commit": "c3e6eb1e13d5dbc5c36ccdca1c9e7a28a646a2d9",
+  "runId": 40844591589,
+  "runUrl": "https://github.com/mohammad2291653-jpg/-rokn-alhenn/actions/runs/40844591589",
+  "runAttempt": 1,
+  "status": "completed",
+  "conclusion": "success",
+  "jobId": 123348869487,
+  "jobConclusion": "success",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Initialize containers",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm ci",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run db:generate",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run db:migrate",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run db:seed",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run typecheck",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run lint",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm test",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run build",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run node scripts/prepare-free-preview-test.mjs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build private preview for HTTPS browser checks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npx playwright install --with-deps chromium firefox webkit",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test:e2e",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm audit --audit-level=high",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Stop containers",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "testCounts": {
+    "unitAndIntegrationPassed": 199,
+    "browserScenariosPassed": 100,
+    "freePreviewBrowserCasesFromSuccessLines": 10,
+    "countsExtractedFromCompletedJobLogs": true
+  },
+  "checks": {
+    "prismaGeneratePassed": true,
+    "migrationsPassed": true,
+    "seedPassed": true,
+    "typeScriptPassed": true,
+    "eslintPassed": true,
+    "unitAndIntegrationPassed": true,
+    "normalProductionBuildPassed": true,
+    "dedicatedPreviewDatabasePreparationPassed": true,
+    "privatePreviewProductionBuildPassed": true,
+    "browserMatrixPassed": true,
+    "dependencyAuditPassed": true,
+    "dependencyAuditZeroKnownVulnerabilitiesReported": true
+  },
+  "browserServerModes": {
+    "normalStore": "Next.js development on local port 3001",
+    "privatePreview": "Production standalone through a local self-signed HTTPS QA proxy on port 3443, forwarding to port 3002"
+  },
+  "limitations": [
+    "The HTTPS QA certificate is temporary and self-signed; this is not cloud TLS or domain verification.",
+    "Mobile browser profiles are emulations; physical iPhone/Android devices were not tested.",
+    "Successful CI neither creates Render services nor authorizes commercial sales.",
+    "No raw logs, environment values, private database connection strings, access tokens, or customer data are stored in this artifact."
+  ]
+}
