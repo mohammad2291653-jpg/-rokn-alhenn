@@ -124,7 +124,10 @@ export async function bootstrapFreePreview({ env = process.env, signal } = {}) {
     else await requireEmptyApplication(client);
 
     await runStep('migrations', [join(root, 'node_modules/prisma/build/index.js'), 'migrate', 'deploy'], env, root, signal);
-    if (checkpoint?.status === 'READY') return { initialized: false, ...await previewState(client), checkoutDisabled: true };
+    if (checkpoint?.status === 'READY') {
+      await runStep('final owner photo sync', [join(root, 'scripts/sync-final-product-media.mjs')], env, root, signal);
+      return { initialized: false, ...await previewState(client), checkoutDisabled: true };
+    }
 
     if (!checkpoint) {
       checkpoint = { purpose, version, database: target.database, status: 'INITIALIZING', startedAt: new Date().toISOString() };
@@ -137,10 +140,10 @@ export async function bootstrapFreePreview({ env = process.env, signal } = {}) {
     scratch = await mkdtemp(join(tmpdir(), 'rokn-free-preview-'));
     for (const directory of ['brand-assets', 'product-assets', 'public', 'config']) await symlink(join(root, directory), join(scratch, directory), 'dir');
     await runStep('logo import', [join(root, 'node_modules/tsx/dist/cli.mjs'), join(root, 'scripts/import-brand-logo.ts')], env, scratch, signal);
-    await runStep('media import', [join(root, 'node_modules/tsx/dist/cli.mjs'), join(root, 'scripts/import-product-media.ts')], env, scratch, signal);
+    await runStep('final owner photo sync', [join(root, 'scripts/sync-final-product-media.mjs'), '--seed-metadata'], env, root, signal);
     const state = await previewState(client);
     const drafts = await client.query('SELECT COUNT(*)::int AS count FROM public."Product" WHERE "status" = \'DRAFT\'');
-    if (state.products !== 9 || state.images !== 24 || drafts.rows[0].count !== 9) throw failure('PREVIEW_SOURCE_DATA', 'Initial free preview catalog did not match the reviewed source data.');
+    if (state.products !== 9 || state.images !== 7 || drafts.rows[0].count !== 9) throw failure('PREVIEW_SOURCE_DATA', 'Initial free preview catalog did not match the reviewed source data.');
     await client.query('UPDATE public."SiteSetting" SET "value" = $2::jsonb, "updatedAt" = CURRENT_TIMESTAMP WHERE "key" = $1', [checkpointKey, JSON.stringify({ ...checkpoint, status: 'READY', completedAt: new Date().toISOString() })]);
     return { initialized: true, ...state, checkoutDisabled: true };
   } catch (error) {
