@@ -4,7 +4,7 @@
 
 إنشاء التطبيق وتجهيزه للمراجعة لا يمنح موافقة إطلاق تجاري. لا يوجد في هذا المستودع إثبات شراء دومين أو اشتراك استضافة أو إنشاء خدمات مدفوعة. يلزم عرض معاينة واختبارات وبيانات ناقصة على صاحب المتجر أولًا. لا تنشر بيانات زبائن حقيقية في معاينة الاختبار.
 
-اكتمل رفع الكود والأصول إلى [مستودع GitHub العام الذي اعتمده المالك](https://github.com/mohammad2291653-jpg/-rokn-alhenn)، على الفرع `main`؛ الإصدار الأول المرفوع [3d4490d](https://github.com/mohammad2291653-jpg/-rokn-alhenn/commit/3d4490d87017809e0bed7d604363df5fa01b56f9). لا يوجد حاليًا نشر سحابي للمتجر أو قاعدة وتخزين إنتاج مخصصان. نتائج فحوص المصدر على GitHub في [Actions](https://github.com/mohammad2291653-jpg/-rokn-alhenn/actions/runs/40833604777) تُراجع منفصلة عن اعتماد الاستضافة والإطلاق.
+اكتمل رفع الكود والأصول إلى [مستودع GitHub العام الذي اعتمده المالك](https://github.com/mohammad2291653-jpg/-rokn-alhenn)، على الفرع `main`؛ الإصدار الأول المرفوع [3d4490d](https://github.com/mohammad2291653-jpg/-rokn-alhenn/commit/3d4490d87017809e0bed7d604363df5fa01b56f9). أُنشئت خدمة وقاعدة معاينة مجانيتان على Render بعد تأكيد مساحة العمل، لكن النشر الأول فشل ولا يوجد نشر live أو قاعدة وتخزين إنتاج معتمدان. نتائج فحوص المصدر على GitHub في [Actions](https://github.com/mohammad2291653-jpg/-rokn-alhenn/actions/runs/40833604777) تُراجع منفصلة عن نجاح النشر واعتماد الإطلاق.
 
 ## البنية المطلوبة
 
@@ -18,17 +18,19 @@
 
 طلب المالك إعداد **معاينة على خطة Render المجانية**. أصبح [render.yaml](render.yaml) يعرّف خدمة ويب مجانية وقاعدة PostgreSQL 18 مجانية فقط، مع بوابة دخول خاصة وتعطيل استقبال الطلبات والفهرسة والرفع. تفاصيل التشغيل وقيود الخطة في [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) و[RENDER_FREE_PREVIEW.md](RENDER_FREE_PREVIEW.md). حُفظ المخطط المدفوع السابق دون تعديل في [render.production.example.yaml](render.production.example.yaml)؛ لم يُعتمد تطبيقه أو دفع تكلفته.
 
-حتى تحقق 29 أكتوبر 2026: نجح فحص JSON Schema للمخططين، وتوقف تحقق CLI الدلالي لعدم تحديد مساحة عمل. لم يُطبّق مخطط ولم تُنشأ موارد أو يُنشر رابط معاينة؛ تنتظر العملية مساحة عمل Render المستهدفة. الأثر في [render-free-blueprint-validation.json](artifacts/render-free-blueprint-validation.json). تفصل هذه النتيجة بين جاهزية المصدر ونجاح نشر لم يحدث بعد.
+حتى تحقق 29 أكتوبر 2026: نجح فحص JSON Schema للمخططين؛ بقي تحقق CLI الدلالي غير منفذ، ومحاولته السابقة سبقت تأكيد مساحة العمل. أنشأ Render MCP الموارد المجانية مباشرة؛ قاعدة PostgreSQL متاحة، والخدمة لم تصبح live لأن البناء الأول فشل لغياب `DATABASE_URL`. [عنوان الخدمة الفعلي](https://rokn-alhenna-free-preview.onrender.com) ليس معاينة جاهزة. تنتظر العملية نقل الاتصال الداخلي من Connect في القاعدة إلى Environment لخدمة الويب داخل Render دون إرساله في المحادثة؛ لا تعرض أدوات MCP معلومات الاتصال وCLI غير مصادق. الأدلة في [render-free-blueprint-validation.json](artifacts/render-free-blueprint-validation.json) و[حالة الموارد المنقحة](artifacts/render-free-resource-status.json).
 
 ## معاينة Render المجانية الحالية
 
-يستخدم المخطط `rokn-alhenna-free-preview` و`rokn-alhenna-free-preview-db` في Frankfurt، وخطة `free` لكليهما. اسم قاعدة البيانات المنطقي `rokn_free_preview`، ويجب أن يطابق `FREE_PREVIEW_DATABASE_NAME`. الاتصال داخلي والاتصال الخارجي بالقاعدة مغلق. لا يتضمن قرصًا أو خطوة pre-deploy أو موردًا مدفوعًا أو نشرًا تلقائيًا.
+يستخدم المخطط `rokn-alhenna-free-preview` و`rokn-alhenna-free-preview-db` في Frankfurt، وخطة `free` لكليهما. اسم قاعدة البيانات المنطقي الفعلي `rokn_alhenna_free_preview_db` والمستخدم `rokn_alhenna_free_preview_db_user`، ويطابق اسمها `FREE_PREVIEW_DATABASE_NAME`. الاتصال الخارجي بالقاعدة مغلق؛ يعرّف Blueprint ربط الاتصال الداخلي آليًا، أما إنشاء MCP المباشر فينتظر متغير الاتصال المفقود. لا يتضمن قرصًا أو خطوة pre-deploy أو موردًا مدفوعًا أو نشرًا تلقائيًا.
 
 البناء: `npm ci --include=dev && NEXT_PUBLIC_SITE_URL="$RENDER_EXTERNAL_URL" BETTER_AUTH_URL="$RENDER_EXTERNAL_URL" npm run build`. البدء: `NEXT_PUBLIC_SITE_URL="$RENDER_EXTERNAL_URL" BETTER_AUTH_URL="$RENDER_EXTERNAL_URL" npm run start:free-preview`. لا يفترض الملف عنوان مضيف قبل أن يمنحه Render.
 
 لأن free لا تدعم `preDeployCommand` أو Shell أو one-off jobs، يهيئ سكربت البدء القاعدة المستقلة قبل خادم Next. يرفض قاعدة تحوي طلبات، وينفذ الترحيلات، وseed واستيراد الشعار والصور مرة واحدة تحت قفل وعلامة PostgreSQL. يبقي المنتجات التسعة مسودات وcheckout معطلًا، ولا يمحو قاعدة قائمة أو يعيد استيراد الصور فوق تعديلات المالك كل بدء. لا يطبق هذا السلوك الخاص على قاعدة الإنتاج.
 
-تبقى `RENDER_FREE_PREVIEW=true` و`COMMERCIAL_LAUNCH_APPROVED=false` و`ALLOW_INDEXING=false` و`STORAGE_DRIVER=disabled` و`TRUST_PROXY=false`. رابط المعاينة الخاص يفتح جلسة قراءة مؤقتة للكتالوج فقط؛ `/admin` تتطلب مصادقة مستقلة. يحتفظ مدير أسرار Render بقيم الأسرار، ولا يُنشأ حساب إدارة تجريبي. لا يُحفظ رمز المعاينة أو رابطه الخاص في Git أو التقرير العام.
+جُهزت في Render أعلام `RENDER_FREE_PREVIEW=true` و`COMMERCIAL_LAUNCH_APPROVED=false` و`ALLOW_INDEXING=false` و`STORAGE_DRIVER=disabled` و`TRUST_PROXY=false`، والأسرار الثلاثة المستقلة العشوائية دون عرض قيمها. بعد نجاح النشر يفتح رابط المعاينة الخاص جلسة قراءة مؤقتة للكتالوج فقط؛ `/admin` تتطلب مصادقة مستقلة. لا يوجد حساب إدارة تجريبي، ولا يُحفظ رمز المعاينة أو رابطه الخاص في Git أو التقرير العام.
+
+تنتهي قاعدة المعاينة الفعلية في **28 نوفمبر 2026، الساعة 08:14:03 UTC**. لا يُؤكد اجتياز تهيئتها أو فحص HTTPS أو عرض الكتالوج إلى أن يُضبط `DATABASE_URL` ويصبح النشر live وتنجح الفحوص المستضافة.
 
 تنام خدمة الويب بعد 15 دقيقة من الخمول وتفقد ملفاتها المحلية؛ تأتي صور العرض من أصول Git المعتمدة. تنتهي قاعدة free بعد 30 يومًا ولا تقدم Render نسخًا احتياطية لها، ثم تُحذف بعد مهلة 14 يومًا إن لم تُرقَّ. لا تقبل هذه المعاينة بيانات زبائن حقيقية أو طلبات تجارية. أسعار حوسبتها صفر ضمن الحصص؛ قد تُفوتر تجاوزات النقل والبناء عند وجود وسيلة دفع بحسب الحساب. لا توجد موافقة على هذه التجاوزات أو على أي ترقية؛ تُراجع الحصة وحدود الفوترة قبل الإنشاء.
 

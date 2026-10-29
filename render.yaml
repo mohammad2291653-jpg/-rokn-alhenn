@@ -30,7 +30,7 @@ services:
           name: rokn-alhenna-free-preview-db
           property: connectionString
       - key: FREE_PREVIEW_DATABASE_NAME
-        value: rokn_free_preview
+        value: rokn_alhenna_free_preview_db
       - key: RENDER_FREE_PREVIEW
         value: "true"
       - key: COMMERCIAL_LAUNCH_APPROVED
@@ -54,7 +54,7 @@ databases:
   - name: rokn-alhenna-free-preview-db
     region: frankfurt
     postgresMajorVersion: "18"
-    databaseName: rokn_free_preview
-    user: rokn_free_preview
+    databaseName: rokn_alhenna_free_preview_db
+    user: rokn_alhenna_free_preview_db_user
     plan: free
     ipAllowList: []

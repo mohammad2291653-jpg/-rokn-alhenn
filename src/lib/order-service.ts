@@ -4,6 +4,7 @@ import { z } from "zod";
 import { db } from "./db";
 import { isFreePreview } from "./preview-access";
 import { addressArea, addressMentions, normalizeAddress } from "./delivery";
+import { isRetryableTransactionError, withTransactionRetry } from "./transaction-retry";
 
 export class OrderError extends Error {
   constructor(message: string, public status = 400, public code = "INVALID_ORDER") { super(message); }
@@ -119,46 +120,44 @@ export async function createOrder(raw:unknown) {
     throw new OrderError("المتجر في مرحلة المعاينة ولا يستقبل طلبات تجارية بعد.",503,"LAUNCH_NOT_APPROVED");
   const normalized = {...input,items:[...input.items].sort((a,b)=>a.productId.localeCompare(b.productId))};
   const requestHash = hash(JSON.stringify(normalized));
-  for (let attempt=0; attempt<4; attempt++) {
-    try {
-      return await db.$transaction(async (tx) => {
-        const existing = await replay(tx,input.idempotencyKey,requestHash);
-        if (existing) return existing;
-        const settings = await tx.siteSetting.findMany({where:{key:{in:["checkoutEnabled","returns","privacy","terms"]}}});
-        const checkout = settings.find((s)=>s.key==="checkoutEnabled")?.value;
-        const policiesApproved = ["returns","privacy","terms"].every((key)=>{
-          const policy = settings.find((s)=>s.key===key)?.value;
-          return policy && typeof policy === "object" && !Array.isArray(policy) && policy.approved === true;
-        });
-        if (checkout !== true || !policiesApproved)
-          throw new OrderError("استقبال الطلبات متوقف لحين اعتماد بيانات المتجر والسياسات. يسعدنا تواصلك عبر واتساب.",503,"CHECKOUT_DISABLED");
-        const priced = await calculate(tx,input);
-        const reservations = new Map<string, boolean>();
-        for (const item of priced.items) {
-          const product = await tx.product.findUniqueOrThrow({where:{id:item.productId},select:{stockTracked:true}});
-          reservations.set(item.productId, product.stockTracked);
-          if (product.stockTracked) {
-            const update = await tx.product.updateMany({where:{id:item.productId,stockQuantity:{gte:item.quantity}},data:{stockQuantity:{decrement:item.quantity}}});
-            if (update.count !== 1) throw new OrderError("الكمية المطلوبة لم تعد متاحة؛ حدّثي السلة.",409,"UNAVAILABLE_PRODUCT");
-          }
+  try {
+    return await withTransactionRetry(() => db.$transaction(async (tx) => {
+      const existing = await replay(tx,input.idempotencyKey,requestHash);
+      if (existing) return existing;
+      const settings = await tx.siteSetting.findMany({where:{key:{in:["checkoutEnabled","returns","privacy","terms"]}}});
+      const checkout = settings.find((s)=>s.key==="checkoutEnabled")?.value;
+      const policiesApproved = ["returns","privacy","terms"].every((key)=>{
+        const policy = settings.find((s)=>s.key===key)?.value;
+        return policy && typeof policy === "object" && !Array.isArray(policy) && policy.approved === true;
+      });
+      if (checkout !== true || !policiesApproved)
+        throw new OrderError("استقبال الطلبات متوقف لحين اعتماد بيانات المتجر والسياسات. يسعدنا تواصلك عبر واتساب.",503,"CHECKOUT_DISABLED");
+      const priced = await calculate(tx,input);
+      const reservations = new Map<string, boolean>();
+      for (const item of priced.items) {
+        const product = await tx.product.findUniqueOrThrow({where:{id:item.productId},select:{stockTracked:true}});
+        reservations.set(item.productId, product.stockTracked);
+        if (product.stockTracked) {
+          const update = await tx.product.updateMany({where:{id:item.productId,stockQuantity:{gte:item.quantity}},data:{stockQuantity:{decrement:item.quantity}}});
+          if (update.count !== 1) throw new OrderError("الكمية المطلوبة لم تعد متاحة؛ حدّثي السلة.",409,"UNAVAILABLE_PRODUCT");
         }
-        const trackingToken = randomBytes(32).toString("base64url");
-        const number = `RA-${new Date().toISOString().slice(0,10).replace(/-/g,"")}-${randomBytes(5).toString("hex").toUpperCase()}`;
-        const order = await tx.order.create({data:{
-          number,customerName:input.customerName,phone:input.phone,zoneId:priced.zone.id,zoneName:priced.zone.name,
-          city:input.city,address:input.address,notes:input.notes,
-          subtotalAgorot:priced.subtotalAgorot,deliveryAgorot:priced.deliveryAgorot,totalAgorot:priced.totalAgorot,
-          trackingTokenHash:hash(trackingToken),trackingTokenSealed:seal(trackingToken),idempotencyKey:input.idempotencyKey,requestHash,
-          items:{create:priced.items.map((item)=>({...item,inventoryReserved:reservations.get(item.productId) ?? false}))},history:{create:{status:"NEW",paymentStatus:"UNPAID",note:"تم إنشاء الطلب بالدفع عند الاستلام."}},
-        },select:summarySelect});
-        return {...order,trackingToken};
-      },{isolationLevel:Prisma.TransactionIsolationLevel.Serializable,maxWait:5000,timeout:15000});
-    } catch (error) {
-      if (error instanceof Prisma.PrismaClientKnownRequestError && ["P2034","P2002"].includes(error.code) && attempt<3) continue;
-      throw error;
-    }
+      }
+      const trackingToken = randomBytes(32).toString("base64url");
+      const number = `RA-${new Date().toISOString().slice(0,10).replace(/-/g,"")}-${randomBytes(5).toString("hex").toUpperCase()}`;
+      const order = await tx.order.create({data:{
+        number,customerName:input.customerName,phone:input.phone,zoneId:priced.zone.id,zoneName:priced.zone.name,
+        city:input.city,address:input.address,notes:input.notes,
+        subtotalAgorot:priced.subtotalAgorot,deliveryAgorot:priced.deliveryAgorot,totalAgorot:priced.totalAgorot,
+        trackingTokenHash:hash(trackingToken),trackingTokenSealed:seal(trackingToken),idempotencyKey:input.idempotencyKey,requestHash,
+        items:{create:priced.items.map((item)=>({...item,inventoryReserved:reservations.get(item.productId) ?? false}))},history:{create:{status:"NEW",paymentStatus:"UNPAID",note:"تم إنشاء الطلب بالدفع عند الاستلام."}},
+      },select:summarySelect});
+      return {...order,trackingToken};
+    },{isolationLevel:Prisma.TransactionIsolationLevel.Serializable,maxWait:5000,timeout:15000}));
+  } catch (error) {
+    if (isRetryableTransactionError(error))
+      throw new OrderError("تعذّر حفظ الطلب الآن؛ يرجى إعادة المحاولة.",503,"ORDER_BUSY");
+    throw error;
   }
-  throw new OrderError("تعذّر حفظ الطلب الآن؛ يرجى المحاولة لاحقًا.",503);
 }
 
 export async function lookupOrder(token:string) {

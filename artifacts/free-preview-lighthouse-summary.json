@@ -1,0 +1,191 @@
+{
+  "at": "2026-10-29T08:33:01.358Z",
+  "scope": "local-production-read-only-full-store-preview",
+  "cloudPerformance": false,
+  "physicalDevices": false,
+  "cacheClearedBeforeEachRun": true,
+  "authenticatedCookieRetained": true,
+  "accessCapabilitiesRecorded": false,
+  "runs": [
+    {
+      "mode": "mobile",
+      "lighthouseVersion": "13.6.0",
+      "fetchTime": "2026-10-29T08:33:03.322Z",
+      "scores": {
+        "performance": 84,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 69
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1120.9123,
+          "unit": "millisecond"
+        },
+        "largest-contentful-paint": {
+          "value": 3662.4123,
+          "unit": "millisecond"
+        },
+        "total-blocking-time": {
+          "value": 283,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.007175214535214542,
+          "unit": "unitless"
+        },
+        "speed-index": {
+          "value": 1120.9123,
+          "unit": "millisecond"
+        }
+      },
+      "failedAudits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.99
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.59
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.8
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.16
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.72
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0
+        },
+        {
+          "id": "is-crawlable",
+          "title": "Page is blocked from indexing",
+          "score": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "score": 0
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "lighthouseVersion": "13.6.0",
+      "fetchTime": "2026-10-29T08:33:12.449Z",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 69
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 314.5553,
+          "unit": "millisecond"
+        },
+        "largest-contentful-paint": {
+          "value": 1267.777075,
+          "unit": "millisecond"
+        },
+        "total-blocking-time": {
+          "value": 233,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.001895111984988881,
+          "unit": "unitless"
+        },
+        "speed-index": {
+          "value": 557.1720419818503,
+          "unit": "millisecond"
+        }
+      },
+      "failedAudits": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.88
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.73
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.2
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0
+        },
+        {
+          "id": "is-crawlable",
+          "title": "Page is blocked from indexing",
+          "score": 0
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "score": 0
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "score": 0
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0.5
+        }
+      ]
+    }
+  ]
+}

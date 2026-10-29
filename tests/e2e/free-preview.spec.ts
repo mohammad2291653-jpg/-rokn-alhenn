@@ -10,7 +10,11 @@ const enabled = Boolean(process.env.PLAYWRIGHT_FREE_PREVIEW_BASE_URL)
   && previewTokenValid(process.env.PREVIEW_TEST_ACCESS_TOKEN, process.env.PREVIEW_TEST_ACCESS_TOKEN);
 
 // File-level worker options keep access capabilities out of traces and screenshots.
-test.use({ baseURL: process.env.PLAYWRIGHT_FREE_PREVIEW_BASE_URL, trace: 'off', screenshot: 'off' });
+test.use({
+  baseURL: process.env.PLAYWRIGHT_FREE_PREVIEW_BASE_URL, trace: 'off', screenshot: 'off',
+  // Only this isolated local QA endpoint uses a temporary self-signed certificate.
+  ignoreHTTPSErrors: process.env.PLAYWRIGHT_FREE_PREVIEW_BASE_URL === 'https://127.0.0.1:3443',
+});
 
 test.describe('authenticated read-only free hosting preview', () => {
   test.skip(!enabled, 'Supply the dedicated loopback preview QA URL, QA access token, and test_rokn_preview database.');
@@ -165,6 +169,9 @@ test.describe('authenticated read-only free hosting preview', () => {
     await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(0);
     await page.getByRole('button', { name: 'تكبير صورة المنتج', exact: true }).click();
     await expect(page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true })).toBeVisible();
+    const zoomImage = page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true }).locator('img');
+    await expect.poll(() => zoomImage.evaluate(img => (img as HTMLImageElement).naturalWidth)).toBe(1600);
+    expect(new URL(await zoomImage.getAttribute('src') || '', page.url()).pathname).toBe('/catalog-media/2026-10-29/page-23.webp');
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog', { name: 'صورة المنتج مكبّرة', exact: true })).not.toBeVisible();
     for (const path of ['/cart', '/checkout', '/order-status']) {

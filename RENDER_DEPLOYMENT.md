@@ -2,7 +2,11 @@
 
 اختار المالك خطة Render المجانية. أصبح [render.yaml](render.yaml) يعرّف **خدمة ويب مجانية وقاعدة PostgreSQL مجانية فقط** لمعاينة خاصة للكتالوج؛ الطلبات التجارية معطلة. حُفظ المخطط المدفوع السابق كما هو في [render.production.example.yaml](render.production.example.yaml)، ولا يُطبّق دون موافقة جديدة على التكلفة.
 
-**حالة هذا التحقق في 29 أكتوبر 2026: لم يُطبّق المخطط، ولم تُنشأ موارد أو يُنشر رابط معاينة؛ تنتظر العملية تحديد مساحة عمل Render المستهدفة.** نجاح إعداد الملفات وفحصها محليًا لا يثبت نجاح النشر. لا يُخمن عنوان `onrender.com` قبل أن يعيده Render فعلًا.
+**الحالة الفعلية في 29 أكتوبر 2026:** أكد المالك مساحة العمل، وأُنشئت الخدمة والقاعدة المجانيتان عبر Render MCP. القاعدة `available`، لكن النشر الأول `build_failed` لغياب `DATABASE_URL` من بيئة الويب. [عنوان الخدمة الذي أعاده Render](https://rokn-alhenna-free-preview.onrender.com) موجود، لكنه **لم يصبح live ولا يمثل معاينة جاهزة**. تفاصيل الحالة المنقحة في [render-free-resource-status.json](artifacts/render-free-resource-status.json).
+
+الخطوة المعلقة مطلوبة لأن MCP لا يعرض معلومات الاتصال وCLI غير مصادق: ينسخ المالك Internal Database URL من Connect في القاعدة إلى `DATABASE_URL` داخل Environment لخدمة الويب، دون إرساله في المحادثة. بعد ذلك يُعاد النشر وتُفحص الصحة والصفحات قبل إعلان الجاهزية. لا تُنشأ قاعدة بديلة ولا تُفتح القاعدة للإنترنت لحل هذا النقص.
+
+الموردان الحاليان ليسا تحت إدارة Blueprint؛ لا تعاود تطبيقه لإنشاء نسخة أخرى. فحص الخدمة الفعلي هو TCP الافتراضي؛ مسار `/api/health` لم يضبط لدى المزود عبر أداة الإنشاء، ويجب فحصه مستقلًا قبل إعلان الجاهزية.
 
 ## الموارد والإعدادات
 
@@ -11,8 +15,9 @@
 | خدمة الويب | `rokn-alhenna-free-preview`، Node.js `24.19.0`، `plan: free`، مثيل واحد |
 | قاعدة البيانات | `rokn-alhenna-free-preview-db`، PostgreSQL 18، `plan: free`، سعة 1GB |
 | المنطقة | Frankfurt للخدمتين، لاتصال PostgreSQL الداخلي |
-| اسم القاعدة المنطقي | `rokn_free_preview`، مطابق لـ`FREE_PREVIEW_DATABASE_NAME` |
-| الشبكة | `DATABASE_URL` من `fromDatabase`؛ `ipAllowList: []` يمنع الاتصال الخارجي بالقاعدة |
+| اسم القاعدة المنطقي | `rokn_alhenna_free_preview_db`، مطابق لـ`FREE_PREVIEW_DATABASE_NAME` |
+| مستخدم القاعدة | `rokn_alhenna_free_preview_db_user` |
+| الشبكة | `ipAllowList: []` يمنع الاتصال الخارجي؛ يربط Blueprint `DATABASE_URL` بواسطة `fromDatabase` لكن إنشاء MCP المباشر ما زال ينتظر ضبطه |
 | الموافقات | `RENDER_FREE_PREVIEW=true`، و`COMMERCIAL_LAUNCH_APPROVED=false`، و`ALLOW_INDEXING=false` |
 | رفع الملفات | `STORAGE_DRIVER=disabled`؛ الصور الجاهزة تُبنى من أصول Git المعتمدة |
 | البروكسي | `TRUST_PROXY=false` حتى يُختبر سلوك الترويسات فعليًا |
@@ -41,12 +46,17 @@ NEXT_PUBLIC_SITE_URL="$RENDER_EXTERNAL_URL" BETTER_AUTH_URL="$RENDER_EXTERNAL_UR
 ## الأسرار والمعاينة الخاصة
 
 - يولّد المخطط `BETTER_AUTH_SECRET` و`ORDER_TOKEN_SECRET` مستقلين بواسطة `generateValue` داخل Render.
+- في إنشاء MCP الفعلي جُهزت الأسرار الثلاثة المستقلة بطول 64 حرفًا بصيغة base64url داخل Render؛ لا تُعاد كتابتها أو تُنشر قيمها لإصلاح اتصال القاعدة.
 - `PREVIEW_ACCESS_TOKEN` هو الحقل الوحيد `sync: false`. يولّد المنفّذ له 48 بايت عشوائية بصيغة base64url وينقله مباشرة إلى مدير الأسرار؛ لا يطبع القيمة أو يضيفها للمحادثة العامة أو Git. ناتج `generateValue` الموثق base64 وليس مضمونًا أن يوافق صيغة رابط المعاينة، لذلك لا يُستخدم لهذا الحقل.
 - في تحديث خدمة قائمة، تُضاف الأسرار الجديدة من إعدادات بيئتها؛ حقول `sync: false` لا تعيد طلب القيم عند مزامنة Blueprint.
 - يفتح رابط `/preview-access` ذو الرمز الخاص جلسة معاينة مؤقتة ثم ينقل الزائر إلى الصفحة الرئيسية. لا يُنشر الرابط الخاص في التقارير أو README أو Issues أو الصور؛ تتيح الجلسة قراءة الكتالوج ولا تمنح حساب إدارة.
 - تبقى `/admin` محمية بمصادقة مستقلة. لا ينشئ القالب حساب إدارة تجريبيًا، ولا يتطلب إرسال كلمة مرور في المحادثة.
 
-## تطبيق المخطط والتحقق الفعلي
+## استكمال الموارد القائمة والتحقق الفعلي
+
+الموارد موجودة الآن؛ لا تضغط Apply لإنشاء نسخة أخرى أثناء إصلاح المتغير المفقود. القاعدة `dpg-dbhg0iu1egvs73fflrqg-a` متاحة في Frankfurt، والخدمة `srv-dbhg1j08v5cc738d4780` مجانية دون نشر تلقائي. أول نشر `dep-dbhg1jg8v5cc738d488g` فشل أثناء البناء. تاريخ انتهاء القاعدة الفعلي `2026-11-28T08:14:03.937017Z`؛ لا تُرقَّ تلقائيًا عند انتهائها.
+
+الخطوات العامة التالية تشرح التحقق والإعداد القابل لإعادة الإنتاج؛ يتجاوز المنفّذ خطوات إنشاء الموارد التي تمت، ويستكمل إعداد `DATABASE_URL` ثم النشر والفحص.
 
 1. حدّد مساحة العمل التي تخص المالك داخل Render، ثم اقرأ مواردها وحصصها. لا تختَر حسابًا ملتبسًا أو تحذف قاعدة مجانية قائمة لإفساح المجال؛ يسمح Render بقاعدة مجانية واحدة فقط لكل مساحة عمل.
 2. راجع [قيود free الموثقة](RENDER_FREE_PREVIEW.md)، والحصة والفوترة الفعلية. لا تُنشأ موارد مدفوعة أو تُغير خطة الحساب.
@@ -67,6 +77,6 @@ NEXT_PUBLIC_SITE_URL="$RENDER_EXTERNAL_URL" BETTER_AUTH_URL="$RENDER_EXTERNAL_UR
 
 ## نتائج التحقق ومصادره
 
-نجح الملفان مقابل JSON Schema الرسمي الحالي Draft 2020-12؛ تطابق النسخة المدفوعة الملف السابق حرفيًا. محاولة CLI الرسمي `2.33.0` للتحقق الدلالي توقفت بالرسالة `no workspace specified and no default workspace set`. لذلك يظل التحقق داخل حساب Render وتعارض الموارد والنشر والوصول الخارجي **غير منفذ** في هذا التقرير. الأدلة في [render-free-blueprint-validation.json](artifacts/render-free-blueprint-validation.json). يخص [السجل السابق](artifacts/render-blueprint-validation.json) المخطط المدفوع المؤرشف ولا يثبت تطبيقه.
+نجح الملفان مقابل JSON Schema الرسمي الحالي Draft 2020-12؛ تطابق النسخة المدفوعة الملف السابق حرفيًا. محاولة CLI الرسمي `2.33.0` السابقة توقفت بالرسالة `no workspace specified and no default workspace set`؛ بعد تأكيد المساحة لم تتوفر مصادقة CLI لإعادة التحقق الدلالي. الأدلة في [render-free-blueprint-validation.json](artifacts/render-free-blueprint-validation.json). أُنشئت الموارد عبر MCP خارج Blueprint، وسجل [الحالة الفعلية](artifacts/render-free-resource-status.json) فشل البناء الأول والمتغير المفقود. **فحوص HTTPS والكتالوج وتهيئة القاعدة والنشر live لم تنجح بعد ولا يدّعي التقرير تنفيذها.** يخص [السجل السابق](artifacts/render-blueprint-validation.json) المخطط المدفوع المؤرشف ولا يثبت تطبيقه.
 
 المراجع الرسمية التي فُتحت وقُرئت: [Free instances](https://render.com/docs/free)، [Blueprint specification](https://render.com/docs/blueprint-spec)، [Compute plans](https://render.com/docs/compute-plans)، [Environment variables](https://render.com/docs/environment-variables)، [Secrets](https://render.com/docs/configure-environment-variables)، [Private network](https://render.com/docs/private-network)، [Deploy lifecycle](https://render.com/docs/deploys)، [Postgres](https://render.com/docs/postgresql-creating-connecting)، [Pricing](https://render.com/pricing)، [JSON Schema](https://render.com/schema/render.yaml.json)، [Render CLI](https://render.com/docs/cli).

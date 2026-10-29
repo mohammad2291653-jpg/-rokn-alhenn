@@ -1,0 +1,16 @@
+{
+  "environment": "local-production-over-loopback-HTTP",
+  "productionBrowserE2E": {
+    "passed": 9,
+    "failed": 1,
+    "total": 10
+  },
+  "failureProject": "webkit-iphone-emulation",
+  "accessStatus": 303,
+  "secureHttpOnlyCookieIssued": true,
+  "browserCookieHeaderSent": false,
+  "pageStatus": 404,
+  "interpretation": "WebKit did not send the production Secure cookie over loopback HTTP; app protection was not weakened. HTTPS browser verification remains required.",
+  "credentialsRecorded": false,
+  "capabilityValuesRecorded": false
+}

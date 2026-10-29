@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-10-29T08:05:18.885374+00:00",
+  "checkedAt": "2026-10-29T08:20:18.644617+00:00",
   "freeBlueprint": "render.yaml",
   "schemaUrl": "https://render.com/schema/render.yaml.json",
   "schemaSha256": "8a3fb8da6b4f55fe686fbefa790e011d3dd7895f013f355953c572a21ab6494a",
   "files": {
     "render.yaml": {
       "schemaResult": "passed",
-      "sha256": "a641a7cf0b8569446ebaccfe5d1c642861f85b7290d8c990ccade72e45db061d"
+      "sha256": "1c2e70a766a5a6f6ebaff0301ac984c062af7896645d64017a3b75d5f21004a5"
     },
     "render.production.example.yaml": {
       "schemaResult": "passed",
@@ -17,11 +17,15 @@
     "version": "2.33.0",
     "command": "render blueprints validate render.yaml --output json",
     "exitCode": 1,
-    "output": "Error: no workspace specified and no default workspace set. Use --workspace or run 'render workspace set'"
+    "output": "Error: no workspace specified and no default workspace set. Use --workspace or run 'render workspace set'",
+    "attemptedBeforeWorkspaceConfirmation": true,
+    "latestAuthenticatedValidation": "not executed; Render CLI authentication is not configured"
   },
-  "resourcesCreated": false,
   "paidResourcesCreated": false,
   "secretValuesIncluded": false,
   "limitsSource": "https://render.com/docs/free",
-  "previewTokenEncoding": "Externally generated base64url; generateValue is not used for preview access."
+  "previewTokenEncoding": "Externally generated base64url; generateValue is not used for preview access.",
+  "resourcesCreatedByThisValidation": false,
+  "resourceStatusReport": "artifacts/render-free-resource-status.json",
+  "validationScope": "Local schema and configuration validation only; actual MCP resource status is tracked separately"
 }

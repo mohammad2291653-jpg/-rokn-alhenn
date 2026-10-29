@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-29T08:20:18.644617+00:00",
+  "evidenceSource": "Render MCP resource responses reported by deployment coordinator",
+  "creationPath": "render-mcp-direct-not-blueprint-apply",
+  "ownerWorkspaceConfirmed": true,
+  "deploymentReady": false,
+  "commercialLaunchApproved": false,
+  "service": {
+    "id": "srv-dbhg1j08v5cc738d4780",
+    "name": "rokn-alhenna-free-preview",
+    "type": "web",
+    "plan": "free",
+    "region": "frankfurt",
+    "runtime": "node",
+    "nodeVersion": "24.19.0",
+    "autoDeploy": false,
+    "baseUrl": "https://rokn-alhenna-free-preview.onrender.com",
+    "status": "created_not_live",
+    "initialDeployment": {
+      "id": "dep-dbhg1jg8v5cc738d488g",
+      "status": "build_failed",
+      "reason": "DATABASE_URL is not configured"
+    },
+    "healthCheck": {
+      "providerMode": "TCP-default",
+      "configuredHttpPath": "",
+      "manualHttpReadinessPath": "/api/health",
+      "httpPathSettingExposedByCreationTool": false
+    }
+  },
+  "database": {
+    "id": "dpg-dbhg0iu1egvs73fflrqg-a",
+    "name": "rokn-alhenna-free-preview-db",
+    "plan": "free",
+    "region": "frankfurt",
+    "postgresMajorVersion": "18",
+    "status": "available",
+    "databaseName": "rokn_alhenna_free_preview_db",
+    "databaseUser": "rokn_alhenna_free_preview_db_user",
+    "expiresAt": "2026-11-28T08:14:03.937017Z",
+    "ipAllowList": [],
+    "externalAccessEnabled": false
+  },
+  "configuredFlags": {
+    "RENDER_FREE_PREVIEW": "true",
+    "FREE_PREVIEW_DATABASE_NAME": "rokn_alhenna_free_preview_db",
+    "COMMERCIAL_LAUNCH_APPROVED": "false",
+    "ALLOW_INDEXING": "false",
+    "STORAGE_DRIVER": "disabled",
+    "TRUST_PROXY": "false"
+  },
+  "secrets": {
+    "configuredNames": [
+      "BETTER_AUTH_SECRET",
+      "ORDER_TOKEN_SECRET",
+      "PREVIEW_ACCESS_TOKEN"
+    ],
+    "independentValues": true,
+    "encoding": "base64url",
+    "lengthCharacters": 64,
+    "valuesIncluded": false
+  },
+  "missingConfiguration": [
+    "DATABASE_URL"
+  ],
+  "pendingHandoff": {
+    "status": "awaiting_owner_render_dashboard_configuration",
+    "action": "Copy the internal database URL from database Connect to web service Environment DATABASE_URL directly in Render; do not send it in chat",
+    "reason": "Available MCP tools do not expose database connection information; Render CLI authentication is not configured",
+    "rerunDeploymentAndHostedChecksRequired": true
+  },
+  "verification": {
+    "blueprintJsonSchema": "passed",
+    "blueprintSemanticValidation": "not_executed_with_authenticated_workspace",
+    "databaseInitialization": "not_verified",
+    "catalogHttps": "not_verified",
+    "liveDeployment": "not_achieved"
+  },
+  "paidResourcesCreated": false,
+  "adminAccountCreated": false,
+  "secretValuesIncluded": false,
+  "privateAccessUrlIncluded": false,
+  "personalDataIncluded": false
+}

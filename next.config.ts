@@ -1,9 +1,10 @@
 import type { NextConfig } from 'next';
 const isProd = process.env.NODE_ENV === 'production';
+const freePreview = process.env.RENDER_FREE_PREVIEW === 'true';
 const config: NextConfig = {
   allowedDevOrigins:['127.0.0.1','localhost'],
   output: 'standalone', distDir:process.env.NEXT_DIST_DIR || '.next', poweredByHeader: false,
-  images: { unoptimized: process.env.RENDER_FREE_PREVIEW === 'true', remotePatterns: process.env.S3_PUBLIC_URL ? [new URL(process.env.S3_PUBLIC_URL.replace(/\/$/,'') + '/products/**')] : [] },
+  images: { ...(freePreview ? { loader: 'custom' as const, loaderFile: './src/lib/free-preview-image-loader.ts', deviceSizes: [640, 960, 1600], imageSizes: [320] } : {}), remotePatterns: process.env.S3_PUBLIC_URL ? [new URL(process.env.S3_PUBLIC_URL.replace(/\/$/,'') + '/products/**')] : [] },
   experimental: { serverActions: { bodySizeLimit: '6mb' } },
   async rewrites() { return [{source:'/favicon.ico',destination:'/api/site-icon'}]; },
   async headers() {

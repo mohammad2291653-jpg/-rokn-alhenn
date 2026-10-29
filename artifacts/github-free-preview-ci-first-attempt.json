@@ -1,0 +1,18 @@
+{
+  "runId": 40840405206,
+  "jobId": 123335103083,
+  "url": "https://github.com/mohammad2291653-jpg/-rokn-alhenn/actions/runs/40840405206",
+  "commit": "c68a9090f1d94cca75a2b8ab5efb48d499a95d69",
+  "conclusion": "failure",
+  "passedSteps": ["dependency install", "Prisma generate", "migrations", "seed", "TypeScript", "ESLint"],
+  "vitest": { "passed": 154, "failed": 1, "total": 155 },
+  "failedScenario": "concurrent duplicate submissions yield a single persisted order",
+  "observedErrorCode": "P2034",
+  "observedError": "PostgreSQL transaction write conflict or deadlock",
+  "preciseReasonOldRetryEscaped": "Not established; constructor identity and exhausted immediate retries were both possible.",
+  "fix": "Fresh complete transactions with bounded exponential jitter, structural Prisma error recognition, and an explicit ORDER_BUSY 503 after retry exhaustion.",
+  "newVerification": "A real forced PostgreSQL serialization conflict, eight concurrent idempotent submissions with one inventory reservation, and unit coverage of bounded retries were added.",
+  "buildAndBrowserStepsReached": false,
+  "rawLogsRecorded": false,
+  "credentialsRecorded": false
+}

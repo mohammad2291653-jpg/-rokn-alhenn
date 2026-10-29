@@ -18,7 +18,7 @@ jobs:
       TEST_DATABASE_URL: postgresql://rokn:ci-only-password@127.0.0.1:5432/test_rokn
       PREVIEW_TEST_DATABASE_URL: postgresql://rokn:ci-only-password@127.0.0.1:5432/test_rokn_preview
       PREVIEW_TEST_ACCESS_TOKEN: CiOnlyPreviewAccess_92dPaMlLsx_45wBn8fzQYwuVH1K67eTX
-      PLAYWRIGHT_FREE_PREVIEW_BASE_URL: http://127.0.0.1:3002
+      PLAYWRIGHT_FREE_PREVIEW_BASE_URL: https://127.0.0.1:3443
       BETTER_AUTH_SECRET: ci-only-random-secret-rotate-not-for-production-123456
       BETTER_AUTH_URL: http://127.0.0.1:3001
       NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3001
@@ -37,6 +37,18 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: node scripts/prepare-free-preview-test.mjs
+      - name: Build private preview for HTTPS browser checks
+        run: npm run build
+        env:
+          DATABASE_URL: ${{ env.PREVIEW_TEST_DATABASE_URL }}
+          PREVIEW_ACCESS_TOKEN: ${{ env.PREVIEW_TEST_ACCESS_TOKEN }}
+          FREE_PREVIEW_DATABASE_NAME: test_rokn_preview
+          RENDER_FREE_PREVIEW: 'true'
+          COMMERCIAL_LAUNCH_APPROVED: 'false'
+          ALLOW_INDEXING: 'false'
+          STORAGE_DRIVER: disabled
+          NEXT_PUBLIC_SITE_URL: https://127.0.0.1:3443
+          BETTER_AUTH_URL: https://127.0.0.1:3443
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
       - run: npm audit --audit-level=high

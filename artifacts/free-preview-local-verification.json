@@ -3,18 +3,57 @@
   "environment": "local-loopback-postgresql-18",
   "typecheck": "passed",
   "eslint": "passed",
-  "unitAndIntegration": { "passed": 155, "unit": 138, "integration": 17, "skipped": 0 },
-  "freePreviewE2E": { "passed": 10, "failed": 0, "projects": 5, "fullPreviousSuiteRerunLocally": false },
-  "productionBuild": { "freePreviewFlag": true, "result": "passed" },
-  "productionStandaloneSmoke": { "passed": 22, "evidence": "free-preview-production-smoke.json" },
-  "dependencyAudit": { "info": 0, "low": 0, "moderate": 0, "high": 0, "critical": 0 },
+  "unitAndIntegration": {
+    "passed": 199,
+    "unit": 180,
+    "integration": 19,
+    "skipped": 0
+  },
+  "freePreviewE2E": {
+    "passed": 10,
+    "failed": 0,
+    "projects": 5,
+    "fullPreviousSuiteRerunLocally": false,
+    "server": "production-standalone",
+    "transport": "local-HTTPS",
+    "temporarySelfSignedQaCertificate": true,
+    "certificateTrustOverrideScope": "https://127.0.0.1:3443 only",
+    "secureCookiePreserved": true,
+    "zoomOriginalWidthVerified": 1600
+  },
+  "productionBuild": {
+    "freePreviewFlag": true,
+    "result": "passed"
+  },
+  "productionStandaloneSmoke": {
+    "passed": 22,
+    "evidence": "free-preview-production-smoke.json"
+  },
+  "dependencyAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0
+  },
   "correctedTestIssues": [
     "Moved worker-scoped trace and screenshot options to file level before discovery could run.",
-    "Replaced a GET assertion on a POST-only route (405) with the protected GET order-export route (401), then reran all ten tests successfully."
+    "Replaced a GET assertion on a POST-only route (405) with the protected GET order-export route (401), then reran all ten tests successfully.",
+    "Production WebKit correctly refused Secure cookies over loopback HTTP; all ten tests passed using a local TLS proxy without changing cookie, origin or redirect semantics.",
+    "Development-server rerun experienced repeated interrupted navigations; its precise cause was not established. Free-preview CI now tests the production build over local HTTPS."
   ],
   "physicalDevicesTested": false,
-  "lighthouseRerun": false,
+  "lighthouseRerun": true,
   "cloudDeploymentVerified": false,
   "credentialsRecorded": false,
-  "actualPreviewAccessLinkRecorded": false
+  "actualPreviewAccessLinkRecorded": false,
+  "lighthouse": {
+    "evidence": "free-preview-lighthouse-summary.json",
+    "mobilePerformance": 84,
+    "desktopPerformance": 89,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 69,
+    "cloudMeasurement": false
+  }
 }

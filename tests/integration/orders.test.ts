@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
+import { TRANSACTION_MAX_ATTEMPTS, withTransactionRetry } from '../../src/lib/transaction-retry';
 
 const testUrl = process.env.TEST_DATABASE_URL;
 const enabled = Boolean(testUrl);
@@ -128,6 +129,65 @@ describe.skipIf(!enabled)('PostgreSQL order transactions and delivery controls',
     expect(await db.order.count({ where: { idempotencyKey: request.idempotencyKey } })).toBe(1);
   });
 
+  it('serves eight concurrent retries with one order, token and stock reservation', async () => {
+    await db.product.update({ where: { id: productId }, data: { stockTracked: true, stockQuantity: 5 } });
+    const request = input({ items: [{ productId, quantity: 2 }] });
+    try {
+      const outcomes = await Promise.allSettled(Array.from({ length: 8 }, () => service.createOrder(request)));
+      const successful = outcomes.filter((outcome): outcome is PromiseFulfilledResult<Awaited<ReturnType<typeof service.createOrder>>> => outcome.status === 'fulfilled').map(outcome => outcome.value);
+      fixtures.push(...new Set(successful.map(order => order.number)));
+      expect(successful).toHaveLength(8);
+      expect(new Set(successful.map(order => order.number)).size).toBe(1);
+      expect(new Set(successful.map(order => order.trackingToken)).size).toBe(1);
+      const stored = await db.order.findMany({ where: { idempotencyKey: request.idempotencyKey }, include: { items: true, history: true } });
+      expect(stored).toHaveLength(1);
+      expect(stored[0].items).toHaveLength(1);
+      expect(stored[0].items[0]).toMatchObject({ quantity: 2, unitPriceAgorot: 7500, inventoryReserved: true });
+      expect(stored[0].history).toHaveLength(1);
+      expect(stored[0].totalAgorot).toBe(17000);
+      expect((await db.product.findUniqueOrThrow({ where: { id: productId } })).stockQuantity).toBe(3);
+    } finally {
+      await db.product.update({ where: { id: productId }, data: { stockTracked: false, stockQuantity: null } });
+    }
+  });
+
+  it('retries an actual PostgreSQL serialization conflict using a fresh transaction', async () => {
+    await db.product.update({ where: { id: productId }, data: { stockTracked: true, stockQuantity: 2 } });
+    let releaseSnapshots!: () => void;
+    const initialSnapshots = new Promise<void>(resolve => { releaseSnapshots = resolve; });
+    let firstReads = 0;
+    const attempts = [0, 0];
+    const conflictCodes: string[] = [];
+    const pending = attempts.map((_, index) => withTransactionRetry(async () => {
+      const attempt = ++attempts[index];
+      try {
+        return await db.$transaction(async tx => {
+          await tx.product.findUniqueOrThrow({ where: { id: productId }, select: { stockQuantity: true } });
+          // Both initial snapshots must see the same row before either writes.
+          if (attempt === 1) {
+            if (++firstReads === 2) releaseSnapshots();
+            await initialSnapshots;
+          }
+          return await tx.product.update({ where: { id: productId }, data: { stockQuantity: { decrement: 1 } } });
+        }, { isolationLevel: 'Serializable', maxWait: 5000, timeout: 10000 });
+      } catch (error) {
+        if (error && typeof error === 'object' && 'code' in error && typeof error.code === 'string') conflictCodes.push(error.code);
+        throw error;
+      }
+    }));
+    try {
+      await Promise.all(pending);
+      expect(conflictCodes).toContain('P2034');
+      expect(attempts.reduce((total, value) => total + value, 0)).toBeGreaterThan(2);
+      expect(attempts.every(count => count <= TRANSACTION_MAX_ATTEMPTS)).toBe(true);
+      expect((await db.product.findUniqueOrThrow({ where: { id: productId } })).stockQuantity).toBe(0);
+    } finally {
+      releaseSnapshots();
+      await Promise.allSettled(pending);
+      await db.product.update({ where: { id: productId }, data: { stockTracked: false, stockQuantity: null } });
+    }
+  });
+
   it('retains the price, product name and shipping fee captured when ordered', async () => {
     const created = await order();
     await db.product.update({ where: { id: productId }, data: { priceAgorot: 9000, name: 'اسم معدل بعد الطلب' } });
@@ -183,12 +243,19 @@ describe.skipIf(!enabled)('PostgreSQL order transactions and delivery controls',
 
   afterAll(async () => {
     if (!db) return;
-    const ids = (await db.order.findMany({ where: { number: { in: fixtures } }, select: { id: true } })).map((o) => o.id);
+    // A failed concurrent assertion may have committed an order before returning
+    // its number. This unique fixture product still identifies that test data.
+    const ownedOrders = productId
+      ? { OR: [{ number: { in: fixtures } }, { items: { some: { productId } } }] }
+      : { number: { in: fixtures } };
+    const ids = (await db.order.findMany({ where: ownedOrders, select: { id: true } })).map((o) => o.id);
     await db.orderStatusHistory.deleteMany({ where: { orderId: { in: ids } } });
     await db.orderItem.deleteMany({ where: { orderId: { in: ids } } });
     await db.order.deleteMany({ where: { id: { in: ids } } });
-    await db.productImage.deleteMany({ where: { productId } });
-    await db.product.deleteMany({ where: { id: productId } });
+    if (productId) {
+      await db.productImage.deleteMany({ where: { productId } });
+      await db.product.deleteMany({ where: { id: productId } });
+    }
     await db.category.deleteMany({ where: { slug: marker } });
     await db.$disconnect();
   });
