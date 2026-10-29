@@ -28,7 +28,7 @@ export default async function CatalogMediaReviewPage() {
         {finalMedia.images.map(entry => {
           const product = bySlug.get(entry.slug);
           return (
-            <article key={entry.slug} style={{ padding: 12, border: '1px solid #e8e0db', background: '#fff' }}>
+            <article id={entry.slug} key={entry.slug} style={{ padding: 12, border: '1px solid #e8e0db', background: '#fff' }}>
               <Image unoptimized src={entry.url} alt={entry.alt} width={1122} height={1402} style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
               <h2 style={{ fontSize: 19, marginBlock: 8 }}>{product?.name ?? entry.alt}</h2>
               <p style={{ fontSize: 13, marginBottom: 8 }}>الملف الأصلي: {entry.file}</p>
