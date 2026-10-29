@@ -1,77 +1,60 @@
 # yaml-language-server: $schema=https://render.com/schema/render.yaml.json
-# Review-only infrastructure proposal. Applying creates PAID resources.
-# Do not apply before owner cost approval, Git repository access, and secrets setup.
+# Free, private, read-only preview only. This does not authorize commercial orders.
+# Postgres free expires after 30 days; no paid resource or automatic upgrade is declared.
 previews:
   generation: "off"
 
 services:
   - type: web
-    name: rokn-alhenna-preview
+    name: rokn-alhenna-free-preview
     runtime: node
     region: frankfurt
-    plan: 0.5c-512mb
+    plan: free
     numInstances: 1
     autoDeployTrigger: "off"
-    buildCommand: npm ci --include=dev && npm run build
-    preDeployCommand: npm run db:migrate && npm run db:seed
-    startCommand: npm start
+    buildCommand: >-
+      npm ci --include=dev &&
+      NEXT_PUBLIC_SITE_URL="$RENDER_EXTERNAL_URL" BETTER_AUTH_URL="$RENDER_EXTERNAL_URL" npm run build
+    startCommand: >-
+      NEXT_PUBLIC_SITE_URL="$RENDER_EXTERNAL_URL" BETTER_AUTH_URL="$RENDER_EXTERNAL_URL" npm run start:free-preview
     healthCheckPath: /api/health
-    maxShutdownDelaySeconds: 30
     envVars:
       - key: NODE_VERSION
         value: 24.19.0
+      - key: NODE_ENV
+        value: production
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"
       - key: DATABASE_URL
         fromDatabase:
-          name: rokn-alhenna-preview-db
+          name: rokn-alhenna-free-preview-db
           property: connectionString
-      # Use Render's ACTUAL assigned HTTPS URL during build and runtime (no guessed host).
-      - key: NEXT_PUBLIC_SITE_URL
-        fromService:
-          name: rokn-alhenna-preview
-          type: web
-          envVarKey: RENDER_EXTERNAL_URL
-      - key: BETTER_AUTH_URL
-        fromService:
-          name: rokn-alhenna-preview
-          type: web
-          envVarKey: RENDER_EXTERNAL_URL
-      # Supply independently generated secrets (48+ chars); keep ORDER_TOKEN_SECRET stable.
-      - key: BETTER_AUTH_SECRET
-        sync: false
-      - key: ORDER_TOKEN_SECRET
-        sync: false
-      - key: STORAGE_DRIVER
-        value: s3
-      - key: S3_ENDPOINT
-        sync: false
-      - key: S3_REGION
-        sync: false
-      - key: S3_BUCKET
-        sync: false
-      - key: S3_ACCESS_KEY_ID
-        sync: false
-      - key: S3_SECRET_ACCESS_KEY
-        sync: false
-      - key: S3_PUBLIC_URL
-        sync: false
+      - key: FREE_PREVIEW_DATABASE_NAME
+        value: rokn_free_preview
+      - key: RENDER_FREE_PREVIEW
+        value: "true"
       - key: COMMERCIAL_LAUNCH_APPROVED
         value: "false"
       - key: ALLOW_INDEXING
         value: "false"
-      # Enable only after verifying the deployed proxy overwrites forwarded addresses.
+      - key: STORAGE_DRIVER
+        value: disabled
       - key: TRUST_PROXY
         value: "false"
+      - key: BETTER_AUTH_SECRET
+        generateValue: true
+      - key: ORDER_TOKEN_SECRET
+        generateValue: true
+      # generateValue produces standard base64. Preview access requires base64url.
+      # Generate securely outside source: randomBytes(48).toString('base64url').
+      - key: PREVIEW_ACCESS_TOKEN
+        sync: false
 
 databases:
-  - name: rokn-alhenna-preview-db
+  - name: rokn-alhenna-free-preview-db
     region: frankfurt
     postgresMajorVersion: "18"
-    databaseName: rokn_preview
-    user: rokn_preview
-    plan: 0.5c-1g
-    diskSizeGB: 5
-    storageAutoscalingEnabled: false
-    connectionPool: none
+    databaseName: rokn_free_preview
+    user: rokn_free_preview
+    plan: free
     ipAllowList: []

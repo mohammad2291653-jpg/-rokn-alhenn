@@ -7,6 +7,8 @@
     "dev": "next dev --hostname 0.0.0.0",
     "build": "prisma generate && next build && node scripts/prepare-standalone.mjs",
     "start": "node --env-file-if-exists=.env scripts/start.mjs",
+    "start:free-preview": "node scripts/start-free-preview.mjs",
+    "preview:bootstrap": "node scripts/bootstrap-free-preview.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",

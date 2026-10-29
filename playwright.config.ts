@@ -12,13 +12,25 @@ export default defineConfig({
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
-  webServer: process.env.CI ? {
+  webServer: process.env.CI ? [{
     command: 'npm run dev -- --port 3001',
     url: 'http://127.0.0.1:3001',
     reuseExistingServer: false,
     timeout: 120_000,
     env: { NEXT_TELEMETRY_DISABLED: '1', NEXT_DIST_DIR: '.next-qa', BETTER_AUTH_URL: 'http://127.0.0.1:3001', NEXT_PUBLIC_SITE_URL: 'http://127.0.0.1:3001' },
-  } : undefined,
+  }, {
+    command: 'npm run dev -- --port 3002',
+    url: 'http://127.0.0.1:3002/api/health',
+    reuseExistingServer: false,
+    timeout: 120_000,
+    env: {
+      NEXT_TELEMETRY_DISABLED: '1', NEXT_DIST_DIR: '.next-free-preview-qa',
+      BETTER_AUTH_URL: 'http://127.0.0.1:3002', NEXT_PUBLIC_SITE_URL: 'http://127.0.0.1:3002',
+      DATABASE_URL: process.env.PREVIEW_TEST_DATABASE_URL ?? '',
+      PREVIEW_ACCESS_TOKEN: process.env.PREVIEW_TEST_ACCESS_TOKEN ?? '',
+      RENDER_FREE_PREVIEW: 'true', COMMERCIAL_LAUNCH_APPROVED: 'false', ALLOW_INDEXING: 'false', STORAGE_DRIVER: 'disabled',
+    },
+  }] : undefined,
   projects: [
     { name: 'chromium-desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 1000 } } },
     { name: 'firefox-desktop', use: { ...devices['Desktop Firefox'] } },

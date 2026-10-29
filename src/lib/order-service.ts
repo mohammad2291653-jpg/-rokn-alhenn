@@ -2,6 +2,7 @@ import { createCipheriv, createDecipheriv, createHash, randomBytes } from "node:
 import { Prisma } from "@prisma/client";
 import { z } from "zod";
 import { db } from "./db";
+import { isFreePreview } from "./preview-access";
 import { addressArea, addressMentions, normalizeAddress } from "./delivery";
 
 export class OrderError extends Error {
@@ -72,6 +73,7 @@ async function calculate(tx:Tx, input:QuoteOrderInput) {
 }
 
 export async function quoteOrder(raw:unknown) {
+  if (isFreePreview()) throw new OrderError("المعاينة لا تستقبل طلبات أو بيانات توصيل.",503,"PREVIEW_READ_ONLY");
   const input = parse(quoteSchema,raw);
   return db.$transaction(async (tx)=>calculate(tx,input),{isolationLevel:Prisma.TransactionIsolationLevel.RepeatableRead});
 }
@@ -111,6 +113,7 @@ async function replay(tx:Tx, idempotencyKey:string, requestHash:string) {
 }
 
 export async function createOrder(raw:unknown) {
+  if (isFreePreview()) throw new OrderError("المعاينة لا تستقبل طلبات أو بيانات توصيل.",503,"PREVIEW_READ_ONLY");
   const input = parse(orderSchema,raw);
   if (process.env.NODE_ENV === "production" && process.env.COMMERCIAL_LAUNCH_APPROVED !== "true")
     throw new OrderError("المتجر في مرحلة المعاينة ولا يستقبل طلبات تجارية بعد.",503,"LAUNCH_NOT_APPROVED");
@@ -159,6 +162,7 @@ export async function createOrder(raw:unknown) {
 }
 
 export async function lookupOrder(token:string) {
+  if (isFreePreview()) throw new OrderError("متابعة الطلبات غير متاحة في المعاينة.",503,"PREVIEW_READ_ONLY");
   if (!/^[A-Za-z0-9_-]{43}$/.test(token)) throw new OrderError("تعذّر العثور على الطلب بهذا الرمز.",404,"NOT_FOUND");
   const order = await db.order.findUnique({where:{trackingTokenHash:hash(token)},select:{...summarySelect,history:{select:{status:true,paymentStatus:true,createdAt:true},orderBy:{createdAt:"asc"}}}});
   if (!order) throw new OrderError("تعذّر العثور على الطلب بهذا الرمز.",404,"NOT_FOUND");

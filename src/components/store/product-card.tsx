@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { WhatsAppLink } from './store-context';
+import { WhatsAppLink, useStoreReadOnly } from './store-context';
 import { ShoppingBag, ArrowUpLeft, MessageCircle } from 'lucide-react';
 import { useCart } from './cart-context';
 import { money, type StoreProduct } from './types';
@@ -12,6 +12,8 @@ function ProductCardActions({ product: p }: { product: StoreProduct }) {
 }
 
 export function ProductCard({ product: p, readOnly = false, href = `/products/${p.slug}` }: { product: StoreProduct; readOnly?: boolean; href?: string }) {
+  const preview = useStoreReadOnly();
+  const displayReadOnly = readOnly || preview;
   const mainImage = p.images[0];
   return (
     <article className="product-card">
@@ -24,7 +26,7 @@ export function ProductCard({ product: p, readOnly = false, href = `/products/${
         <span className="eyebrow">{p.category.name}</span>
         <Link href={href}><h3>{p.name}</h3></Link>
         <div className="product-price"><span>{p.weightGrams} غرام</span><strong>{money(p.priceAgorot)}</strong></div>
-        {readOnly ? <Link className="text-link" href={href}>معاينة التفاصيل <ArrowUpLeft size={16} /></Link> : <ProductCardActions product={p} />}
+        {displayReadOnly ? <Link className="text-link" href={href}>معاينة التفاصيل <ArrowUpLeft size={16} /></Link> : <ProductCardActions product={p} />}
       </div>
     </article>
   );

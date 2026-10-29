@@ -1,0 +1,5 @@
+.free-preview-banner{display:flex;align-items:center;justify-content:center;gap:8px 20px;flex-wrap:wrap;padding:12px 20px;text-align:center;background:#f5e6ea;color:#64283c;border-bottom:1px solid #d9bcc6;font-size:13px;line-height:1.8}
+.free-preview-banner span{max-width:720px}
+.free-preview-active .preview-no-photo{display:flex;align-items:center;justify-content:center;min-height:160px;width:100%;height:100%;padding:24px;background:#f2ece7;color:#745f67;text-align:center;font-size:14px}
+.free-preview-active .hero-real-image{width:100%;height:100%;object-fit:contain}
+@media(max-width:650px){.free-preview-banner{padding:10px 15px;gap:3px;font-size:12px}.free-preview-banner strong{width:100%}.free-preview-active .product-card .text-link{font-size:12px;min-height:44px}.free-preview-active .preview-no-photo{padding:15px;font-size:12px}}

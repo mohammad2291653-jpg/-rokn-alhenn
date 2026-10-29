@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-29T08:09:59.611Z",
+  "environment": "local-production-standalone",
+  "cloudDeploymentVerified": false,
+  "credentialsRecorded": false,
+  "checks": {
+    "health200": true,
+    "anonymousHome404": true,
+    "anonymousDraft404": true,
+    "accessRedirect303": true,
+    "secureHttpOnlyLaxCookie": true,
+    "authorizedHome200": true,
+    "referrer-policy": true,
+    "x-robots-tag": true,
+    "noStore": true,
+    "noAccessTokenInHtml": true,
+    "homeNoHorizontalOverflow1440": true,
+    "homeNoHorizontalOverflow390": true,
+    "homeNoHorizontalOverflow320": true,
+    "nineDraftProductsVisible": true,
+    "sevenProductsWithOriginalPhotos": true,
+    "twoMissingOriginalPhotosExplicit": true,
+    "noPurchaseButtons": true,
+    "approvedHennaWashingCopy": true,
+    "noDraftProductStructuredData": true,
+    "adminExportUnauthorized": true,
+    "ordersRejected503": true,
+    "realDraftCatalogAndNoAccountsOrOrders": true
+  },
+  "database": {
+    "name": "test_rokn_preview",
+    "products": 9,
+    "images": 24,
+    "orders": 0,
+    "users": 0
+  },
+  "result": "passed"
+}

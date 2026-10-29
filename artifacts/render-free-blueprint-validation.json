@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-29T08:05:18.885374+00:00",
+  "freeBlueprint": "render.yaml",
+  "schemaUrl": "https://render.com/schema/render.yaml.json",
+  "schemaSha256": "8a3fb8da6b4f55fe686fbefa790e011d3dd7895f013f355953c572a21ab6494a",
+  "files": {
+    "render.yaml": {
+      "schemaResult": "passed",
+      "sha256": "a641a7cf0b8569446ebaccfe5d1c642861f85b7290d8c990ccade72e45db061d"
+    },
+    "render.production.example.yaml": {
+      "schemaResult": "passed",
+      "sha256": "bbf4970e715ee4d844edc0479b37373991b564abd047d4f5ffe466c4a0319e7f"
+    }
+  },
+  "cli": {
+    "version": "2.33.0",
+    "command": "render blueprints validate render.yaml --output json",
+    "exitCode": 1,
+    "output": "Error: no workspace specified and no default workspace set. Use --workspace or run 'render workspace set'"
+  },
+  "resourcesCreated": false,
+  "paidResourcesCreated": false,
+  "secretValuesIncluded": false,
+  "limitsSource": "https://render.com/docs/free",
+  "previewTokenEncoding": "Externally generated base64url; generateValue is not used for preview access."
+}

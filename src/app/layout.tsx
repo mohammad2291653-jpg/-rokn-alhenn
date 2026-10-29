@@ -9,6 +9,6 @@ export const metadata: Metadata = {
   description: 'ركن الحناء، علامة فلسطينية للعناية بالشعر والحناء والسدر والمشاط. نوصل إلى الضفة الغربية والداخل الفلسطيني. الدفع عند الاستلام.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   openGraph: { locale: 'ar_PS', type: 'website', siteName: 'ركن الحناء | Rokn Alhenna', title: 'ركن الحناء | عناية من أصالة التراث', description: 'اكتشفي عالم الحناء والسدر والمشاط للعناية بالشعر.' },
-  robots: process.env.ALLOW_INDEXING === 'true' ? { index: true, follow: true } : { index: false, follow: false },
+  robots: process.env.RENDER_FREE_PREVIEW !== 'true' && process.env.ALLOW_INDEXING === 'true' ? { index: true, follow: true } : { index: false, follow: false },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) { return <html lang="ar" dir="rtl"><body><a className="skip-link" href="#main-content">انتقلي إلى المحتوى</a>{children}</body></html>; }

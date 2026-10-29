@@ -2,6 +2,7 @@ import { createHmac, randomUUID, timingSafeEqual } from 'node:crypto';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import sharp, { type Metadata } from 'sharp';
 import { HttpError } from '@/lib/security';
+import { isFreePreview } from '@/lib/preview-access';
 
 function proof(url:string, originalKey:string) {
   const secret=process.env.BETTER_AUTH_SECRET;
@@ -14,6 +15,7 @@ export function verifyUploadedImage(input:{url:string;originalKey:string;proof?:
   return true;
 }
 export async function storeOriginal(file:File) {
+  if (isFreePreview()) throw new HttpError('رفع الصور غير متاح في المعاينة المجانية.',503,'PREVIEW_READ_ONLY');
   if (file.size<1 || file.size>5*1024*1024) throw new HttpError('الحد الأقصى للصورة 5 ميغابايت.');
   if (!['image/jpeg','image/png','image/webp'].includes(file.type)) throw new HttpError('ارفع صورة JPEG أو PNG أو WebP.');
   const original=Buffer.from(await file.arrayBuffer());

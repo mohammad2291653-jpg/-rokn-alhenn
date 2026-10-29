@@ -2,6 +2,7 @@ import 'server-only';
 import { db } from '@/lib/db';
 import type { Prisma } from '@prisma/client';
 import { toPublicProduct } from '@/lib/availability';
+import { requirePreviewReadAccess } from '@/lib/free-preview';
 // Server-side selection only; toPublicProduct strips inventory before serialization.
 export const publicProductSelect = {
   id: true, slug: true, name: true, weightGrams: true, priceAgorot: true, available: true, stockTracked: true, stockQuantity: true, featured: true, description: true, ingredients: true, usage: true, warnings: true,
@@ -9,6 +10,9 @@ export const publicProductSelect = {
   images: { select: { id: true, url: true, alt: true, position: true }, orderBy: { position: 'asc' as const } },
 } satisfies Prisma.ProductSelect;
 export const visibleProducts = { status: 'PUBLISHED' as const, nameNeedsConfirmation: false, images: { some: {} } };
+export async function catalogProductFilter(): Promise<Prisma.ProductWhereInput> {
+  return await requirePreviewReadAccess() ? {} : visibleProducts;
+}
 export async function getStoreSettings() {
   // Keep administrative source audits out of public-page queries and payloads.
   const rows = await db.siteSetting.findMany({ where: { key: { in: ['store','checkoutEnabled','returns','privacy','terms','analytics'] } } });
@@ -20,4 +24,4 @@ export async function getStoreSettings() {
   const logoUrl = (['/brand/rokn-alhenna-logo.webp','/brand/rokn-alhenna-logo-transparent.webp'].includes(rawLogo) || rawLogo.startsWith('/uploads/products/')) ? rawLogo : url(raw.logoUrl, '');
   return { map, logoUrl, instagram: url(raw.instagram, 'https://www.instagram.com/rokn_alhenna/'), whatsapp, facebook: url(raw.facebook, ''), checkoutEnabled: map.checkoutEnabled === true };
 }
-export async function getProducts() { return (await db.product.findMany({ where: visibleProducts, select: publicProductSelect, orderBy: [{ featured: 'desc' }, { createdAt: 'asc' }] })).map(toPublicProduct); }
+export async function getProducts() { const where = await catalogProductFilter(); return (await db.product.findMany({ where, select: publicProductSelect, orderBy: [{ featured: 'desc' }, { createdAt: 'asc' }] })).map(toPublicProduct); }

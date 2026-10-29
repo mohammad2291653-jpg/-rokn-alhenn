@@ -16,6 +16,9 @@ jobs:
     env:
       DATABASE_URL: postgresql://rokn:ci-only-password@127.0.0.1:5432/test_rokn
       TEST_DATABASE_URL: postgresql://rokn:ci-only-password@127.0.0.1:5432/test_rokn
+      PREVIEW_TEST_DATABASE_URL: postgresql://rokn:ci-only-password@127.0.0.1:5432/test_rokn_preview
+      PREVIEW_TEST_ACCESS_TOKEN: CiOnlyPreviewAccess_92dPaMlLsx_45wBn8fzQYwuVH1K67eTX
+      PLAYWRIGHT_FREE_PREVIEW_BASE_URL: http://127.0.0.1:3002
       BETTER_AUTH_SECRET: ci-only-random-secret-rotate-not-for-production-123456
       BETTER_AUTH_URL: http://127.0.0.1:3001
       NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3001
@@ -33,6 +36,7 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run build
+      - run: node scripts/prepare-free-preview-test.mjs
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
       - run: npm audit --audit-level=high

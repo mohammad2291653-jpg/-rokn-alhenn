@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-29T08:07:32.684Z",
+  "database": "test_rokn_preview",
+  "mainDatabaseMutated": false,
+  "credentialsRecorded": false,
+  "previewTokenRecorded": false,
+  "result": "passed",
+  "ui": {
+    "draftsBlockedWithoutCookie": true,
+    "duplicateAndInvalidTokensRejected": true,
+    "derivedHttpOnlyLaxCookie": true,
+    "eightHourCookie": true,
+    "fullStoreHomeAvailable": true,
+    "stockFieldsNotSerialized": true,
+    "zeroStockShownUnavailable": true,
+    "missingOriginalImageShownExplicitly": true,
+    "originalPhotoLoaded": true,
+    "draftStructuredDataSuppressed": true,
+    "noPurchaseControlsOrForms": true,
+    "localCartPreserved": true,
+    "previewCookieDoesNotGrantAdmin": true,
+    "viewports": [
+      {
+        "width": 1440,
+        "viewport": 1440,
+        "document": 1440
+      },
+      {
+        "width": 390,
+        "viewport": 390,
+        "document": 390
+      },
+      {
+        "width": 320,
+        "viewport": 320,
+        "document": 320
+      }
+    ]
+  },
+  "api": {
+    "validPublishedProductCannotBeOrdered": true,
+    "approvedPoliciesAndEnabledCheckoutCannotBypassPreview": true,
+    "orderQuoteAndTrackingReturnPreviewReadOnly": true,
+    "ordersUnchanged": true
+  },
+  "cleanup": {
+    "countsRestored": true,
+    "settingsRestored": true,
+    "rateLimitsRestored": true,
+    "deliveryZonesRestored": true,
+    "citiesRestored": true,
+    "noTemporaryAdminCreated": true
+  }
+}

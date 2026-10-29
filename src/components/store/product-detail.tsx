@@ -5,7 +5,7 @@ import { Maximize2, X, Minus, Plus, ShoppingBag, MessageCircle } from 'lucide-re
 import { useCart } from './cart-context';
 import { money, type StoreProduct } from './types';
 import Link from 'next/link';
-import { WhatsAppLink } from './store-context';
+import { WhatsAppLink, useStoreReadOnly } from './store-context';
 
 function ProductPurchase({ product: p }: { product: StoreProduct }) {
   const [quantity, setQuantity] = useState(1);
@@ -14,6 +14,8 @@ function ProductPurchase({ product: p }: { product: StoreProduct }) {
 }
 
 export function ProductDetail({ product: p, readOnly = false }: { product: StoreProduct; readOnly?: boolean }) {
+  const preview = useStoreReadOnly();
+  const displayReadOnly = readOnly || preview;
   const [image, setImage] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);
   const current = p.images[image];
@@ -31,12 +33,12 @@ export function ProductDetail({ product: p, readOnly = false }: { product: Store
         <div className="detail-meta"><span>{p.weightGrams} غرام</span><span className={p.available ? 'status-dot' : 'status-dot unavailable'}>{p.available ? 'متوفر' : 'غير متوفر'}</span></div>
         <div className="detail-price">{money(p.priceAgorot)}</div>
         {p.description && <p className="detail-description">{p.description}</p>}
-        {!readOnly && <ProductPurchase product={p} />}
+        {!displayReadOnly && <ProductPurchase product={p} />}
         <div className="detail-tabs">
           {[{ label: 'المكونات المؤكدة', text: p.ingredients }, { label: 'طريقة الاستخدام', text: p.usage }, { label: 'التحذيرات', text: p.warnings }].map(s => s.text && <details key={s.label}><summary>{s.label}</summary><p style={{ whiteSpace: 'pre-line' }}>{s.text}</p></details>)}
-          {(!p.ingredients || !p.usage) && <p className="detail-note">{readOnly ? 'بعض تفاصيل المنتج قيد الاستكمال والمراجعة قبل النشر.' : 'بعض تفاصيل المنتج قيد الاستكمال. تواصلي معنا للتأكد من المعلومات قبل الاستخدام.'}</p>}
+          {(!p.ingredients || !p.usage) && <p className="detail-note">{displayReadOnly ? 'بعض تفاصيل المنتج قيد الاستكمال والمراجعة قبل النشر.' : 'بعض تفاصيل المنتج قيد الاستكمال. تواصلي معنا للتأكد من المعلومات قبل الاستخدام.'}</p>}
         </div>
-        {!readOnly && <p className="detail-policy">راجعي <Link href="/returns">سياسة الاستبدال والاسترجاع</Link> قبل الطلب. المنتجات الطبيعية قد لا تناسب الجميع؛ التزمي بتعليمات العبوة وتوقّفي عند حدوث تهيّج.</p>}
+        {!displayReadOnly && <p className="detail-policy">راجعي <Link href="/returns">سياسة الاستبدال والاسترجاع</Link> قبل الطلب. المنتجات الطبيعية قد لا تناسب الجميع؛ التزمي بتعليمات العبوة وتوقّفي عند حدوث تهيّج.</p>}
       </div>
     </div>
   );
