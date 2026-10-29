@@ -52,11 +52,12 @@ describe.skipIf(!source)('dedicated free-preview database bootstrap', () => {
     originalMediaProof = await readFile('artifacts/catalog-media-import-verification.json');
   }, 30_000);
 
-  it('initializes the nine real draft products, 24 photographs, logo and disabled checkout in a new database', async () => {
+  it('initializes nine original draft products, seven final photographs, logo and disabled checkout in a new database', async () => {
     const result = resultOf(execute());
-    expect(result).toMatchObject({ result: 'passed', initialized: true, products: 9, images: 24, checkoutDisabled: true });
+    expect(result).toMatchObject({ result: 'passed', initialized: true, products: 9, images: 7, checkoutDisabled: true });
     expect(await db!.product.count({ where: { status: 'DRAFT', nameNeedsConfirmation: true } })).toBe(9);
-    expect(await db!.productImage.count()).toBe(24);
+    expect(await db!.productImage.count()).toBe(7);
+    expect(await db!.productImage.count({ where: { url: { startsWith: '/catalog-media/' } } })).toBe(0);
     expect(await db!.order.count()).toBe(0);
     expect(await db!.user.count()).toBe(0);
     expect((await db!.siteSetting.findUniqueOrThrow({ where: { key: 'checkoutEnabled' } })).value).toBe(false);
@@ -66,15 +67,21 @@ describe.skipIf(!source)('dedicated free-preview database bootstrap', () => {
     expect(await readFile('artifacts/catalog-media-import-verification.json')).toEqual(originalMediaProof);
   }, 120_000);
 
-  it('preserves later price/name/status/image changes and does not repeat successful imports or their audit records', async () => {
+  it('preserves later product metadata but removes inserted outdated images on re-bootstrap', async () => {
     const product = await db!.product.findUniqueOrThrow({ where: { slug: 'integrated-henna' } });
     await db!.product.update({ where: { id: product.id }, data: { name: 'اسم مراجعة اختبارية معزولة', priceAgorot: 8900, status: 'HIDDEN', available: false, nameNeedsConfirmation: false } });
     await db!.productImage.create({ data: { productId: product.id, url: '/catalog-media/2026-10-29/page-23.webp', originalKey: 'qa-free-preview-owned-extra', alt: 'صورة أصلية في اختبار معزول', position: 99 } });
     const before = await db!.product.findUniqueOrThrow({ where: { id: product.id }, include: { images: { orderBy: { id: 'asc' } } } });
     const auditCount = await db!.auditLog.count();
     const checkpoint = await db!.siteSetting.findUniqueOrThrow({ where: { key: 'renderFreePreviewBootstrap' } });
-    expect(resultOf(execute())).toMatchObject({ initialized: false, products: 9, images: 25, checkoutDisabled: true });
-    expect(await db!.product.findUniqueOrThrow({ where: { id: product.id }, include: { images: { orderBy: { id: 'asc' } } } })).toEqual(before);
+    expect(resultOf(execute())).toMatchObject({ initialized: false, products: 9, images: 7, checkoutDisabled: true });
+    const after = await db!.product.findUniqueOrThrow({ where: { id: product.id }, include: { images: { orderBy: { id: 'asc' } } } });
+    const { images: previousImages, ...previousMetadata } = before;
+    const { images: finalImages, ...finalMetadata } = after;
+    expect(finalMetadata).toEqual(previousMetadata);
+    expect(previousImages.length).toBe(2);
+    expect(finalImages).toHaveLength(1);
+    expect(finalImages[0].url).toBe('/final-product-images/2026-10-29/03_complete_henna_mix.jpeg');
     expect(await db!.auditLog.count()).toBe(auditCount);
     expect(await db!.siteSetting.findUniqueOrThrow({ where: { key: 'renderFreePreviewBootstrap' } })).toEqual(checkpoint);
     expect(await readFile('artifacts/catalog-media-import-verification.json')).toEqual(originalMediaProof);
@@ -112,7 +119,7 @@ describe.skipIf(!source)('dedicated free-preview database bootstrap', () => {
       expect(result.status).toBe(1);
       expect(JSON.parse(result.stderr.trim())).toMatchObject({ code: 'PREVIEW_EXISTING_ORDERS', result: 'failed' });
       expect(await db!.order.findUniqueOrThrow({ where: { id } })).toEqual(order);
-      expect(await db!.productImage.count()).toBe(25);
+      expect(await db!.productImage.count()).toBe(7);
     } finally { await db!.order.delete({ where: { id } }); }
   }, 30_000);
 
