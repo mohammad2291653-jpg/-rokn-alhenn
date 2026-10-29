@@ -1,0 +1,10 @@
+/* The owner's final 1122×1402 JPEGs are shown uncropped, at their native ratio.
+   Product components pass unoptimized to Next Image: never transcode these sources. */
+.product-card .product-image { aspect-ratio: 1122 / 1402; background: #f5efe9; }
+.product-card .product-image > img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.product-gallery .main-product-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.product-gallery .zoom-dialog img { max-width: 100%; width: auto; height: auto; max-height: 84vh; object-fit: contain; }
+@media (max-width: 650px) {
+  .product-card .product-image { aspect-ratio: 1122 / 1402; }
+  .product-gallery .main-product-photo { overflow: hidden; }
+}
