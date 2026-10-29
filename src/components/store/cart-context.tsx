@@ -2,6 +2,16 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import type { CartLine, StoreProduct } from './types';
 const STORAGE = 'rokn-cart-v1';
+const FINAL_PHOTOS: Record<string, string> = {
+  'ground-henna': '/final-product-images/2026-10-29/01_ground_henna.jpeg',
+  'sidr-powder': '/final-product-images/2026-10-29/02_sidr_powder.jpeg',
+  'integrated-henna': '/final-product-images/2026-10-29/03_complete_henna_mix.jpeg',
+  'dark-color-powder': '/final-product-images/2026-10-29/04_dark_color_powder.jpeg',
+  'red-mashat-mask': '/final-product-images/2026-10-29/05_rich_activating_mask.jpeg',
+  'red-mashat-powder': '/final-product-images/2026-10-29/06_mishat_hair_powder.jpeg',
+  'sidr-mask': '/final-product-images/2026-10-29/07_mask_al_sidr_al_moazzaz.jpg',
+};
+
 type CartContextType = { lines: CartLine[]; ready: boolean; add: (p: StoreProduct, quantity?: number) => void; update: (id: string, quantity: number) => void; remove: (id: string) => void; clear: () => void; count: number; notice: string; dismiss: () => void };
 const CartContext = createContext<CartContextType | null>(null);
 function validLine(value: unknown): value is CartLine {
@@ -16,7 +26,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [notice, setNotice] = useState('');
   useEffect(() => {
     const hydrate = window.requestAnimationFrame(() => {
-      try { const saved: unknown = JSON.parse(localStorage.getItem(STORAGE) || '[]'); if (Array.isArray(saved)) { currentLines.current = saved.filter(validLine).slice(0, 30); setLines(currentLines.current); } } catch { /* An invalid local cart is safely discarded. */ }
+      try { const saved: unknown = JSON.parse(localStorage.getItem(STORAGE) || '[]'); if (Array.isArray(saved)) { currentLines.current = saved.filter(validLine).slice(0, 30).map(line => ({ ...line, image: FINAL_PHOTOS[line.slug] || null })); setLines(currentLines.current); localStorage.setItem(STORAGE, JSON.stringify(currentLines.current)); } } catch { /* An invalid local cart is safely discarded. */ }
       setReady(true);
     });
     return () => window.cancelAnimationFrame(hydrate);
