@@ -1,0 +1,981 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/rokn-alhenna/node_modules/.bin/playwright",
+      "test",
+      "--project=webkit-iphone-emulation"
+    ],
+    "configFile": "/workspace/rokn-alhenna/playwright.config.ts",
+    "rootDir": "/workspace/rokn-alhenna/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium-desktop",
+        "name": "chromium-desktop",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox-desktop",
+        "name": "firefox-desktop",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit-iphone-emulation",
+        "name": "webkit-iphone-emulation",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium-android-emulation",
+        "name": "chromium-android-emulation",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium-320",
+        "name": "chromium-320",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit-iphone-emulation",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "snapshotDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-iphone-emulation"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/playwright-webkit-prelaunch-rerun.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "admin-order.spec.ts",
+      "file": "admin-order.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "authorized delivery and order operations",
+          "file": "admin-order.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "changes shipping price and preserves pending Jerusalem fee",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6630,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:49:27.441Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-d32235fe0309411c6d1c",
+              "file": "admin-order.spec.ts",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "updates order and payment states, rejects cross-origin writes and audits history",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7603,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:49:34.757Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-95a73a8fb2c7b951b6bf",
+              "file": "admin-order.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "cancellation restores reserved stock exactly once and cannot reopen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4124,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:49:42.437Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-8505ac912fbc003fed03",
+              "file": "admin-order.spec.ts",
+              "line": 141,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "admin.spec.ts",
+      "file": "admin.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "authorized administration using isolated test records",
+          "file": "admin.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "logs in, changes product price/availability, audits and logs out",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8684,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:49:46.941Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-058b3a65e3bdc651e2d8",
+              "file": "admin.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7104,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:49:56.080Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-6dffd69e6915f34d4080",
+              "file": "admin.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "expired sessions cannot call an admin mutation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5071,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:50:03.285Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-f491e88bdda71fe76e78",
+              "file": "admin.spec.ts",
+              "line": 75,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "catalog-review.spec.ts",
+      "file": "catalog-review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "private original product media review",
+          "file": "catalog-review.spec.ts",
+          "line": 27,
+          "column": 6,
+          "specs": [
+            {
+              "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 34630,
+                      "error": {
+                        "message": "Error: page.screenshot: Cannot take screenshot larger than 32767 pixels on any dimension\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+                        "stack": "Error: page.screenshot: Cannot take screenshot larger than 32767 pixels on any dimension\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\n    at /workspace/rokn-alhenna/tests/e2e/catalog-review.spec.ts:126:18",
+                        "location": {
+                          "file": "/workspace/rokn-alhenna/tests/e2e/catalog-review.spec.ts",
+                          "column": 18,
+                          "line": 126
+                        },
+                        "snippet": "  124 |       viewportResults.push({ width, imagesLoaded: 26, ...dimensions });\n  125 |       await page.evaluate(() => scrollTo(0, 0));\n> 126 |       await page.screenshot({ path: width === 1440 ? 'artifacts/admin-catalog-review.png' : 'artifacts/admin-catalog-review-mobile.png', fullPage: true });\n      |                  ^\n  127 |     }\n  128 |     evidence.viewports = viewportResults;\n  129 |     // Capture the owner's received catalog in the protected storefront preview,"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/workspace/rokn-alhenna/tests/e2e/catalog-review.spec.ts",
+                            "column": 18,
+                            "line": 126
+                          },
+                          "message": "Error: page.screenshot: Cannot take screenshot larger than 32767 pixels on any dimension\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\n\n  124 |       viewportResults.push({ width, imagesLoaded: 26, ...dimensions });\n  125 |       await page.evaluate(() => scrollTo(0, 0));\n> 126 |       await page.screenshot({ path: width === 1440 ? 'artifacts/admin-catalog-review.png' : 'artifacts/admin-catalog-review-mobile.png', fullPage: true });\n      |                  ^\n  127 |     }\n  128 |     evidence.viewports = viewportResults;\n  129 |     // Capture the owner's received catalog in the protected storefront preview,\n    at /workspace/rokn-alhenna/tests/e2e/catalog-review.spec.ts:126:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "(node:42278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:42289) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:50:08.555Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspace/rokn-alhenna/test-results/catalog-review-private-ori-a2d74-t-desktop-and-mobile-widths-webkit-iphone-emulation/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/catalog-review-private-ori-a2d74-t-desktop-and-mobile-widths-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/catalog-review-private-ori-a2d74-t-desktop-and-mobile-widths-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/catalog-review-private-ori-a2d74-t-desktop-and-mobile-widths-webkit-iphone-emulation/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/workspace/rokn-alhenna/tests/e2e/catalog-review.spec.ts",
+                        "column": 18,
+                        "line": 126
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64df918c4ee84802b985-25d493592c2d8b40677d",
+              "file": "catalog-review.spec.ts",
+              "line": 87,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "checkout.spec.ts",
+      "file": "checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "customer purchase flow in the isolated QA database",
+          "file": "checkout.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13338,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.product-card')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.product-card') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.product-card')\u001b[22m\n\u001b[2m    24 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.product-card')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.product-card') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.product-card')\u001b[22m\n\u001b[2m    24 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n    at /workspace/rokn-alhenna/tests/e2e/checkout.spec.ts:14:49",
+                        "location": {
+                          "file": "/workspace/rokn-alhenna/tests/e2e/checkout.spec.ts",
+                          "column": 49,
+                          "line": 14
+                        },
+                        "snippet": "  12 |     await page.goto('/products');\n  13 |     await page.getByRole('searchbox', { name: 'ابحثي عن منتج', exact: true }).fill('غير موجود بالكتالوج');\n> 14 |     await expect(page.locator('.product-card')).toHaveCount(0);\n     |                                                 ^\n  15 |     await page.getByRole('searchbox', { name: 'ابحثي عن منتج', exact: true }).fill(fixture.product.name);\n  16 |     await expect(page.locator('.product-card')).toHaveCount(1);\n  17 |     await page.locator('.product-card').getByRole('heading', { name: fixture.product.name }).click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/workspace/rokn-alhenna/tests/e2e/checkout.spec.ts",
+                            "column": 49,
+                            "line": 14
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.product-card')\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" locator('.product-card') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.product-card')\u001b[22m\n\u001b[2m    24 × locator resolved to 1 element\u001b[22m\n\u001b[2m       - unexpected value \"1\"\u001b[22m\n\n\n  12 |     await page.goto('/products');\n  13 |     await page.getByRole('searchbox', { name: 'ابحثي عن منتج', exact: true }).fill('غير موجود بالكتالوج');\n> 14 |     await expect(page.locator('.product-card')).toHaveCount(0);\n     |                                                 ^\n  15 |     await page.getByRole('searchbox', { name: 'ابحثي عن منتج', exact: true }).fill(fixture.product.name);\n  16 |     await expect(page.locator('.product-card')).toHaveCount(1);\n  17 |     await page.locator('.product-card').getByRole('heading', { name: fixture.product.name }).click();\n    at /workspace/rokn-alhenna/tests/e2e/checkout.spec.ts:14:49"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:50:48.065Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-1911d--after-a-connection-failure-webkit-iphone-emulation/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-1911d--after-a-connection-failure-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-1911d--after-a-connection-failure-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-1911d--after-a-connection-failure-webkit-iphone-emulation/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/workspace/rokn-alhenna/tests/e2e/checkout.spec.ts",
+                        "column": 49,
+                        "line": 14
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-dcf672e757e42e780c13",
+              "file": "checkout.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "rejects Gaza and forged fees in direct HTTP requests",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 205,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:51:03.131Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-e194ba57de391cf1b35b",
+              "file": "checkout.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "deletes a cart line and rejects an unavailable product at checkout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6181,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "Skipping host requirements validation logic because `PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS` env variable is set.\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:51:03.805Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-907d55e5382ab38ffc6f",
+              "file": "checkout.spec.ts",
+              "line": 89,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "repeat-purchase.spec.ts",
+      "file": "repeat-purchase.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "successful purchase idempotency lifecycle",
+          "file": "repeat-purchase.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9232,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:51:10.210Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf21fef374b5f08f5ec9-7810b0e1b681f0c0228b",
+              "file": "repeat-purchase.spec.ts",
+              "line": 10,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "store-preview.spec.ts",
+      "file": "store-preview.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "private storefront preview",
+          "file": "store-preview.spec.ts",
+          "line": 13,
+          "column": 6,
+          "specs": [
+            {
+              "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18518,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:51:19.735Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efab4a959a9386564909-a57b2d99ed05f66ef18d",
+              "file": "store-preview.spec.ts",
+              "line": 62,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "store.spec.ts",
+      "file": "store.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Arabic RTL pages render and stay within the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13033,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:51:38.605Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-0dadd2415701700f1e2a",
+          "file": "store.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "home navigation and permitted contact links work without tracking scripts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3139,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:51:51.656Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-9cc536bae6bda2a23065",
+          "file": "store.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "administration and order APIs enforce trust boundaries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1780,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:51:54.808Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-793a46a0aa081a3e5ad9",
+          "file": "store.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "missing pages and product drafts do not expose data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4287,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:51:56.608Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-e52ae692635b3f066bc4",
+          "file": "store.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "login never places a password in the URL when JavaScript is unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1116,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:52:00.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-080f7d93d4726facfef8",
+          "file": "store.spec.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T05:49:26.396Z",
+    "duration": 155826.584,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

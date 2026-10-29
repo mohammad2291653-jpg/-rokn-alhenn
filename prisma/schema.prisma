@@ -1,0 +1,305 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISHED
+  HIDDEN
+}
+
+enum OrderStatus {
+  NEW
+  PENDING_CONFIRMATION
+  CONFIRMED
+  PREPARING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID
+  COLLECTED
+  CANCELLED
+  REFUNDED
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  position  Int       @default(0)
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Product {
+  id                    String         @id @default(cuid())
+  name                  String
+  slug                  String         @unique
+  weightGrams           Int
+  priceAgorot           Int
+  description           String?
+  ingredients           String?
+  usage                 String?
+  warnings              String?
+  status                ProductStatus  @default(DRAFT)
+  available             Boolean        @default(true)
+  featured              Boolean        @default(false)
+  nameNeedsConfirmation Boolean        @default(true)
+  stockTracked          Boolean        @default(false)
+  stockQuantity         Int?
+  categoryId            String
+  category              Category       @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  images                ProductImage[]
+  orderItems            OrderItem[]
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+
+  @@index([status, available, categoryId])
+  @@index([priceAgorot])
+  @@index([name])
+}
+
+model ProductImage {
+  id          String   @id @default(cuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url         String
+  originalKey String?
+  alt         String
+  position    Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@index([productId, position])
+}
+
+model DeliveryZone {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  name      String
+  feeAgorot Int?
+  enabled   Boolean  @default(true)
+  approved  Boolean  @default(false)
+  cities    City[]
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model City {
+  id      String       @id @default(cuid())
+  name    String
+  zoneId  String
+  zone    DeliveryZone @relation(fields: [zoneId], references: [id], onDelete: Cascade)
+  enabled Boolean      @default(true)
+
+  @@unique([zoneId, name])
+}
+
+model Order {
+  id                  String               @id @default(cuid())
+  number              String               @unique
+  customerName        String
+  phone               String
+  zoneId              String
+  zone                DeliveryZone         @relation(fields: [zoneId], references: [id], onDelete: Restrict)
+  zoneName            String
+  city                String
+  address             String
+  notes               String?
+  internalNotes       String?
+  inventoryReleasedAt DateTime?
+  subtotalAgorot      Int
+  deliveryAgorot      Int
+  totalAgorot         Int
+  currency            String               @default("ILS")
+  paymentMethod       String               @default("COD")
+  paymentStatus       PaymentStatus        @default(UNPAID)
+  status              OrderStatus          @default(NEW)
+  trackingTokenHash   String               @unique
+  trackingTokenSealed String
+  idempotencyKey      String               @unique
+  requestHash         String
+  items               OrderItem[]
+  history             OrderStatusHistory[]
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+
+  @@index([status, createdAt])
+  @@index([paymentStatus])
+  @@index([customerName])
+  @@index([phone])
+}
+
+model OrderItem {
+  id              String   @id @default(cuid())
+  orderId         String
+  order           Order    @relation(fields: [orderId], references: [id], onDelete: Restrict)
+  productId       String?
+  product         Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productName     String
+  weightGrams     Int
+  unitPriceAgorot Int
+  quantity        Int
+  totalAgorot     Int
+
+  inventoryReserved Boolean @default(false)
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model OrderStatusHistory {
+  id            String        @id @default(cuid())
+  orderId       String
+  order         Order         @relation(fields: [orderId], references: [id], onDelete: Restrict)
+  status        OrderStatus
+  paymentStatus PaymentStatus
+  note          String?
+  actorId       String?
+  createdAt     DateTime      @default(now())
+
+  @@index([orderId, createdAt])
+}
+
+model User {
+  id            String    @id
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  role          String    @default("ADMIN")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  accounts      Account[]
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+}
+
+model SiteSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model ContentSection {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  title     String
+  body      String
+  imageUrl  String?
+  enabled   Boolean  @default(true)
+  position  Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Article {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String
+  body        String
+  imageUrl    String?
+  published   Boolean   @default(false)
+  reviewed    Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([published, publishedAt])
+}
+
+model FAQ {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  position  Int      @default(0)
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Discount {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  title     String
+  percent   Int
+  approved  Boolean   @default(false)
+  active    Boolean   @default(false)
+  startsAt  DateTime?
+  endsAt    DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  action     String
+  entityType String
+  entityId   String?
+  details    Json?
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([actorId])
+}
+
+model RateLimit {
+  key       String   @id
+  count     Int      @default(1)
+  expiresAt DateTime
+
+  @@index([expiresAt])
+}

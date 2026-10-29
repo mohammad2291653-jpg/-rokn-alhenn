@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-10-29T05:36:13.279632+00:00",
+  "status": "schema_valid_deployment_blocked",
+  "blueprint": "render.yaml",
+  "blueprintSha256": "bbf4970e715ee4d844edc0479b37373991b564abd047d4f5ffe466c4a0319e7f",
+  "schemaValidation": {
+    "result": "passed",
+    "url": "https://render.com/schema/render.yaml.json",
+    "sha256": "8a3fb8da6b4f55fe686fbefa790e011d3dd7895f013f355953c572a21ab6494a",
+    "dialect": "https://json-schema.org/draft/2020-12/schema",
+    "errors": []
+  },
+  "cli": {
+    "version": "v2.33.0",
+    "sha256": "038bd9b47f8737b560bcddb3c5d59e04114b8ea002b05bba144e52e56e2a824e",
+    "source": "https://github.com/render-oss/cli/releases/download/v2.33.0/cli_2.33.0_linux_amd64.zip",
+    "command": "render blueprints validate render.yaml --output json",
+    "exitCode": 1,
+    "result": "not_completed",
+    "reason": "no workspace specified and no default workspace set; owner workspace confirmation required"
+  },
+  "reviewChecks": {
+    "sameRegion": true,
+    "internalDatabaseReference": true,
+    "databaseExternalConnectionsBlocked": true,
+    "noHardcodedSecrets": true,
+    "realAssignedOriginReferenceUsedAtBuildAndRuntime": true,
+    "allRequiredSecretsPrompted": true,
+    "noAutomaticPreviewStacks": true,
+    "noAutomaticDeploys": true,
+    "commercialLaunchDisabled": true,
+    "indexingDisabled": true,
+    "noAdminPassword": true,
+    "persistentStorageRequirementsDeclared": true
+  },
+  "notExecuted": [
+    "Render workspace semantic validation",
+    "Git push",
+    "Blueprint Apply or sync",
+    "Cloud deployment",
+    "S3 provisioning or upload verification",
+    "Cloud backup scheduling and restore",
+    "Custom domain or TLS verification"
+  ],
+  "resourcesCreated": false,
+  "paidServicesPurchased": false,
+  "publicPreviewUrl": null,
+  "referencePricingUSD": {
+    "checkedDate": "2026-10-29",
+    "source": "https://render.com/pricing",
+    "webMonthly": 7,
+    "postgresComputeMonthly": 19,
+    "postgresStorageGB": 5,
+    "advertisedStoragePerGB": 0.3,
+    "storageConservativeBudgetMonthly": 1.5,
+    "computeAndStorageBudgetMonthly": 27.5,
+    "optionalProWorkspaceMonthly": 25,
+    "excluded": [
+      "S3",
+      "bandwidth overages",
+      "build pipeline overages",
+      "external backups",
+      "domain and renewals",
+      "tax and currency conversion"
+    ]
+  },
+  "documentationFetched": [
+    {
+      "url": "https://render.com/docs/blueprint-spec.md",
+      "bytes": 59786,
+      "sha256": "0be7af1f2452f5bb881c7e79fdcdbe7635afdf9e55efebbbffcb1da8ef1e1e73"
+    },
+    {
+      "url": "https://render.com/docs/compute-plans.md",
+      "bytes": 14566,
+      "sha256": "960ee1c719b931354ab5a66854ab308a5a67361a035d9f85927cba567699fb07"
+    },
+    {
+      "url": "https://render.com/docs/configure-environment-variables.md",
+      "bytes": 10800,
+      "sha256": "4a90f3b52a434a7774bc7c8d6bf80bc634cb396b8002ed2e1cc0bc7ccf9a865f"
+    },
+    {
+      "url": "https://render.com/docs/environment-variables.md",
+      "bytes": 6620,
+      "sha256": "15db654b2f3de6f2c69ec1b52b203c3d2777f5fa7188afa124ec5060ac562316"
+    },
+    {
+      "url": "https://render.com/docs/private-network.md",
+      "bytes": 8420,
+      "sha256": "d346a7a5072349c5aa311bbf95475f8a60d0bc151af562de778ac75918d2fd21"
+    },
+    {
+      "url": "https://render.com/docs/service-types.md",
+      "bytes": 9148,
+      "sha256": "76efab263050d15355e11249caabdfb49d15b02f89bc480ab2590c456dc42847"
+    },
+    {
+      "url": "https://render.com/docs/web-services.md",
+      "bytes": 12873,
+      "sha256": "6ea2f9a369f67b43ae05554b1048362c06f2476bcc809aafc7d91a73d82f468f"
+    },
+    {
+      "url": "https://render.com/docs/postgresql.md",
+      "bytes": 1645,
+      "sha256": "97f4b323aa3bbb672d6f1c8b5cb5555f528003b017073e34dee6df75c7f54e6f"
+    },
+    {
+      "url": "https://render.com/docs/cli.md",
+      "bytes": 14998,
+      "sha256": "539c756bda23b82cba3ebfd4190e5f2f3f6b9f8ccf9c4701828cdcfd1e2d6ca1"
+    },
+    {
+      "url": "https://render.com/docs/postgresql-creating-connecting.md",
+      "bytes": 23510,
+      "sha256": "6b19f63944d4bcde86888c09be36ad9d8f2285bf3b3f67ea56fcd738bc111ba4"
+    },
+    {
+      "url": "https://render.com/docs/postgresql-backups.md",
+      "bytes": 9379,
+      "sha256": "e485f79e5208080117cd707e9995afbee3740103b00f99de26f0419c75c6e80a"
+    },
+    {
+      "url": "https://render.com/docs/node-version.md",
+      "bytes": 2390,
+      "sha256": "e7fe3068600a8d33957ad7c650cef76c11ed113c778158b5943cd7cd237da9ec"
+    },
+    {
+      "url": "https://render.com/docs/deploys.md",
+      "bytes": 26485,
+      "sha256": "1231a1aea4fbb6f0ad71750a9aa8b84b6225625667af2dd0b4396868d06aa5c6"
+    }
+  ]
+}

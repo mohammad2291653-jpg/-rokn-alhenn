@@ -1,0 +1,24 @@
+{
+  "verifiedAt": "2026-10-29T04:55:01.019Z",
+  "result": "passed",
+  "productSlug": "integrated-henna",
+  "approvedUsage": "افتحي العبوة واستخدمي المزيج مباشرة دون أي إضافات.\nوزعي المزيج على الشعر الجاف أو الرطب من الجذور حتى الأطراف.\nغطي الشعر بقبعة بلاستيكية واتركيه لمدة 2–6 ساعات.\nاغسلي الشعر بالماء الفاتر ثم بشامبو أو ماسك خالٍ من الأملاح.",
+  "ownerResolution": "اعتمد صاحب المتجر في المحادثة الغسل بماء فاتر ثم شامبو أو ماسك خالٍ من الأملاح بعد ترك خلطة الحناء المتكاملة لمدة 2–6 ساعات.",
+  "ownerConfirmedAt": "2026-10-29T04:54:18.435825+00:00",
+  "checks": {
+    "databaseUsageMatchesApprovedManifest": true,
+    "durationPreserved": true,
+    "alternativeWashSequenceNotInApprovedUsage": true,
+    "reviewResolutionSaved": true,
+    "originalConflictingLabelTextPreservedForAudit": true,
+    "onlyHennaUsageChanged": true,
+    "allProductNamesPricesWeightsAvailabilityInventoryAndImagesUnchanged": true,
+    "allProductsRemainDraft": true,
+    "checkoutRemainsDisabled": true,
+    "ordersUnchanged": true,
+    "auditEntryRecorded": true,
+    "all26OriginalAssetsVerifiedByImporter": true,
+    "imagesCreated": 0,
+    "attachedPhotos": 24
+  }
+}

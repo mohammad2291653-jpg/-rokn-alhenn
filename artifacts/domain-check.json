@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-10-29T05:32:38.469996+00:00",
+  "method": "Read-only HTTPS using the configured session proxy; no DNS availability inference, TCP WHOIS, reservations or purchases.",
+  "ianaBootstrap": {
+    "url": "https://data.iana.org/rdap/dns.json",
+    "httpStatus": 200,
+    "publication": "2026-10-28T22:00:04Z",
+    "comService": "https://rdap.verisign.com/com/v1/",
+    "psServicePresent": false
+  },
+  "rdapPositiveControl": {
+    "domain": "example.com",
+    "source": "https://rdap.verisign.com/com/v1/domain/example.com",
+    "httpStatus": 200,
+    "returnedLdhName": "EXAMPLE.COM",
+    "contentType": "application/rdap+json"
+  },
+  "domains": [
+    {
+      "domain": "roknalhenna.com",
+      "checkedAt": "2026-10-29T05:32:37.990257+00:00",
+      "source": "https://rdap.verisign.com/com/v1/domain/roknalhenna.com",
+      "sourceAuthority": "Verisign .com registry, selected by IANA RDAP bootstrap",
+      "registrationStatus": "not_found_in_registry_rdap",
+      "purchaseAvailabilityConfirmed": false,
+      "priceConfirmed": false,
+      "httpStatus": 404,
+      "contentType": "application/rdap+json"
+    },
+    {
+      "domain": "rokn-alhenna.com",
+      "checkedAt": "2026-10-29T05:32:37.992022+00:00",
+      "source": "https://rdap.verisign.com/com/v1/domain/rokn-alhenna.com",
+      "sourceAuthority": "Verisign .com registry, selected by IANA RDAP bootstrap",
+      "registrationStatus": "not_found_in_registry_rdap",
+      "purchaseAvailabilityConfirmed": false,
+      "priceConfirmed": false,
+      "httpStatus": 404,
+      "contentType": "application/rdap+json"
+    },
+    {
+      "domain": "roknalhenna.ps",
+      "registrationStatus": "unverified",
+      "purchaseAvailabilityConfirmed": false,
+      "priceConfirmed": false,
+      "sources": [
+        {
+          "url": "https://data.iana.org/rdap/dns.json",
+          "httpStatus": 200,
+          "publication": "2026-10-28T22:00:04Z",
+          "finding": "No .ps RDAP service listed."
+        },
+        {
+          "url": "https://www.iana.org/domains/root/db/ps.html",
+          "httpStatus": 200,
+          "finding": "Registry website listed as www.pnina.ps."
+        },
+        {
+          "url": "https://www.pnina.ps/",
+          "httpStatus": 200,
+          "finding": "Returned a CAPTCHA challenge rather than a domain availability result. No challenge was bypassed."
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "An HTTP404 from registry RDAP means no matching record was found at check time; it does not guarantee that a registrar can register the name or that it is unrestricted.",
+    "Registration availability, initial price, renewal price, taxes and terms must be confirmed with an accredited registrar before any purchase.",
+    "No price quote was verified and no name was reserved or purchased.",
+    "The .ps registry website required CAPTCHA and IANA bootstrap contained no .ps RDAP service; .ps registration status remains unverified."
+  ]
+}

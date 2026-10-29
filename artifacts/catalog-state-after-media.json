@@ -1,0 +1,83 @@
+{
+  "verifiedAt": "2026-10-29T04:55:01.019Z",
+  "products": [
+    {
+      "slug": "integrated-henna",
+      "name": "خلطة الحناء المتكاملة",
+      "weightGrams": 500,
+      "priceILS": 75,
+      "status": "DRAFT",
+      "images": 7
+    },
+    {
+      "slug": "sidr-mask",
+      "name": "ماسك السدر",
+      "weightGrams": 200,
+      "priceILS": 110,
+      "status": "DRAFT",
+      "images": 8
+    },
+    {
+      "slug": "red-mashat-mask",
+      "name": "ماسك المشاط الأحمر",
+      "weightGrams": 500,
+      "priceILS": 110,
+      "status": "DRAFT",
+      "images": 4
+    },
+    {
+      "slug": "green-mashat-mask",
+      "name": "ماسك المشاط الأخضر",
+      "weightGrams": 500,
+      "priceILS": 130,
+      "status": "DRAFT",
+      "images": 0
+    },
+    {
+      "slug": "ground-henna",
+      "name": "الحناء المطحونة",
+      "weightGrams": 200,
+      "priceILS": 40,
+      "status": "DRAFT",
+      "images": 1
+    },
+    {
+      "slug": "sidr-powder",
+      "name": "بودرة السدر",
+      "weightGrams": 100,
+      "priceILS": 55,
+      "status": "DRAFT",
+      "images": 1
+    },
+    {
+      "slug": "red-mashat-powder",
+      "name": "بودرة المشاط الأحمر",
+      "weightGrams": 200,
+      "priceILS": 50,
+      "status": "DRAFT",
+      "images": 1
+    },
+    {
+      "slug": "green-mashat-powder",
+      "name": "بودرة المشاط الأخضر",
+      "weightGrams": 200,
+      "priceILS": 60,
+      "status": "DRAFT",
+      "images": 0
+    },
+    {
+      "slug": "dark-color-powder",
+      "name": "بودرة اللون الداكن بعد الحناء",
+      "weightGrams": 100,
+      "priceILS": 60,
+      "status": "DRAFT",
+      "images": 2
+    }
+  ],
+  "productsWithPhotos": 7,
+  "totalAttachedPhotos": 24,
+  "sidrOwnerDurationSaved": true,
+  "checkoutEnabled": false,
+  "hennaOwnerWashSequenceSaved": true,
+  "usageConflictsPending": []
+}

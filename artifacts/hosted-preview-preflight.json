@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "mode": "preview",
+  "checkedAt": "2026-10-29T05:38:00.172Z",
+  "ready": false,
+  "checks": [
+    {
+      "id": "site-https-origin",
+      "passed": false,
+      "message": "Configure a public HTTPS origin without a path, credentials, query, or fragment."
+    },
+    {
+      "id": "auth-origin-matches",
+      "passed": false,
+      "message": "Authentication must use the same public HTTPS origin as the store."
+    },
+    {
+      "id": "auth-secret",
+      "passed": true,
+      "message": "Provide a private strong authentication secret of at least 48 characters."
+    },
+    {
+      "id": "order-token-secret",
+      "passed": true,
+      "message": "If configured, the order-token secret must be strong and at least 32 characters."
+    },
+    {
+      "id": "bootstrap-password-removed",
+      "passed": true,
+      "message": "Remove the administrator bootstrap password from the running environment."
+    },
+    {
+      "id": "permanent-storage-driver",
+      "passed": false,
+      "message": "Hosted environments require permanent S3-compatible storage."
+    },
+    {
+      "id": "storage-configuration",
+      "passed": false,
+      "message": "Configure the S3 region, bucket, and private write credentials."
+    },
+    {
+      "id": "storage-public-https",
+      "passed": false,
+      "message": "Configure a public HTTPS media base URL without embedded credentials, query, or fragment."
+    },
+    {
+      "id": "commercial-launch-disabled",
+      "passed": true,
+      "message": "Hosted previews must explicitly set COMMERCIAL_LAUNCH_APPROVED=false."
+    },
+    {
+      "id": "indexing-disabled",
+      "passed": true,
+      "message": "Hosted previews must explicitly set ALLOW_INDEXING=false."
+    },
+    {
+      "id": "database-readable",
+      "passed": true,
+      "message": "The configured database must be reachable and its application schema readable."
+    },
+    {
+      "id": "private-administrator",
+      "passed": false,
+      "message": "Create a private administrator with a password account."
+    },
+    {
+      "id": "official-logo",
+      "passed": true,
+      "message": "Configure the original official logo using its bundled asset or permanent HTTPS media."
+    },
+    {
+      "id": "checkout-setting",
+      "passed": true,
+      "message": "Checkout must remain disabled in the preview database."
+    },
+    {
+      "id": "gaza-disabled",
+      "passed": true,
+      "message": "Delivery to Gaza must remain disabled."
+    },
+    {
+      "id": "supported-delivery-zones",
+      "passed": true,
+      "message": "Only approved delivery regions may be enabled."
+    },
+    {
+      "id": "delivery-fees-valid",
+      "passed": true,
+      "message": "Approved delivery zones require a valid nonnegative server-side fee."
+    }
+  ],
+  "content": {
+    "counts": {
+      "total": 9,
+      "draft": 9,
+      "published": 0,
+      "incompletePublished": 0,
+      "missingImages": 2,
+      "pendingNames": 9,
+      "missingUsage": 4,
+      "missingIngredients": 5
+    },
+    "notices": [
+      {
+        "id": "policy-returns",
+        "count": 1,
+        "message": "The returns policy is awaiting owner review; preview does not approve or publish it."
+      },
+      {
+        "id": "policy-privacy",
+        "count": 1,
+        "message": "The privacy policy is awaiting owner review; preview does not approve or publish it."
+      },
+      {
+        "id": "policy-terms",
+        "count": 1,
+        "message": "The terms policy is awaiting owner review; preview does not approve or publish it."
+      },
+      {
+        "id": "draft-products",
+        "count": 9,
+        "message": "Products remain drafts awaiting review."
+      },
+      {
+        "id": "products-missing-images",
+        "count": 2,
+        "message": "Products still need original product photographs."
+      },
+      {
+        "id": "products-pending-names",
+        "count": 9,
+        "message": "Product names still need owner confirmation."
+      },
+      {
+        "id": "products-missing-usage",
+        "count": 4,
+        "message": "Confirmed usage instructions are incomplete."
+      },
+      {
+        "id": "products-missing-ingredients",
+        "count": 5,
+        "message": "Confirmed ingredient information is incomplete."
+      }
+    ]
+  },
+  "limitations": [
+    "Configuration and read-only database checks do not test public reachability, HTTPS certificates, media access, backup restoration, or real-device behavior.",
+    "Passing preview checks does not publish draft content or authorize commercial launch."
+  ]
+}

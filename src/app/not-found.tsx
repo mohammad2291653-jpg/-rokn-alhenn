@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import { Leaf, ArrowLeft } from 'lucide-react';
+export default function NotFound() { return <main id="main-content" className="shell" style={{ minHeight: '65vh', display: 'grid', placeItems: 'center', paddingBlock: 70 }}><div className="empty-state" style={{ width: '100%', maxWidth: 700 }}><span className="empty-state-icon"><Leaf size={30} strokeWidth={1.3} /></span><span className="eyebrow">404</span><h1 style={{ fontSize: 39, color: 'var(--burgundy)' }}>لم نجد هذه الصفحة</h1><p>قد يكون الرابط تغيّر، أو المنتج لم يُنشر بعد. يمكنكِ العودة واكتشاف المتجر.</p><Link href="/" className="button">العودة للرئيسية <ArrowLeft size={17} /></Link></div></main>; }

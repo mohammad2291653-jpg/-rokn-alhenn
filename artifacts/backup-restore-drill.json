@@ -1,0 +1,121 @@
+{
+  "measuredAt": "2026-10-29T05:37:24.991Z",
+  "result": "passed",
+  "mainDatabaseAccessed": false,
+  "testDatabaseAccessed": false,
+  "credentialsRecorded": false,
+  "limitations": [
+    "Local isolated PostgreSQL dump/restore drill; managed production backups, scheduling, encryption at rest and off-site storage were not exercised.",
+    "Database restoration retains image references; S3/object files require their own backup and restore drill."
+  ],
+  "archive": {
+    "bytes": 46184,
+    "sha256": "d137c7aa551254375e760e310ab03888113d86f9acfdcd8516caa284bbce9f73",
+    "permissions": "0600"
+  },
+  "clientVersion": "pg_dump (PostgreSQL) 18.6 (Debian 18.6-1.pgdg13+2)",
+  "restoredTables": {
+    "Account": {
+      "count": 1,
+      "sha256": "aad6c89fad0f478ac0464e2be1b8d32714163fb7c1fd2fc62b0a76aa4e1a28fa"
+    },
+    "Article": {
+      "count": 7,
+      "sha256": "f1ecff7da7b38d05c1e5f5dc64e81f350b4fecca87dfb3659383a891cb457874"
+    },
+    "AuditLog": {
+      "count": 2,
+      "sha256": "2da86490bd3ade782834539c4475f757c80cf691e22e5e1c01744f3564e9d294"
+    },
+    "Category": {
+      "count": 4,
+      "sha256": "fa76ea2b5a5156ad374c32ab16181a77b672435de3f2fb6a2e850054f37e394b"
+    },
+    "City": {
+      "count": 26,
+      "sha256": "5f7702f901c83ddf37993efede53b0a8f2bc94142b7ca55508ae4ee782be9372"
+    },
+    "ContentSection": {
+      "count": 4,
+      "sha256": "1ecad7bc5b1f6f1c1d5853b1abb5055ee1952764653b5dd31ad4bb0b09ce7312"
+    },
+    "DeliveryZone": {
+      "count": 3,
+      "sha256": "e8b9435cf452c4a99e6f0c67028a08d9985b1c599ad15efb8a70743b4ada42c7"
+    },
+    "Discount": {
+      "count": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "FAQ": {
+      "count": 5,
+      "sha256": "595a6a9158fb41b7f8fff3a5e2762a74a4c22ff3390b1571ea64a3a364227c3c"
+    },
+    "Order": {
+      "count": 1,
+      "sha256": "d529291a29ad91eb73492b577ebfb93441227fb787a2bf8a0a4e6c570f839970"
+    },
+    "OrderItem": {
+      "count": 1,
+      "sha256": "6ae15d591ede6d69b319137cc7956accb7e4188d4b54809b08cbd21643ae2e30"
+    },
+    "OrderStatusHistory": {
+      "count": 1,
+      "sha256": "e540015a7977b85b06063cb2987de4c9d375116714fd92b44c65a9942f3f7626"
+    },
+    "Product": {
+      "count": 9,
+      "sha256": "b6b4767c11d18e7f5eacff572bb8bc6b5736e3e0a44ca64f7424cb14b1e8e7de"
+    },
+    "ProductImage": {
+      "count": 1,
+      "sha256": "db800ea36371851f2bc48233c7857a824681fe68784a0dbcf3d4326d77b708ae"
+    },
+    "RateLimit": {
+      "count": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "Session": {
+      "count": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "SiteSetting": {
+      "count": 7,
+      "sha256": "427808d5d54d6f32d1f7713c2bd7d169fe726ef05b44dc021024c38b330bd9de"
+    },
+    "User": {
+      "count": 1,
+      "sha256": "0dd4492a99bef5501e6e4d5bd22b61b097d32ea86a8defcc3fc5e1d016beecef"
+    },
+    "Verification": {
+      "count": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "_prisma_migrations": {
+      "count": 2,
+      "sha256": "ee8ed8452b71d7462a1ee5a5b917fdcb8811c337a3f51c48b8c4efc50b3c0ffe"
+    }
+  },
+  "checks": [
+    "Current migrations and exact nine-product seed applied to a new isolated source database",
+    "Synthetic COD order, historic prices, administrator hash, image metadata and audit record created only in drill database",
+    "Production backup script created a valid custom-format archive with owner-only file permissions",
+    "The explicit source URL takes precedence over inherited libpq service selectors",
+    "Backup script rejects overwriting an existing archive without modifying its bytes",
+    "Failed database connection leaves no final backup or partial archive",
+    "Restoration requires explicit empty-target confirmation before making changes",
+    "Restoration refuses a nonempty target and leaves all source rows unchanged",
+    "Invalid archive is rejected without creating tables in the target",
+    "Restoration also refuses an otherwise empty database containing a custom schema without removing it",
+    "Every restored public table matches the source row count and full row-content SHA256",
+    "COD payment, order history and original 75 + 20 = 95 ILS snapshots survive restoration alongside newer catalog prices",
+    "Restored private administrator credential hash verifies the correct password and rejects a wrong password",
+    "Restored image URL and original key still resolve to the separately preserved local media assets",
+    "Secure tracking and idempotent retry function on the restored database without exposing PII or creating a second order",
+    "Redeploy migrations and seed preserve the restored order and administrative price changes"
+  ],
+  "checkCount": 16,
+  "cleanup": {
+    "temporaryClusterAndSyntheticArchiveRemoved": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "currency": "ILS",
+  "moneyUnit": "agorot",
+  "feeScope": "per_order",
+  "source": "owner-approved initial configuration; runtime values are managed in PostgreSQL",
+  "zones": [
+    { "code": "west-bank", "name": "الضفة الغربية", "feeAgorot": 2000, "enabled": true, "approved": true },
+    { "code": "interior", "name": "الداخل الفلسطيني", "feeAgorot": 3000, "enabled": true, "approved": true },
+    { "code": "jerusalem", "name": "القدس", "feeAgorot": null, "enabled": true, "approved": false }
+  ],
+  "unsupported": [
+    { "code": "gaza", "name": "قطاع غزة", "message": "التوصيل غير متاح حاليًا إلى قطاع غزة." }
+  ],
+  "jerusalemRule": "No final-price checkout until the owner approves a fee or classification.",
+  "freeShippingEnabled": false
+}

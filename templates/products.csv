@@ -1,0 +1,10 @@
+slug,name,weightGrams,priceILS,categorySlug,status,available,featured,nameNeedsConfirmation,description,ingredients,usage,warnings,imageOriginalFile,imageAlt
+integrated-henna,خلطة الحناء المتكاملة,500,75,henna,DRAFT,true,false,true,,,,,,
+sidr-mask,ماسك السدر,200,110,sidr,DRAFT,true,false,true,,,,,,
+red-mashat-mask,ماسك المشاط الأحمر,500,110,mashat,DRAFT,true,false,true,,,,,,
+green-mashat-mask,ماسك المشاط الأخضر,500,130,mashat,DRAFT,true,false,true,,,,,,
+ground-henna,الحناء المطحونة,200,40,henna,DRAFT,true,false,true,,,,,,
+sidr-powder,بودرة السدر,100,55,sidr,DRAFT,true,false,true,,,,,,
+red-mashat-powder,بودرة المشاط الأحمر,200,50,mashat,DRAFT,true,false,true,,,,,,
+green-mashat-powder,بودرة المشاط الأخضر,200,60,mashat,DRAFT,true,false,true,,,,,,
+dark-color-powder,بودرة اللون الداكن بعد الحناء,100,60,other,DRAFT,true,false,true,,,,,,

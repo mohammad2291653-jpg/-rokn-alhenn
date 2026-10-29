@@ -1,0 +1,18 @@
+{
+  "source": "Official PostgreSQL apt repository over HTTPS",
+  "verification": "Downloaded size and SHA256 matched the official Packages.gz index; no system package installation performed.",
+  "packages": [
+    {
+      "package": "postgresql-client-18",
+      "version": "18.6-1.pgdg13+2",
+      "sha256": "9af40c99f7074f8ff3798155af2f07f1a4e1e3bd4edce44ef928c1e03aea620e",
+      "source": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18/postgresql-client-18_18.6-1.pgdg13+2_amd64.deb"
+    },
+    {
+      "package": "libpq5",
+      "version": "18.6-1.pgdg13+2",
+      "sha256": "c6cc459bb499db4697686533e50bf5943f7e7d6929c04ef55eec184d5436859b",
+      "source": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18/libpq5_18.6-1.pgdg13+2_amd64.deb"
+    }
+  ]
+}

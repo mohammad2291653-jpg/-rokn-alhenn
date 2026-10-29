@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-10-29T03:47:15.097Z",
+  "checks": [
+    {
+      "viewport": 390,
+      "sources": [
+        {
+          "src": "/brand/rokn-alhenna-logo-transparent.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/brand/rokn-alhenna-logo-transparent.webp",
+          "loaded": true,
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "viewport": 1440,
+      "sources": [
+        {
+          "src": "/brand/rokn-alhenna-logo-transparent.webp",
+          "loaded": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/brand/rokn-alhenna-logo-transparent.webp",
+          "loaded": true,
+          "fit": "contain"
+        }
+      ]
+    }
+  ],
+  "hasAlpha": true,
+  "result": "passed"
+}

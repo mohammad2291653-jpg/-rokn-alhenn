@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.next-qa/
+.env
+.env.*
+!.env.example
+.local/
+coverage/
+test-results/
+playwright-report/
+public/uploads/*
+!public/uploads/.gitkeep
+*.tsbuildinfo

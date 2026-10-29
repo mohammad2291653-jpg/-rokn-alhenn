@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import { Leaf, ArrowUpLeft } from 'lucide-react';
+export function EmptyCatalog({ search = false }: { search?: boolean }) { return <div className="empty-state"><span className="empty-state-icon"><Leaf size={32} strokeWidth={1.2} /></span><h3>{search ? 'لم نجد منتجًا بهذه الخيارات' : 'نحضّر لكِ تفاصيل تستحق الانتظار'}</h3><p>{search ? 'جرّبي كلمة أخرى أو غيّري خيارات التصفية.' : 'نراجع صور المنتجات الأصلية وتفاصيلها قبل إتاحتها للطلب. يمكنكِ التواصل معنا لأي استفسار.'}</p><Link href={search ? '/products' : '/contact'} className="text-link">{search ? 'عرض جميع المنتجات' : 'تواصلي مع ركن الحناء'}<ArrowUpLeft size={17} /></Link></div>; }

@@ -1,0 +1,127 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.29kB 0.0s done
+#1 DONE 0.1s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 1.2s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/node:24-bookworm-slim
+#4 DONE 1.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 170B 0.0s done
+#5 DONE 0.0s
+
+#6 [build 1/6] FROM docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 575.07kB 0.1s done
+#7 DONE 0.1s
+
+#8 [build 2/6] WORKDIR /app
+#8 CACHED
+
+#9 [build 3/6] COPY package.json package-lock.json ./
+#9 CACHED
+
+#10 [build 4/6] RUN --mount=type=secret,id=proxy_ca     if [ -f /run/secrets/proxy_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/proxy_ca; fi;     npm ci --strict-ssl=true
+#10 CACHED
+
+#11 [build 5/6] COPY . .
+#11 DONE 33.1s
+
+#12 [build 6/6] RUN --mount=type=secret,id=proxy_ca     if [ -f /run/secrets/proxy_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/proxy_ca; fi;     BETTER_AUTH_SECRET="$(node -e 'process.stdout.write(require("node:crypto").randomBytes(48).toString("hex"))')" BETTER_AUTH_URL="http://localhost:3100" npm run build
+#12 19.62 
+#12 19.62 > rokn-alhenna@1.0.0 build
+#12 19.62 > prisma generate && next build && node scripts/prepare-standalone.mjs
+#12 19.62 
+#12 22.21 Loaded Prisma config from prisma.config.ts.
+#12 22.21 
+#12 22.31 prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+#12 22.31 Please manually install OpenSSL via `apt-get update -y && apt-get install -y openssl` and try installing Prisma again. If you're running Prisma on Docker, add this command to your Dockerfile, or switch to an image that already has OpenSSL installed.
+#12 22.32 prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+#12 22.32 Please manually install OpenSSL via `apt-get update -y && apt-get install -y openssl` and try installing Prisma again. If you're running Prisma on Docker, add this command to your Dockerfile, or switch to an image that already has OpenSSL installed.
+#12 23.33 Prisma schema loaded from prisma/schema.prisma.
+#12 24.77 
+#12 24.77 ✔ Generated Prisma Client (v7.10.1) to ./node_modules/@prisma/client in 1.04s
+#12 24.77 
+#12 24.77 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+#12 24.77 
+#12 24.77 
+#12 26.26 ▲ Next.js 16.4.3 (Turbopack)
+#12 26.51 ✓ Running next.config.ts took 253ms
+#12 26.54 - Experiments (use with caution):
+#12 26.54   · serverActions
+#12 26.54 
+#12 26.63   Creating an optimized production build ...
+#12 59.81 ✓ Compiled successfully in 33.1s
+#12 59.82   Running TypeScript ...
+#12 86.03   Finished TypeScript in 26.2s ...
+#12 86.04   Collecting page data using 2 workers ...
+#12 89.04   Generating static pages using 2 workers (0/9) ...
+#12 89.11   Generating static pages using 2 workers (2/9) 
+#12 89.12   Generating static pages using 2 workers (4/9) 
+#12 89.81   Generating static pages using 2 workers (6/9) 
+#12 89.82 ✓ Generating static pages using 2 workers (9/9) in 787ms
+#12 89.83   Finalizing page optimization ...
+#12 90.64 
+#12 90.64 Route (app)
+#12 90.64 ┌ ƒ /
+#12 90.64 ├ ○ /_not-found
+#12 90.64 ├ ƒ /[info]
+#12 90.64 ├ ƒ /admin
+#12 90.64 ├ ƒ /admin/catalog-review
+#12 90.64 ├ ƒ /admin/content
+#12 90.64 ├ ƒ /admin/orders
+#12 90.64 ├ ƒ /admin/orders/[id]
+#12 90.64 ├ ƒ /admin/products
+#12 90.64 ├ ƒ /admin/products/[id]
+#12 90.64 ├ ƒ /admin/products/new
+#12 90.64 ├ ƒ /admin/settings
+#12 90.64 ├ ƒ /admin/store-preview
+#12 90.64 ├ ƒ /admin/store-preview/[slug]
+#12 90.64 ├ ƒ /api/admin/[resource]
+#12 90.64 ├ ƒ /api/admin/orders/export
+#12 90.64 ├ ƒ /api/admin/uploads
+#12 90.64 ├ ƒ /api/auth/[...all]
+#12 90.64 ├ ƒ /api/checkout/quote
+#12 90.64 ├ ƒ /api/health
+#12 90.64 ├ ƒ /api/order-status
+#12 90.64 ├ ƒ /api/orders
+#12 90.64 ├ ƒ /api/site-icon
+#12 90.64 ├ ƒ /blog
+#12 90.64 ├ ƒ /blog/[slug]
+#12 90.64 ├ ƒ /cart
+#12 90.64 ├ ƒ /checkout
+#12 90.64 ├ ○ /opengraph-image
+#12 90.64 ├ ƒ /order-status
+#12 90.64 ├ ƒ /products
+#12 90.64 ├ ƒ /products/[slug]
+#12 90.64 ├ ○ /robots.txt
+#12 90.64 └ ƒ /sitemap.xml
+#12 90.64 
+#12 90.64 
+#12 90.64 ○  (Static)   prerendered as static content
+#12 90.64 ƒ  (Dynamic)  server-rendered on demand
+#12 90.64 
+#12 91.03 Standalone prepared with static assets; .env and local uploaded media excluded.
+#12 DONE 91.1s
+
+#8 [build 2/6] WORKDIR /app
+#8 CACHED
+
+#13 [runtime 3/3] COPY --from=build --chown=node:node /app/.next/standalone ./
+#13 DONE 4.6s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 1.3s done
+#14 writing image sha256:6a2d7b8581dd567d41f98ff311f6f5b110b307e698ab0d1358afadbd7755ab64 done
+#14 naming to docker.io/library/rokn-alhenna:review done
+#14 DONE 1.4s

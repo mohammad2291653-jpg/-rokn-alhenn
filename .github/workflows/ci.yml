@@ -1,0 +1,45 @@
+name: Verify store
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: rokn
+          POSTGRES_PASSWORD: ci-only-password
+          POSTGRES_DB: test_rokn
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://rokn:ci-only-password@127.0.0.1:5432/test_rokn
+      TEST_DATABASE_URL: postgresql://rokn:ci-only-password@127.0.0.1:5432/test_rokn
+      BETTER_AUTH_SECRET: ci-only-random-secret-rotate-not-for-production-123456
+      BETTER_AUTH_URL: http://127.0.0.1:3001
+      NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3001
+      STORAGE_DRIVER: local
+      COMMERCIAL_LAUNCH_APPROVED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 24, cache: npm}
+      - run: npm ci
+      - run: npm run db:generate
+      - run: npm run db:migrate
+      - run: npm run db:seed
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: npm run test:e2e
+      - run: npm audit --audit-level=high
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-test-results
+          path: |
+            playwright-report
+            test-results

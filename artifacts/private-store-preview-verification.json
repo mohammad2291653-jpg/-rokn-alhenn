@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-29T05:51:19.731Z",
+  "database": "test_rokn",
+  "mainDatabaseMutated": false,
+  "credentialsRecorded": false,
+  "sampleProducts": "temporary isolated QA records with owner-supplied source images",
+  "viewports": [
+    {
+      "width": 1440,
+      "imageLoaded": true,
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "width": 390,
+      "imageLoaded": true,
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "width": 320,
+      "imageLoaded": true,
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "detailViewports": [
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "width": 320,
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "checks": {
+    "anonymousListAndDetailBlocked": true,
+    "publicPreviewQueryCannotExposeDrafts": true,
+    "noStoreAndNoIndex": true,
+    "databasePriceAndWeightDisplayed": true,
+    "zeroTrackedStockShownUnavailableWithoutCount": true,
+    "internalInventoryAndOriginalKeysNotSerialized": true,
+    "originalImagesLoad": true,
+    "confirmedHennaUsageDisplayed": true,
+    "galleryAndZoomWork": true,
+    "purchaseAndWhatsAppActionsAbsent": true,
+    "localCartUnchanged": true,
+    "productsRemainDraft": true,
+    "settingsAndOrdersUnchanged": true
+  },
+  "result": "passed",
+  "cleanup": {
+    "before": {
+      "products": 0,
+      "users": 0,
+      "orders": 0
+    },
+    "after": {
+      "products": 0,
+      "users": 0,
+      "orders": 0
+    },
+    "countsRestored": true,
+    "settingsUnchanged": true,
+    "temporaryCredentialsRemoved": true
+  }
+}

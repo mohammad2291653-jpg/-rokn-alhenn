@@ -1,0 +1,686 @@
+{
+  "result": "passed_after_runtime_setup_and_fixes",
+  "distinctScenarios": 90,
+  "finalPassed": 90,
+  "finalFailed": 0,
+  "attempts": [
+    {
+      "report": "playwright-prelaunch-review.json",
+      "startTime": "2026-10-29T05:37:12.677Z",
+      "duration": 653835.549,
+      "expected": 69,
+      "skipped": 0,
+      "unexpected": 16,
+      "flaky": 0
+    },
+    {
+      "report": "playwright-webkit-prelaunch-rerun.json",
+      "startTime": "2026-10-29T05:49:26.396Z",
+      "duration": 155826.584,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    {
+      "report": "playwright-webkit-prelaunch-fixes.json",
+      "startTime": "2026-10-29T05:56:39.183Z",
+      "duration": 97924.20599999999,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "report": "playwright-catalog-hydration.json",
+      "startTime": "2026-10-29T05:58:18.284Z",
+      "duration": 21998.003,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  ],
+  "fixes": [
+    "Installed verified temporary WebKit runtime libraries; actual engine launch and rendering succeeded.",
+    "Catalog controls now wait until hydration before accepting input; deliberate JavaScript-delay regression passed in all five browser profiles.",
+    "Full-page source-photo screenshots use CSS pixels to stay within WebKit bitmap dimension limits."
+  ],
+  "limitations": [
+    "Browser profiles emulate mobile devices; no physical Safari/iPhone or Chrome/Android devices were tested.",
+    "Initial failure and rerun reports remain preserved; this is not a claim of 90 initial first-pass successes.",
+    "Temporary libraries are not in the system ldconfig cache; the cache-only precheck was skipped for local reruns, followed by real browser launch and page tests."
+  ],
+  "scenarios": [
+    {
+      "project": "chromium-desktop",
+      "file": "admin-order.spec.ts",
+      "title": "changes shipping price and preserves pending Jerusalem fee",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "admin-order.spec.ts",
+      "title": "updates order and payment states, rejects cross-origin writes and audits history",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "admin-order.spec.ts",
+      "title": "cancellation restores reserved stock exactly once and cannot reopen",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "admin-order.spec.ts",
+      "title": "changes shipping price and preserves pending Jerusalem fee",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "admin-order.spec.ts",
+      "title": "updates order and payment states, rejects cross-origin writes and audits history",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "admin-order.spec.ts",
+      "title": "cancellation restores reserved stock exactly once and cannot reopen",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "admin-order.spec.ts",
+      "title": "changes shipping price and preserves pending Jerusalem fee",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "admin-order.spec.ts",
+      "title": "updates order and payment states, rejects cross-origin writes and audits history",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "admin-order.spec.ts",
+      "title": "cancellation restores reserved stock exactly once and cannot reopen",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "admin-order.spec.ts",
+      "title": "changes shipping price and preserves pending Jerusalem fee",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "admin-order.spec.ts",
+      "title": "updates order and payment states, rejects cross-origin writes and audits history",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "admin-order.spec.ts",
+      "title": "cancellation restores reserved stock exactly once and cannot reopen",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "admin-order.spec.ts",
+      "title": "changes shipping price and preserves pending Jerusalem fee",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "admin-order.spec.ts",
+      "title": "updates order and payment states, rejects cross-origin writes and audits history",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "admin-order.spec.ts",
+      "title": "cancellation restores reserved stock exactly once and cannot reopen",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "admin.spec.ts",
+      "title": "logs in, changes product price/availability, audits and logs out",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "admin.spec.ts",
+      "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "admin.spec.ts",
+      "title": "expired sessions cannot call an admin mutation",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "admin.spec.ts",
+      "title": "logs in, changes product price/availability, audits and logs out",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "admin.spec.ts",
+      "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "admin.spec.ts",
+      "title": "expired sessions cannot call an admin mutation",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "admin.spec.ts",
+      "title": "logs in, changes product price/availability, audits and logs out",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "admin.spec.ts",
+      "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "admin.spec.ts",
+      "title": "expired sessions cannot call an admin mutation",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "admin.spec.ts",
+      "title": "logs in, changes product price/availability, audits and logs out",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "admin.spec.ts",
+      "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "admin.spec.ts",
+      "title": "expired sessions cannot call an admin mutation",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "admin.spec.ts",
+      "title": "logs in, changes product price/availability, audits and logs out",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "admin.spec.ts",
+      "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "admin.spec.ts",
+      "title": "expired sessions cannot call an admin mutation",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "catalog-review.spec.ts",
+      "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "catalog-review.spec.ts",
+      "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "catalog-review.spec.ts",
+      "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-fixes.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "catalog-review.spec.ts",
+      "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "catalog-review.spec.ts",
+      "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "checkout.spec.ts",
+      "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "checkout.spec.ts",
+      "title": "rejects Gaza and forged fees in direct HTTP requests",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "checkout.spec.ts",
+      "title": "deletes a cart line and rejects an unavailable product at checkout",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "checkout.spec.ts",
+      "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "checkout.spec.ts",
+      "title": "rejects Gaza and forged fees in direct HTTP requests",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "checkout.spec.ts",
+      "title": "deletes a cart line and rejects an unavailable product at checkout",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "checkout.spec.ts",
+      "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-fixes.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "checkout.spec.ts",
+      "title": "rejects Gaza and forged fees in direct HTTP requests",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "checkout.spec.ts",
+      "title": "deletes a cart line and rejects an unavailable product at checkout",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "checkout.spec.ts",
+      "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "checkout.spec.ts",
+      "title": "rejects Gaza and forged fees in direct HTTP requests",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "checkout.spec.ts",
+      "title": "deletes a cart line and rejects an unavailable product at checkout",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "checkout.spec.ts",
+      "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "checkout.spec.ts",
+      "title": "rejects Gaza and forged fees in direct HTTP requests",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "checkout.spec.ts",
+      "title": "deletes a cart line and rejects an unavailable product at checkout",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "repeat-purchase.spec.ts",
+      "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "repeat-purchase.spec.ts",
+      "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "repeat-purchase.spec.ts",
+      "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "repeat-purchase.spec.ts",
+      "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "repeat-purchase.spec.ts",
+      "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "store-preview.spec.ts",
+      "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "store-preview.spec.ts",
+      "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "store-preview.spec.ts",
+      "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "store-preview.spec.ts",
+      "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "store-preview.spec.ts",
+      "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "store.spec.ts",
+      "title": "Arabic RTL pages render and stay within the viewport",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "store.spec.ts",
+      "title": "home navigation and permitted contact links work without tracking scripts",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "store.spec.ts",
+      "title": "administration and order APIs enforce trust boundaries",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "store.spec.ts",
+      "title": "missing pages and product drafts do not expose data",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "store.spec.ts",
+      "title": "login never places a password in the URL when JavaScript is unavailable",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "store.spec.ts",
+      "title": "Arabic RTL pages render and stay within the viewport",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "store.spec.ts",
+      "title": "home navigation and permitted contact links work without tracking scripts",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "store.spec.ts",
+      "title": "administration and order APIs enforce trust boundaries",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "store.spec.ts",
+      "title": "missing pages and product drafts do not expose data",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "store.spec.ts",
+      "title": "login never places a password in the URL when JavaScript is unavailable",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "store.spec.ts",
+      "title": "Arabic RTL pages render and stay within the viewport",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "store.spec.ts",
+      "title": "home navigation and permitted contact links work without tracking scripts",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "store.spec.ts",
+      "title": "administration and order APIs enforce trust boundaries",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "store.spec.ts",
+      "title": "missing pages and product drafts do not expose data",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "store.spec.ts",
+      "title": "login never places a password in the URL when JavaScript is unavailable",
+      "status": "passed",
+      "evidence": "playwright-webkit-prelaunch-rerun.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "store.spec.ts",
+      "title": "Arabic RTL pages render and stay within the viewport",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "store.spec.ts",
+      "title": "home navigation and permitted contact links work without tracking scripts",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "store.spec.ts",
+      "title": "administration and order APIs enforce trust boundaries",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "store.spec.ts",
+      "title": "missing pages and product drafts do not expose data",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "store.spec.ts",
+      "title": "login never places a password in the URL when JavaScript is unavailable",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "store.spec.ts",
+      "title": "Arabic RTL pages render and stay within the viewport",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "store.spec.ts",
+      "title": "home navigation and permitted contact links work without tracking scripts",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "store.spec.ts",
+      "title": "administration and order APIs enforce trust boundaries",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "store.spec.ts",
+      "title": "missing pages and product drafts do not expose data",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "store.spec.ts",
+      "title": "login never places a password in the URL when JavaScript is unavailable",
+      "status": "passed",
+      "evidence": "playwright-prelaunch-review.json"
+    },
+    {
+      "project": "chromium-desktop",
+      "file": "catalog-hydration.spec.ts",
+      "title": "enables search only when input can be handled, then filters without losing the query",
+      "status": "passed",
+      "evidence": "playwright-catalog-hydration.json"
+    },
+    {
+      "project": "firefox-desktop",
+      "file": "catalog-hydration.spec.ts",
+      "title": "enables search only when input can be handled, then filters without losing the query",
+      "status": "passed",
+      "evidence": "playwright-catalog-hydration.json"
+    },
+    {
+      "project": "webkit-iphone-emulation",
+      "file": "catalog-hydration.spec.ts",
+      "title": "enables search only when input can be handled, then filters without losing the query",
+      "status": "passed",
+      "evidence": "playwright-catalog-hydration.json"
+    },
+    {
+      "project": "chromium-android-emulation",
+      "file": "catalog-hydration.spec.ts",
+      "title": "enables search only when input can be handled, then filters without losing the query",
+      "status": "passed",
+      "evidence": "playwright-catalog-hydration.json"
+    },
+    {
+      "project": "chromium-320",
+      "file": "catalog-hydration.spec.ts",
+      "title": "enables search only when input can be handled, then filters without losing the query",
+      "status": "passed",
+      "evidence": "playwright-catalog-hydration.json"
+    }
+  ]
+}

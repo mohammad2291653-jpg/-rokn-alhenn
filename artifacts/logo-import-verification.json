@@ -1,0 +1,74 @@
+{
+  "verifiedAt": "2026-10-29T03:34:38.399Z",
+  "checks": [
+    {
+      "viewport": 320,
+      "logos": [
+        {
+          "src": "/brand/rokn-alhenna-logo.webp",
+          "naturalWidth": 1080,
+          "naturalHeight": 1080,
+          "width": 68,
+          "height": 68,
+          "fit": "contain"
+        },
+        {
+          "src": "/brand/rokn-alhenna-logo.webp",
+          "naturalWidth": 1080,
+          "naturalHeight": 1080,
+          "width": 96,
+          "height": 96,
+          "fit": "contain"
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": 390,
+      "logos": [
+        {
+          "src": "/brand/rokn-alhenna-logo.webp",
+          "naturalWidth": 1080,
+          "naturalHeight": 1080,
+          "width": 68,
+          "height": 68,
+          "fit": "contain"
+        },
+        {
+          "src": "/brand/rokn-alhenna-logo.webp",
+          "naturalWidth": 1080,
+          "naturalHeight": 1080,
+          "width": 96,
+          "height": 96,
+          "fit": "contain"
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": 1440,
+      "logos": [
+        {
+          "src": "/brand/rokn-alhenna-logo.webp",
+          "naturalWidth": 1080,
+          "naturalHeight": 1080,
+          "width": 88,
+          "height": 88,
+          "fit": "contain"
+        },
+        {
+          "src": "/brand/rokn-alhenna-logo.webp",
+          "naturalWidth": 1080,
+          "naturalHeight": 1080,
+          "width": 120,
+          "height": 120,
+          "fit": "contain"
+        }
+      ],
+      "horizontalOverflow": false
+    }
+  ],
+  "servedLogoSha256": "1603fba33ebb92fbc2b4bdf991e2d5c9be7d79ae9469346aba81c5b0d0a76d15",
+  "faviconStatus": 200,
+  "result": "passed"
+}

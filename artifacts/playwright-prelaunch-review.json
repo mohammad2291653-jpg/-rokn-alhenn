@@ -1,0 +1,3713 @@
+{
+  "config": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/workspace/rokn-alhenna/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/workspace/rokn-alhenna/playwright.config.ts",
+    "rootDir": "/workspace/rokn-alhenna/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium-desktop",
+        "name": "chromium-desktop",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox-desktop",
+        "name": "firefox-desktop",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit-iphone-emulation",
+        "name": "webkit-iphone-emulation",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium-android-emulation",
+        "name": "chromium-android-emulation",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium-320",
+        "name": "chromium-320",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium-desktop",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "snapshotDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox-desktop",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "snapshotDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "firefox"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox-desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit-iphone-emulation",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "snapshotDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-iphone-emulation"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium-android-emulation",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "snapshotDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Mobile Safari/537.36",
+          "viewport": {
+            "width": 412,
+            "height": 839
+          },
+          "screen": {
+            "width": 412,
+            "height": 915
+          },
+          "deviceScaleFactor": 2.625,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-android-emulation"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/workspace/rokn-alhenna/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium-320",
+        "testDir": "/workspace/rokn-alhenna/tests/e2e",
+        "snapshotDir": "/workspace/rokn-alhenna/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3001",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 320,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-320"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "artifacts/playwright-prelaunch-review.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "admin-order.spec.ts",
+      "file": "admin-order.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "authorized delivery and order operations",
+          "file": "admin-order.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "changes shipping price and preserves pending Jerusalem fee",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13138,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:37:13.859Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-46e72e534df23c87d3eb",
+              "file": "admin-order.spec.ts",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "updates order and payment states, rejects cross-origin writes and audits history",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9204,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:37:27.636Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-486ec5aaaa39f9ffa87d",
+              "file": "admin-order.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "cancellation restores reserved stock exactly once and cannot reopen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5771,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:37:36.862Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-96bee2a38554a70b69e2",
+              "file": "admin-order.spec.ts",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "changes shipping price and preserves pending Jerusalem fee",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7309,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:39:50.610Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-2793bad6359c8eaff8d2",
+              "file": "admin-order.spec.ts",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "updates order and payment states, rejects cross-origin writes and audits history",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6951,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:39:59.096Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-7e8c11ac8820726e2aa3",
+              "file": "admin-order.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "cancellation restores reserved stock exactly once and cannot reopen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4032,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:40:06.139Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-522cc81d8a50742e702a",
+              "file": "admin-order.spec.ts",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "changes shipping price and preserves pending Jerusalem fee",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:00.652Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-4c9f7-erves-pending-Jerusalem-fee-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-4c9f7-erves-pending-Jerusalem-fee-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-4c9f7-erves-pending-Jerusalem-fee-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-d32235fe0309411c6d1c",
+              "file": "admin-order.spec.ts",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "updates order and payment states, rejects cross-origin writes and audits history",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:06.068Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-9ef78-n-writes-and-audits-history-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-9ef78-n-writes-and-audits-history-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-9ef78-n-writes-and-audits-history-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-95a73a8fb2c7b951b6bf",
+              "file": "admin-order.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "cancellation restores reserved stock exactly once and cannot reopen",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:11.812Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-143cc-ctly-once-and-cannot-reopen-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-143cc-ctly-once-and-cannot-reopen-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-order-authorized-del-143cc-ctly-once-and-cannot-reopen-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-8505ac912fbc003fed03",
+              "file": "admin-order.spec.ts",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "changes shipping price and preserves pending Jerusalem fee",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6462,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:43:06.440Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-b7b8609d73d50768796f",
+              "file": "admin-order.spec.ts",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "updates order and payment states, rejects cross-origin writes and audits history",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8609,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:43:13.884Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-2db799bc0546ae648dd4",
+              "file": "admin-order.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "cancellation restores reserved stock exactly once and cannot reopen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5375,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:43:22.586Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-eaf626cfa589c7dbc42a",
+              "file": "admin-order.spec.ts",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "changes shipping price and preserves pending Jerusalem fee",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3322,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:46:09.338Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-41a28f2f879a2329f350",
+              "file": "admin-order.spec.ts",
+              "line": 33,
+              "column": 3
+            },
+            {
+              "title": "updates order and payment states, rejects cross-origin writes and audits history",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7249,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:46:13.776Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-e1c08c42ac6fbb55c075",
+              "file": "admin-order.spec.ts",
+              "line": 67,
+              "column": 3
+            },
+            {
+              "title": "cancellation restores reserved stock exactly once and cannot reopen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3812,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:46:21.052Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54c3e9ac3c46cd29a4fc-c17f2bb8da36f7be3606",
+              "file": "admin-order.spec.ts",
+              "line": 141,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "admin.spec.ts",
+      "file": "admin.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "authorized administration using isolated test records",
+          "file": "admin.spec.ts",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "logs in, changes product price/availability, audits and logs out",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12910,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:37:42.843Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-76a4e23673462baaa001",
+              "file": "admin.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12168,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:37:56.070Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-290a3a6381e42cca3f1b",
+              "file": "admin.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "expired sessions cannot call an admin mutation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3882,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:38:08.263Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-98b4bd25756d315ca930",
+              "file": "admin.spec.ts",
+              "line": 75,
+              "column": 3
+            },
+            {
+              "title": "logs in, changes product price/availability, audits and logs out",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8095,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:40:10.457Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-20dbdbd0c5100c115113",
+              "file": "admin.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7243,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:40:18.785Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-7c49606cf5c9cf7d11bc",
+              "file": "admin.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "expired sessions cannot call an admin mutation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4905,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:40:26.081Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-00f0b434955dcdb66eba",
+              "file": "admin.spec.ts",
+              "line": 75,
+              "column": 3
+            },
+            {
+              "title": "logs in, changes product price/availability, audits and logs out",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:17.596Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-e56a7-ability-audits-and-logs-out-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-e56a7-ability-audits-and-logs-out-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-e56a7-ability-audits-and-logs-out-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-058b3a65e3bdc651e2d8",
+              "file": "admin.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:23.401Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-e73f6-me-review-before-publishing-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-e73f6-me-review-before-publishing-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-e73f6-me-review-before-publishing-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-6dffd69e6915f34d4080",
+              "file": "admin.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "expired sessions cannot call an admin mutation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 33,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:30.969Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-c1112-nnot-call-an-admin-mutation-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-c1112-nnot-call-an-admin-mutation-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/admin-authorized-administr-c1112-nnot-call-an-admin-mutation-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-f491e88bdda71fe76e78",
+              "file": "admin.spec.ts",
+              "line": 75,
+              "column": 3
+            },
+            {
+              "title": "logs in, changes product price/availability, audits and logs out",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8063,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:43:28.368Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-879cc811e4fc27e03388",
+              "file": "admin.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7386,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:43:37.160Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-228b60581a27f7731b98",
+              "file": "admin.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "expired sessions cannot call an admin mutation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5124,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:43:44.598Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-953e8a9e933d97777976",
+              "file": "admin.spec.ts",
+              "line": 75,
+              "column": 3
+            },
+            {
+              "title": "logs in, changes product price/availability, audits and logs out",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7722,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:46:25.301Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-8bdf632f18a52d8cbd4d",
+              "file": "admin.spec.ts",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "uploads an original image, preserves its bytes and requires name review before publishing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9395,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:46:33.377Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-84174606acaf38fa48cc",
+              "file": "admin.spec.ts",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "expired sessions cannot call an admin mutation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6356,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:46:42.839Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d4043a9dd1ab94463227-b123af726002341bab1e",
+              "file": "admin.spec.ts",
+              "line": 75,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "catalog-review.spec.ts",
+      "file": "catalog-review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "private original product media review",
+          "file": "catalog-review.spec.ts",
+          "line": 27,
+          "column": 6,
+          "specs": [
+            {
+              "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45553,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "(node:31904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:31915) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:38:12.259Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "64df918c4ee84802b985-95afc668613fd5c7c722",
+              "file": "catalog-review.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20246,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "(node:33009) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:33020) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:40:31.155Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "64df918c4ee84802b985-3185aeaeca225aab0255",
+              "file": "catalog-review.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "(node:36176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:36189) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:40.936Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/catalog-review-private-ori-a2d74-t-desktop-and-mobile-widths-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/catalog-review-private-ori-a2d74-t-desktop-and-mobile-widths-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/catalog-review-private-ori-a2d74-t-desktop-and-mobile-widths-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64df918c4ee84802b985-25d493592c2d8b40677d",
+              "file": "catalog-review.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 73426,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "(node:40047) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:40058) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:43:49.943Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "64df918c4ee84802b985-eb19501935a1cd68f545",
+              "file": "catalog-review.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "protects original review metadata, shows owner resolutions and loads 26 images at desktop and mobile widths",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 28266,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "(node:41177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:41192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:46:49.670Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "64df918c4ee84802b985-0bbe42cb7a4076c5915b",
+              "file": "catalog-review.spec.ts",
+              "line": 87,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "checkout.spec.ts",
+      "file": "checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "customer purchase flow in the isolated QA database",
+          "file": "checkout.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9626,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:38:59.771Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-f979c95425ef74a1026a",
+              "file": "checkout.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "rejects Gaza and forged fees in direct HTTP requests",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 149,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:39:09.706Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-1179f4713040dc63e115",
+              "file": "checkout.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "deletes a cart line and rejects an unavailable product at checkout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5381,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:39:09.869Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-f901265d59f9a0775fd8",
+              "file": "checkout.spec.ts",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9178,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:40:53.051Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-71d7ec9b74b3243c10a8",
+              "file": "checkout.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "rejects Gaza and forged fees in direct HTTP requests",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 140,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:41:02.498Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-389cf66ac043e53ec9e7",
+              "file": "checkout.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "deletes a cart line and rejects an unavailable product at checkout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5445,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:41:02.654Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-ada3e095fa190611c8cc",
+              "file": "checkout.spec.ts",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:48.252Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-1911d--after-a-connection-failure-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-1911d--after-a-connection-failure-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-1911d--after-a-connection-failure-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-dcf672e757e42e780c13",
+              "file": "checkout.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "rejects Gaza and forged fees in direct HTTP requests",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 375,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:50.942Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-e194ba57de391cf1b35b",
+              "file": "checkout.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "deletes a cart line and rejects an unavailable product at checkout",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:52.091Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-3a7f0-ailable-product-at-checkout-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-3a7f0-ailable-product-at-checkout-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/checkout-customer-purchase-3a7f0-ailable-product-at-checkout-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-907d55e5382ab38ffc6f",
+              "file": "checkout.spec.ts",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11364,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:45:06.161Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-3532a423f3980a9a0441",
+              "file": "checkout.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "rejects Gaza and forged fees in direct HTTP requests",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 273,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:45:18.079Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-74a3d73865825946385b",
+              "file": "checkout.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "deletes a cart line and rejects an unavailable product at checkout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8666,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:45:18.370Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-30c7d41cdfdcc308ee2e",
+              "file": "checkout.spec.ts",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "searches, persists cart quantities, changes delivery zone and saves a COD order after a connection failure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 7388,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:47:23.478Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-3e3f1e7c8afc28aef213",
+              "file": "checkout.spec.ts",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "rejects Gaza and forged fees in direct HTTP requests",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 112,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:47:31.142Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-54fd0df04c45600f2a99",
+              "file": "checkout.spec.ts",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "deletes a cart line and rejects an unavailable product at checkout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4196,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:47:31.268Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25ab1bfc84c57e3e3a45-e14c08f16087ce8545d8",
+              "file": "checkout.spec.ts",
+              "line": 89,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "repeat-purchase.spec.ts",
+      "file": "repeat-purchase.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "successful purchase idempotency lifecycle",
+          "file": "repeat-purchase.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8966,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:39:15.318Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf21fef374b5f08f5ec9-02acb0846fe60cf9e4ec",
+              "file": "repeat-purchase.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8968,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:41:08.163Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf21fef374b5f08f5ec9-29ecb55b1cab59c507bc",
+              "file": "repeat-purchase.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:53.902Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/repeat-purchase-successful-fb99c-er-after-the-first-succeeds-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/repeat-purchase-successful-fb99c-er-after-the-first-succeeds-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/repeat-purchase-successful-fb99c-er-after-the-first-succeeds-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "cf21fef374b5f08f5ec9-7810b0e1b681f0c0228b",
+              "file": "repeat-purchase.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10418,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:45:27.212Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf21fef374b5f08f5ec9-d15e38e1583d27c926e8",
+              "file": "repeat-purchase.spec.ts",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "a deliberate identical second purchase gets a new order after the first succeeds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5892,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:47:35.524Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf21fef374b5f08f5ec9-eca4c8f7f7a79bda0787",
+              "file": "repeat-purchase.spec.ts",
+              "line": 10,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "store-preview.spec.ts",
+      "file": "store-preview.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "private storefront preview",
+          "file": "store-preview.spec.ts",
+          "line": 13,
+          "column": 6,
+          "specs": [
+            {
+              "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-desktop",
+                  "projectName": "chromium-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9771,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:39:24.539Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efab4a959a9386564909-97dcb87406e207f05995",
+              "file": "store-preview.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox-desktop",
+                  "projectName": "firefox-desktop",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10293,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:41:17.401Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efab4a959a9386564909-a05423d53228863ec7f5",
+              "file": "store-preview.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit-iphone-emulation",
+                  "projectName": "webkit-iphone-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:42:56.486Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/store-preview-private-stor-16d5c-t-purchases-or-cart-changes-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/workspace/rokn-alhenna/test-results/store-preview-private-stor-16d5c-t-purchases-or-cart-changes-webkit-iphone-emulation/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/workspace/rokn-alhenna/test-results/store-preview-private-stor-16d5c-t-purchases-or-cart-changes-webkit-iphone-emulation/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "efab4a959a9386564909-a57b2d99ed05f66ef18d",
+              "file": "store-preview.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-android-emulation",
+                  "projectName": "chromium-android-emulation",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16516,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:45:38.804Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efab4a959a9386564909-0968632d1f0f9d22f018",
+              "file": "store-preview.spec.ts",
+              "line": 62,
+              "column": 3
+            },
+            {
+              "title": "keeps drafts private, previews real data and images without purchases or cart changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium-320",
+                  "projectName": "chromium-320",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9070,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T05:47:41.666Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "efab4a959a9386564909-6b73ab05eeeb8f567dee",
+              "file": "store-preview.spec.ts",
+              "line": 62,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "store.spec.ts",
+      "file": "store.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Arabic RTL pages render and stay within the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-desktop",
+              "projectName": "chromium-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8177,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:39:34.547Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-0ae702117882f6261fd3",
+          "file": "store.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "home navigation and permitted contact links work without tracking scripts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-desktop",
+              "projectName": "chromium-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1691,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:39:42.743Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-ce129783d7c27bee2797",
+          "file": "store.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "administration and order APIs enforce trust boundaries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-desktop",
+              "projectName": "chromium-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1380,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:39:44.451Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-b561b70a0ff2ab05d259",
+          "file": "store.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "missing pages and product drafts do not expose data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-desktop",
+              "projectName": "chromium-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:39:45.851Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-3c03dbd250d07dd06dc1",
+          "file": "store.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "login never places a password in the URL when JavaScript is unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-desktop",
+              "projectName": "chromium-desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 839,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:39:48.885Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-97972910e5f4a38e7aeb",
+          "file": "store.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "Arabic RTL pages render and stay within the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-desktop",
+              "projectName": "firefox-desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13688,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:41:27.949Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-40a9cf00bb992151f115",
+          "file": "store.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "home navigation and permitted contact links work without tracking scripts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-desktop",
+              "projectName": "firefox-desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:41:41.657Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-104a7b02b56c8ac0a749",
+          "file": "store.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "administration and order APIs enforce trust boundaries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-desktop",
+              "projectName": "firefox-desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2350,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:41:45.934Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-7a88c8c30d5c307d806c",
+          "file": "store.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "missing pages and product drafts do not expose data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-desktop",
+              "projectName": "firefox-desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7317,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:41:48.353Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-12ff6c81591deb6a9fb1",
+          "file": "store.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "login never places a password in the URL when JavaScript is unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox-desktop",
+              "projectName": "firefox-desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2541,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:41:55.743Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-c145b31f6b25aa56dc72",
+          "file": "store.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "Arabic RTL pages render and stay within the viewport",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4,
+                  "error": {
+                    "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                    "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:42:58.891Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/rokn-alhenna/test-results/store-Arabic-RTL-pages-render-and-stay-within-the-viewport-webkit-iphone-emulation/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/rokn-alhenna/test-results/store-Arabic-RTL-pages-render-and-stay-within-the-viewport-webkit-iphone-emulation/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-0dadd2415701700f1e2a",
+          "file": "store.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "home navigation and permitted contact links work without tracking scripts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4,
+                  "error": {
+                    "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                    "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:43:00.401Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/rokn-alhenna/test-results/store-home-navigation-and--52093-rk-without-tracking-scripts-webkit-iphone-emulation/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/rokn-alhenna/test-results/store-home-navigation-and--52093-rk-without-tracking-scripts-webkit-iphone-emulation/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-9cc536bae6bda2a23065",
+          "file": "store.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "administration and order APIs enforce trust boundaries",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6,
+                  "error": {
+                    "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                    "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:43:02.078Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/rokn-alhenna/test-results/store-administration-and-order-APIs-enforce-trust-boundaries-webkit-iphone-emulation/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/rokn-alhenna/test-results/store-administration-and-order-APIs-enforce-trust-boundaries-webkit-iphone-emulation/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-793a46a0aa081a3e5ad9",
+          "file": "store.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "missing pages and product drafts do not expose data",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2,
+                  "error": {
+                    "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                    "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:43:03.538Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/rokn-alhenna/test-results/store-missing-pages-and-product-drafts-do-not-expose-data-webkit-iphone-emulation/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/rokn-alhenna/test-results/store-missing-pages-and-product-drafts-do-not-expose-data-webkit-iphone-emulation/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-e52ae692635b3f066bc4",
+          "file": "store.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "login never places a password in the URL when JavaScript is unavailable",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-iphone-emulation",
+              "projectName": "webkit-iphone-emulation",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4,
+                  "error": {
+                    "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝",
+                    "stack": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     liblzo2.so.2                                     ║\n║     libGLESv2.so.2                                   ║\n╚══════════════════════════════════════════════════════╝"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:43:04.901Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/workspace/rokn-alhenna/test-results/store-login-never-places-a-9c4fc-n-JavaScript-is-unavailable-webkit-iphone-emulation/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/workspace/rokn-alhenna/test-results/store-login-never-places-a-9c4fc-n-JavaScript-is-unavailable-webkit-iphone-emulation/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-080f7d93d4726facfef8",
+          "file": "store.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "Arabic RTL pages render and stay within the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-android-emulation",
+              "projectName": "chromium-android-emulation",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6532,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:45:55.757Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-98b0558e0fbbca524d81",
+          "file": "store.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "home navigation and permitted contact links work without tracking scripts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-android-emulation",
+              "projectName": "chromium-android-emulation",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:46:02.310Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-1dfc467fba300e3a1f82",
+          "file": "store.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "administration and order APIs enforce trust boundaries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-android-emulation",
+              "projectName": "chromium-android-emulation",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1089,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:46:03.742Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-9e636c7a14ec0e5f7758",
+          "file": "store.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "missing pages and product drafts do not expose data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-android-emulation",
+              "projectName": "chromium-android-emulation",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3017,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:46:04.848Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-f4308c06576c9e9612eb",
+          "file": "store.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "login never places a password in the URL when JavaScript is unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-android-emulation",
+              "projectName": "chromium-android-emulation",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 577,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:46:07.885Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-4ec32629b4bd7899ea81",
+          "file": "store.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "Arabic RTL pages render and stay within the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-320",
+              "projectName": "chromium-320",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7001,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:47:50.979Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-3b51503dbd43c936faa9",
+          "file": "store.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "home navigation and permitted contact links work without tracking scripts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-320",
+              "projectName": "chromium-320",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2022,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:47:57.999Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-6ebdfcd2aebb36902a7d",
+          "file": "store.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "administration and order APIs enforce trust boundaries",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-320",
+              "projectName": "chromium-320",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1127,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:48:00.039Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-340d458f358a38ef86b6",
+          "file": "store.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "missing pages and product drafts do not expose data",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-320",
+              "projectName": "chromium-320",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4143,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:48:01.198Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-d656db22c7d641da74b8",
+          "file": "store.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "login never places a password in the URL when JavaScript is unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-320",
+              "projectName": "chromium-320",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 914,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T05:48:05.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "142cdf6a1adeb8604bd3-1bf18ca74a66dd92e848",
+          "file": "store.spec.ts",
+          "line": 53,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T05:37:12.677Z",
+    "duration": 653835.549,
+    "expected": 69,
+    "skipped": 0,
+    "unexpected": 16,
+    "flaky": 0
+  }
+}

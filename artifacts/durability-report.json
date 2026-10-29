@@ -1,0 +1,19 @@
+{
+  "measuredAt": "2026-10-29T02:31:36.101Z",
+  "database": "PostgreSQL isolated temporary cluster on port 5434",
+  "result": "passed",
+  "checks": [
+    "Both production migrations applied and exact nine-product seed persisted in isolated database",
+    "Real transactional COD order created at 75 + 20 = 95 ILS as UNPAID",
+    "Controlled administrator bootstrap stores a password hash; correct password verifies and wrong password fails",
+    "Repeated administrator bootstrap rejects overwrite and duplicate account creation",
+    "Database stop/start retains saved order, original name/price/shipping snapshots, payment state and history",
+    "Secure tracking and idempotent replay work after database restart without duplicate order",
+    "Products, test image metadata and administrator survive database restart",
+    "Redeploy migrations and seed preserve existing order and administrative price/delivery changes"
+  ],
+  "limitations": [
+    "Local PostgreSQL restart/redeploy drill only; managed production database not provisioned.",
+    "pg_dump/pg_restore backup restoration drill was not executed because these binaries are unavailable."
+  ]
+}

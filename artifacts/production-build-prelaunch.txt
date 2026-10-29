@@ -1,0 +1,71 @@
+
+> rokn-alhenna@1.0.0 build
+> prisma generate && next build && node scripts/prepare-standalone.mjs
+
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma/schema.prisma.
+
+✔ Generated Prisma Client (v7.10.1) to ./node_modules/@prisma/client in 685ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+
+▲ Next.js 16.4.3 (Turbopack)
+- Environments: .env
+✓ Running next.config.ts took 182ms
+- Experiments (use with caution):
+  · serverActions
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.8s
+  Running TypeScript ...
+  Finished TypeScript in 12.0s ...
+  Collecting page data using 2 workers ...
+  Generating static pages using 2 workers (0/9) ...
+  Generating static pages using 2 workers (2/9) 
+  Generating static pages using 2 workers (4/9) 
+  Generating static pages using 2 workers (6/9) 
+✓ Generating static pages using 2 workers (9/9) in 519ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ƒ /[info]
+├ ƒ /admin
+├ ƒ /admin/catalog-review
+├ ƒ /admin/content
+├ ƒ /admin/orders
+├ ƒ /admin/orders/[id]
+├ ƒ /admin/products
+├ ƒ /admin/products/[id]
+├ ƒ /admin/products/new
+├ ƒ /admin/settings
+├ ƒ /admin/store-preview
+├ ƒ /admin/store-preview/[slug]
+├ ƒ /api/admin/[resource]
+├ ƒ /api/admin/orders/export
+├ ƒ /api/admin/uploads
+├ ƒ /api/auth/[...all]
+├ ƒ /api/checkout/quote
+├ ƒ /api/health
+├ ƒ /api/order-status
+├ ƒ /api/orders
+├ ƒ /api/site-icon
+├ ƒ /blog
+├ ƒ /blog/[slug]
+├ ƒ /cart
+├ ƒ /checkout
+├ ○ /opengraph-image
+├ ƒ /order-status
+├ ƒ /products
+├ ƒ /products/[slug]
+├ ○ /robots.txt
+└ ƒ /sitemap.xml
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+Standalone prepared with static assets; .env and local uploaded media excluded.

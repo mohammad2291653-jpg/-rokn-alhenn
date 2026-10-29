@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-10-29T06:00:34.435Z",
+  "result": "passed",
+  "image": "sha256:6a2d7b8581dd567d41f98ff311f6f5b110b307e698ab0d1358afadbd7755ab64",
+  "checks": {
+    "productionContainerStarted": true,
+    "configuredPortRespected": true,
+    "nonRootUser": true,
+    "actualQaPostgresHealthPassed": true,
+    "adminPreviewRequiresAuthentication": true,
+    "noIndexAndNoStoreHeaders": true,
+    "originalWebPhotoBytesPreserved": true,
+    "noEnvFilesOrDevelopmentDatabaseInImage": true,
+    "noRawProductSourcesInImage": true
+  },
+  "scope": {
+    "database": "isolated test_rokn; read-only health query",
+    "hostNetworking": "local loopback-only smoke test to reach the local QA PostgreSQL instance",
+    "mainDatabaseAccessed": false,
+    "commercialLaunchApproved": false,
+    "cloudDeployment": false,
+    "cloudS3UploadsTested": false,
+    "fullBusinessBrowserMatrixInsideDocker": false
+  },
+  "cleanup": {
+    "temporaryContainerRemoved": true,
+    "temporaryEnvironmentFileRemoved": true
+  },
+  "includesCatalogHydrationFix": true
+}

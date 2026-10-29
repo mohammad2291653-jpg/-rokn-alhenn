@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-29T02:45:46.884Z",
+  "readOnly": true,
+  "actualDatabaseRecords": 9,
+  "findings": [
+    {
+      "slug": "integrated-henna",
+      "name": "خلطة الحناء المتكاملة",
+      "weightGrams": 500,
+      "priceAgorot": 7500,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "sidr-mask",
+      "name": "ماسك السدر",
+      "weightGrams": 200,
+      "priceAgorot": 11000,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "red-mashat-mask",
+      "name": "ماسك المشاط الأحمر",
+      "weightGrams": 500,
+      "priceAgorot": 11000,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "green-mashat-mask",
+      "name": "ماسك المشاط الأخضر",
+      "weightGrams": 500,
+      "priceAgorot": 13000,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "ground-henna",
+      "name": "الحناء المطحونة",
+      "weightGrams": 200,
+      "priceAgorot": 4000,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "sidr-powder",
+      "name": "بودرة السدر",
+      "weightGrams": 100,
+      "priceAgorot": 5500,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "red-mashat-powder",
+      "name": "بودرة المشاط الأحمر",
+      "weightGrams": 200,
+      "priceAgorot": 5000,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "green-mashat-powder",
+      "name": "بودرة المشاط الأخضر",
+      "weightGrams": 200,
+      "priceAgorot": 6000,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    },
+    {
+      "slug": "dark-color-powder",
+      "name": "بودرة اللون الداكن بعد الحناء",
+      "weightGrams": 100,
+      "priceAgorot": 6000,
+      "status": "DRAFT",
+      "originalPhotoProvided": false,
+      "result": "passed"
+    }
+  ],
+  "physicalPackagingComparison": "not performed: no source assets supplied"
+}

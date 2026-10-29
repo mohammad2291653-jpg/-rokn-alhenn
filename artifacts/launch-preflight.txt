@@ -1,0 +1,20 @@
+
+> rokn-alhenna@1.0.0 preflight
+> tsx scripts/preflight.ts
+
+Launch blocked:
+• NEXT_PUBLIC_SITE_URL must be the real HTTPS origin.
+• Owner has not authorized commercial launch (COMMERCIAL_LAUNCH_APPROVED).
+• Production requires permanent S3-compatible storage.
+• Missing S3_REGION.
+• Missing S3_BUCKET.
+• Missing S3_ACCESS_KEY_ID.
+• Missing S3_SECRET_ACCESS_KEY.
+• Missing S3_PUBLIC_URL.
+• Create a private administrator before launch.
+• Checkout is disabled.
+• returns policy needs owner review and approval.
+• privacy policy needs owner review and approval.
+• terms policy needs owner review and approval.
+• Original official logo missing.
+• No products are approved and published.

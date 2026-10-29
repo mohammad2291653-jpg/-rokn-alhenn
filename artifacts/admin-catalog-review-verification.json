@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-29T05:56:41.247Z",
+  "database": "test_rokn",
+  "mainDatabaseMutated": false,
+  "credentialsRecorded": false,
+  "before": {
+    "checkoutEnabled": true,
+    "matchingProducts": 0,
+    "users": 0,
+    "orders": 0,
+    "reviewExisted": false
+  },
+  "import": {
+    "result": "passed",
+    "created": 24,
+    "attached": 24,
+    "draftProducts": 7,
+    "unassigned": 2,
+    "checkoutRemainsDisabled": true
+  },
+  "viewports": [
+    {
+      "width": 1440,
+      "imagesLoaded": 26,
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "width": 390,
+      "imagesLoaded": 26,
+      "viewport": 390,
+      "document": 390
+    }
+  ],
+  "storefrontPreview": {
+    "viewports": [
+      {
+        "width": 1440,
+        "viewport": 1440,
+        "document": 1440
+      },
+      {
+        "width": 390,
+        "viewport": 390,
+        "document": 390
+      },
+      {
+        "width": 320,
+        "viewport": 320,
+        "document": 320
+      }
+    ],
+    "ownerPhotosLoaded": true,
+    "purchaseActionsHidden": true,
+    "hennaOwnerWashSequenceShown": true
+  },
+  "checks": {
+    "unauthenticatedRedirect": true,
+    "sourceMetadataNotInLogin": true,
+    "groups": 7,
+    "images": 26,
+    "attachedImages": 24,
+    "unassignedImages": 2,
+    "sidrConflictResolved": true,
+    "originalContradictionPreservedForAudit": true,
+    "bothMashatGroupsRed": true,
+    "editorNotice": true,
+    "productsRemainDraft": true,
+    "checkoutRemainsDisabled": true
+  },
+  "result": "passed",
+  "cleanup": {
+    "checkoutRestored": true,
+    "usersAfter": 0,
+    "ordersAfter": 0,
+    "matchingProductsAfter": 0,
+    "reviewExistedAfter": false
+  }
+}

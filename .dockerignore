@@ -1,0 +1,12 @@
+node_modules
+.next*
+.local
+.env
+.env.*
+.git
+artifacts
+playwright-report
+test-results
+public/uploads
+product-assets
+brand-assets

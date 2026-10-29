@@ -1,0 +1,11 @@
+{
+  "verifiedAt": "2026-10-29T05:44:41.409566+00:00",
+  "sourceIndex": "https://deb.debian.org/debian/dists/trixie/main/binary-amd64/Packages.xz",
+  "package": "liblzo2-2",
+  "version": "2.10-3+b1",
+  "url": "https://deb.debian.org/debian/pool/main/l/lzo2/liblzo2-2_2.10-3+b1_amd64.deb",
+  "sha256": "f3032201fe2928a87e13f05ce256ff3ac2a7860c7e594dc51ae6d7348a4466ce",
+  "sha256Verified": true,
+  "temporaryLibraryPath": "/workspace/scratch/browser-libs/extracted/usr/lib/x86_64-linux-gnu",
+  "note": "User-space libraries are absent from the system ldconfig cache. Actual engine startup and full WebKit rerun validate dynamic loading; no system packages were modified."
+}

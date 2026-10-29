@@ -1,0 +1,118 @@
+{
+  "reviewedPages": [19,20,21,22,23,24,25,26],
+  "source": "Original extracted JPEG images from the owner-provided PDF; no edits to original images",
+  "pages": [
+    {
+      "page": 19,
+      "view": "Back label of a white mask jar; hand-held",
+      "visibleName": "ماسك المشاط الطبيعي 100%",
+      "candidateSlugs": ["green-mashat-mask", "red-mashat-mask"],
+      "mappingStatus": "Needs adjacent front image or owner confirmation; this back alone does not name red or green",
+      "weightVisible": false,
+      "ingredientsStatus": "No specific ingredient list on this side. Generic mentions of oils/vitamins/Indian herbs are not a full confirmed composition.",
+      "usageLegible": [
+        "افتحي العبوة واستخدمي الماسك مباشرة دون أي إضافات.",
+        "وزعي كمية مناسبة من الماسك على الجذور وكامل الشعر الجاف والنظيف.",
+        "يغطى بقبعة بلاستيكية.",
+        "يترك لمدة ٢ إلى ٤ ساعات ثم يغسل الشعر جيداً كالمعتاد."
+      ],
+      "warningsVisible": false,
+      "printedClaimsNotForAutomaticPublication": ["طبيعي 100%", "خالية من المواد الكيميائية", "نتائج من أول استخدام", "تدعم زيادة طول الشعر"],
+      "notes": "Clear usage side; printed marketing claims do not establish scientific evidence. PAO-like 3M icon visible, not interpreted as a product expiry date."
+    },
+    {
+      "page": 20,
+      "view": "Top lid of a floral pink cardboard box; other integrated-henna boxes behind",
+      "visibleName": "ركن الحناء (on top lid); خلطة الحناء المتكاملة visible on background boxes",
+      "candidateSlugs": ["integrated-henna"],
+      "mappingStatus": "Supplementary packaging context only; selected lid has no product name, avoid treating background text alone as definitive identification",
+      "mainPhotoRecommended": false,
+      "notes": "Top logo dark green on pale pink floral packaging. Background carton front appears to state 500 غرام and topical hair use."
+    },
+    {
+      "page": 21,
+      "view": "Front of a white cylindrical jar with olive-green brand/logo border",
+      "visibleName": "ماسك المشاط الغني",
+      "visibleWeightGrams": 500,
+      "candidateSlugs": ["green-mashat-mask"],
+      "mappingStatus": "Tentative green-mask match only; owner must confirm because front does not say الأخضر",
+      "nameNeedsConfirmation": true,
+      "printedClaimsNotForAutomaticPublication": ["طبيعي وعضوي 100%"],
+      "mainPhotoRecommended": true,
+      "notes": "Front clear and jar fully visible. Do not silently rename الغني to الأخضر."
+    },
+    {
+      "page": 22,
+      "view": "Plain mauve underside of a hand-held box; integrated-henna boxes visible behind",
+      "visibleName": null,
+      "candidateSlugs": ["integrated-henna"],
+      "mappingStatus": "Unconfirmed supplementary carton underside; do not infer selected product solely from boxes behind",
+      "mainPhotoRecommended": false
+    },
+    {
+      "page": 23,
+      "view": "Front of white jar placed on floral pink boxes",
+      "visibleName": "خلطة الحناء المتكاملة",
+      "visibleWeightGrams": 500,
+      "matchedSlug": "integrated-henna",
+      "mappingStatus": "Confident exact name and weight match to catalog",
+      "mainPhotoRecommended": true,
+      "printedClaimsNotForAutomaticPublication": ["طبيعي وعضوي 100%"]
+    },
+    {
+      "page": 24,
+      "view": "Usage/back side of integrated henna jar on same floral pink boxes",
+      "visibleName": "خلطة الحناء المتكاملة (within body copy)",
+      "matchedSlug": "integrated-henna",
+      "mappingStatus": "Confident name and continuous packaging match",
+      "usageLegible": [
+        "افتحي العبوة واستخدمي المزيج مباشرة دون إضافات.",
+        "وزعي المزيج على الشعر الجاف أو الرطب من الجذور حتى الأطراف.",
+        "غطي الشعر بقبعة بلاستيكية واتركيه لمدة 2-6 ساعات.",
+        "اغسلي الشعر بالماء الفاتر ثم بشامبو أو ماسك خالي من الأملاح. لأفضل نتيجة يشطف بالماء والماسك فقط، وبعد 24-48 ساعة استخدمي الشامبو كالمعتاد."
+      ],
+      "usageNotes": "Duration digits are printed in an RTL paragraph; transcribed as 2–6 hours and 24–48 hours. Preserve the label's alternative shampoo/mask wording pending owner review instead of reconciling it silently.",
+      "printedClaimsNotForAutomaticPublication": ["طبيعي 100%", "تغذي الشعر من الجذور حتى الأطراف", "تقوي البصيلات وتحسن صحة فروة الرأس", "نتائج من أول استخدام"]
+    },
+    {
+      "page": 25,
+      "view": "Ingredients/warnings side of integrated henna jar",
+      "visibleName": "خلطة الحناء المتكاملة",
+      "matchedSlug": "integrated-henna",
+      "mappingStatus": "Confident exact name and packaging match",
+      "descriptionLegible": "عناية شاملة للشعر بلون خمري غني، جاهزة للاستخدام الفوري",
+      "ingredientsClearlyLegible": ["الحناء", "ورق مورينغا", "الألوفيرا", "ماء ورد", "زيوت طبيعية", "فيتامين E"],
+      "ingredientsUncertain": ["Additional ingredient near the left curved edge after ورق مورينغا; appears like أملج but not reliable enough to confirm", "Extract name after مستخلص; do not guess"],
+      "ingredientsStatus": "PARTIAL ONLY. Do not publish as complete ingredient list; request a straight close-up or exact owner-approved text.",
+      "warningsLegible": [
+        "يحفظ المنتج في مكان جاف وبارد بعيداً عن أشعة الشمس.",
+        "يمنع تعرض المنتج لأي رطوبة، كما نوصي بإغلاق المنتج بإحكام.",
+        "ينصح بعمل اختبار حساسية قبل الاستخدام.",
+        "في حال ملامسة منتجنا للعينين تغسل العينين بالماء [نهاية السطر غير مؤكدة]."
+      ],
+      "storageAndShelfLifeLegible": ["صالح لمدة 6 أشهر من تاريخ الإنتاج.", "يحفظ في الثلاجة بعد الفتح."],
+      "shelfLifeNotes": "These are label instructions, not an actual batch expiry date. PAO-like 3M icon also appears elsewhere; owner should confirm storage/opened-life instructions before publication.",
+      "useFrequencyLegible": "لأفضل النتائج استخدميه مرة كل أسبوعين لتعزيز اللون الخمري",
+      "printedClaimsNotForAutomaticPublication": ["طبيعي 100%", "عضوي", "خالٍ من المواد الكيميائية والملونات الصناعية والأمونيا والمواد الحافظة", "PPD-free statement appears at curved label edge; treat only as unverified manufacturer claim, not independently established"]
+    },
+    {
+      "page": 26,
+      "view": "Front of a white resealable window pouch with lavender-purple floral label, greenish/brown powder visible",
+      "visibleName": "بودرة اللون الداكن بعد الحناء",
+      "matchedSlug": "dark-color-powder",
+      "mappingStatus": "Confident exact name match; weight not visible in this image",
+      "weightVisible": false,
+      "catalogWeightGramsPendingLabelConfirmation": 100,
+      "ingredientsVisible": false,
+      "usageVisible": false,
+      "warningsVisible": false,
+      "mainPhotoRecommended": true,
+      "notes": "No rear/usage label for this product among pages19–26. Do not infer ingredients from powder color or confuse with henna."
+    }
+  ],
+  "recommendedGrouping": [
+    {"slug":"integrated-henna","mainPage":23,"confirmedSupplementaryPages":[24,25],"unconfirmedContextPages":[20,22]},
+    {"slug":"green-mashat-mask","mainPage":21,"tentativeSupplementaryPages":[19],"needsOwnerConfirmation":true,"reason":"Printed front name is ماسك المشاط الغني rather than ماسك المشاط الأخضر; back is generic."},
+    {"slug":"dark-color-powder","mainPage":26,"confirmedSupplementaryPages":[],"needsWeightAndDetailsConfirmation":true}
+  ]
+}

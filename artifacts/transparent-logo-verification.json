@@ -1,0 +1,15 @@
+{
+  "preparedAt": "2026-10-29T03:42:14.239Z",
+  "source": "brand-assets/originals/Rukn_Al_Henna_Logo_4K.png",
+  "sourceSha256": "1d101d3866bf6fbdacd8d38b385d6b0a0e0093d13c18603bae37c61c5db744fe",
+  "method": "White matte removal from original pixels and original flat ink color; no generated contours, no tracing, no lettering changes",
+  "width": 4320,
+  "height": 4320,
+  "inkHex": "#A67898",
+  "transparentPixels": 16357476,
+  "foregroundPixels": 2304924,
+  "foregroundMaskDifferences": 0,
+  "originalUnchanged": true,
+  "generatedCandidatesUsed": false,
+  "limitations": "Source is raster; no claim of recovered vector detail or genuine additional detail from upscaling."
+}

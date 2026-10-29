@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-29T05:42:03.277Z",
+  "database": "temporary isolated review_preview_*",
+  "mainDatabaseMutated": false,
+  "testDatabaseMutated": false,
+  "credentialsRecorded": false,
+  "commercialLaunchApproved": false,
+  "import": {
+    "result": "passed",
+    "created": 24,
+    "attached": 24,
+    "draftProducts": 7,
+    "unassigned": 2,
+    "checkoutRemainsDisabled": true
+  },
+  "catalog": {
+    "products": 9,
+    "productsWithOriginalPhotos": 7,
+    "awaitingOriginalPhotos": 2,
+    "attachedImages": 24,
+    "allProductsRemainDraft": true
+  },
+  "viewports": [
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440,
+      "allImagesLoaded": true
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "document": 390,
+      "allImagesLoaded": true
+    },
+    {
+      "width": 320,
+      "viewport": 320,
+      "document": 320,
+      "allImagesLoaded": true
+    }
+  ],
+  "checks": {
+    "authenticationRequired": true,
+    "noStoreAndNoIndex": true,
+    "officialUnmodifiedTransparentLogoShown": true,
+    "productsNine": true,
+    "sevenProductsHaveOwnerPhotos": true,
+    "twoProductsHaveExplicitPhotoPlaceholders": true,
+    "purchaseAndWhatsAppActionsHidden": true,
+    "hennaApprovedWashSequenceShown": true,
+    "durationTwoToSixHoursShown": true,
+    "productionBuildWithoutDeveloperBadge": true,
+    "noOrdersCreated": true
+  },
+  "result": "passed",
+  "cleanup": {
+    "temporaryProductionServerStopped": true,
+    "temporaryDatabaseDropped": true,
+    "temporaryCredentialsRemovedWithDatabase": true,
+    "mainDatabaseUntouched": true,
+    "testRoknUntouched": true
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "scope": "Pages 1–9 of user-supplied image PDF; original JPEGs read visually without edits",
+  "productGroups": [
+    {
+      "catalogSlug": "dark-color-powder",
+      "catalogName": "بودرة اللون الداكن بعد الحناء",
+      "pages": [1],
+      "mappingConfidence": "high",
+      "visibleLabelName": "بودرة اللون الداكن بعد الحناء",
+      "nameMatchesCatalog": true,
+      "visibleWeightGrams": null,
+      "container": "كيس أبيض/فضي قائم بملصق خلفي بنفسجي",
+      "photoRoles": {"1": "back/instructions; not suitable as sole main image"},
+      "ingredientsConfirmed": null,
+      "usageTranscription": [
+        "توضع كمية مناسبة من البودرة في وعاء باستخدام ملعقة جافة.",
+        "يضاف الماء تدريجيًا مع الخلط جيدًا للحصول على قوام كريمي.",
+        "يوزع المزيج فورًا على الشعر المحنى مسبقًا الذي ترغبين بتغميقه، سواء الجذور فقط أو كل الشعر.",
+        "يغطى بقبعة بلاستيكية ويترك لمدة تحدد حسب درجة اللون المراد الوصول لها وطبيعة الشعر. حيث تكون المدة من نصف ساعة إلى ساعة. علمًا أنه كلما زادت المدة زادت درجة السواد.",
+        "يغسل الشعر كالمعتاد."
+      ],
+      "additionalPrintedInstructions": [
+        "هذه الخلطة تعطي النتائج المطلوبة على الشعر المحنى فقط (أي وضعت حناء طبيعية بدون ملونات أو مواد كيميائية على الشعر).",
+        "هذه الخلطة لا تحتاج تخمير قبل الاستخدام. يجب استخدام المزيج بعد التحضير مباشرة أو خلال 10 دقائق كحد أقصى."
+      ],
+      "warningsTranscription": [
+        "يحفظ المنتج في مكان جاف وبارد بعيدًا عن أشعة الشمس.",
+        "يمنع تعرض المنتج لأي رطوبة، كما يوصى بإغلاق المنتج بإحكام.",
+        "ينصح بعمل اختبار حساسية قبل الاستخدام.",
+        "في حال ملامسة منتجنا العضوي للعينين، تغسل العينين بالماء بهدوء."
+      ],
+      "claimsNotToPublishAsVerifiedFacts": [
+        "نقية وخالية من الشوائب وفائقة النعومة / Ultrafine",
+        "خالية من المواد الكيميائية والملونات والمواد الحافظة",
+        "حناء ركن الحناء العضوية",
+        "صنع بفخر بأيد فلسطينية"
+      ],
+      "notes": "No ingredient list is visible; do not infer Indigo or any ingredient from intended darkening use. Keep unverified organic/composition assertions out of neutral public copy."
+    },
+    {
+      "catalogSlug": null,
+      "candidateCatalogSlugs": ["red-mashat-powder", "green-mashat-powder"],
+      "pages": [2],
+      "mappingConfidence": "ambiguous",
+      "visibleLabelName": "مشاط",
+      "visibleWeightGrams": null,
+      "container": "كيس أبيض بنافذة شفافة يظهر فيها مسحوق وردي/محمر، وملصق أبيض بزخارف زهرية وعنوان برقعة بنفسجية",
+      "photoRoles": {"2": "front/generic label; hand visible; full package largely visible"},
+      "nameNeedsConfirmation": true,
+      "ingredientsConfirmed": null,
+      "usageTranscription": "اخلطي كمية مناسبة من المشاط حسب طول شعرك بالماء أو الزيوت أو مغلي الأعشاب أو اللبن للوصول لقوام كريمي، وزعيه على الجذور وكل الشعر واتركيه 2–4 ساعات.",
+      "frequencyText": "ملاحظة: لأفضل النتائج يستعمل كروتين مرة أسبوعيًا.",
+      "frequencyConfidence": "medium; small text should be owner-reviewed",
+      "warningsTranscription": [
+        "يحفظ المنتج في مكان جاف وبارد بعيدًا عن أشعة الشمس.",
+        "ننصح بعمل اختبار حساسية قبل الاستخدام.",
+        "في حال ملامسة منتجنا العضوي للعينين تغسل العينين بالماء بهدوء."
+      ],
+      "claimsNotToPublishAsVerifiedFacts": [
+        "مشاط طبيعي 100% لشعر صحي",
+        "خليط من أنقى الأعشاب الطبيعية 100% بنسب مدروسة وخالية من المواد الكيميائية والملونات الصناعية والمواد الحافظة",
+        "تغذية متكاملة وفريدة يحتاجها شعرك / شعر صحي وقوي"
+      ],
+      "notes": "Do not decide red versus green from powder color alone. Neither color name nor weight legibly appears on this page. It is not a mask container."
+    },
+    {
+      "catalogSlug": "sidr-mask",
+      "catalogName": "ماسك السدر",
+      "pages": [3,4,5,6,7,8,9],
+      "mappingConfidence": "high",
+      "visibleLabelName": "ماسك السدر المعزز",
+      "nameMatchesCatalog": false,
+      "nameNeedsConfirmation": true,
+      "visibleWeightGrams": 200,
+      "weightSourcePage": 6,
+      "container": "مرطبان أبيض بغطاء أبيض وملصق أخضر نباتي، مع علبة ورقية خضراء داكنة وزخارف أوراق",
+      "photoRoles": {
+        "3": "jar front; main image candidate if jar is desired, label unobscured; unrelated henna boxes in background",
+        "4": "jar back/usage",
+        "5": "jar side/back ingredients and warnings",
+        "6": "box front with exact name and 200g; best source to verify name and weight; main image candidate if outer box desired",
+        "7": "box back ingredients/warnings/marketing copy; clearest ingredients text",
+        "8": "alternate box front without visible weight",
+        "9": "box side usage; clearest full usage instructions"
+      },
+      "ingredientsConfirmed": ["ورق سدر بلدي", "ورق مورينغا", "زيوت طبيعية", "فيتامين E", "مستخلص اللافندر"],
+      "ingredientsSourcePage": 7,
+      "usageBoxTranscription": [
+        "توضع كمية مناسبة من الماسك في وعاء باستخدام ملعقة جافة.",
+        "يضاف الماء تدريجيًا مع الخلط جيدًا للحصول على قوام كريمي (يمكن استبدال الماء بمغلي الأعشاب أو اللبن).",
+        "يوزع المزيج على فروة الرأس وجذور الشعر مع تدليك لطيف.",
+        "يغطى بقبعة بلاستيكية لمدة نصف ساعة إلى ساعة فقط.",
+        "يغسل الشعر كالمعتاد."
+      ],
+      "usageJarTranscription": [
+        "توضع كمية مناسبة من الماسك في وعاء باستخدام ملعقة جافة.",
+        "يضاف الماء تدريجيًا مع الخلط جيدًا للحصول على قوام كريمي (يمكن استبدال الماء بمغلي الأعشاب أو اللبن).",
+        "يوزع المزيج على فروة الرأس وجذور الشعر مع تدليك لطيف.",
+        "يغطى بقبعة بلاستيكية لمدة ساعة إلى ساعتين.",
+        "يغسل الشعر كالمعتاد."
+      ],
+      "usageConflict": {
+        "needsOwnerConfirmation": true,
+        "jarPage4": "ساعة إلى ساعتين",
+        "boxPage9": "نصف ساعة إلى ساعة فقط",
+        "recommendation": "Do not silently choose or merge durations. Keep usage draft until owner resolves which label is current."
+      },
+      "warningsTranscription": [
+        "يحفظ المنتج في مكان جاف وبارد بعيدًا عن أشعة الشمس.",
+        "يمنع تعرض المنتج لأي مصدر رطوبة عند الاستخدام لمنع تلفه، كما يوصى بإغلاق العبوة بإحكام.",
+        "ينصح بعمل اختبار حساسية قبل الاستخدام.",
+        "في حال ملامسة منتجنا العضوي للعينين تغسل العينين بالماء بهدوء."
+      ],
+      "otherPrintedInformation": [
+        "Jar page5: صالح لمدة سنة من تاريخ الإنتاج، but production date itself not visible. Do not fabricate expiry date.",
+        "Page7 suggests usage مرة واحدة أسبوعيًا as marketing copy; retain as source only pending usage conflict resolution."
+      ],
+      "claimsNotToPublishAsVerifiedFacts": [
+        "طبيعي وعضوي 100%",
+        "دون جفاف أو صعوبة في الغسل",
+        "فروة صحية وجذور قوية",
+        "الغني بالزيوت المرطبة / المعزز بالفيتامينات (ingredient list includes vitamins/oils but effect claims not independently proven)"
+      ],
+      "notes": "Photos3–5 show jar and unrelated henna packaging behind it; do not map background henna boxes as the subject of these jar photos. Photos6–9 refer to same named Sidr mask box."
+    }
+  ],
+  "unrelatedBackgroundProducts": [{"pages": [3,4,5], "visibleName": "خلطة الحناء المتكاملة", "visibleWeightGrams": 500, "role": "background boxes only, not suitable separate product photos from these pages"}],
+  "publicationPolicy": "All results are source audit data; owner review required. Do not silently publish conflicting usage or unsupported therapeutic/organic certification claims."
+}
