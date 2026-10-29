@@ -16,17 +16,15 @@ function ProductPurchase({ product: p }: { product: StoreProduct }) {
 export function ProductDetail({ product: p, readOnly = false }: { product: StoreProduct; readOnly?: boolean }) {
   const preview = useStoreReadOnly();
   const displayReadOnly = readOnly || preview;
-  const [image, setImage] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);
-  const current = p.images[image];
+  const current = p.images[0];
   return (
     <div className="detail-grid">
       <div className="product-gallery">
         {current ? <>
-          <button type="button" className="main-product-photo" onClick={() => dialog.current?.showModal()} aria-label="تكبير صورة المنتج"><Image src={current.url} alt={current.alt || p.name} width={900} height={1000} sizes="(max-width: 650px) 92vw, 48vw" fetchPriority="high" /><span className="photo-zoom"><Maximize2 size={19} /></span></button>
-          {p.images.length > 1 && <div className="gallery-thumbs" aria-label="صور المنتج">{p.images.map((im, index) => <button type="button" key={im.id} className={image === index ? 'selected' : ''} onClick={() => setImage(index)} aria-label={`عرض الصورة ${index + 1}`} aria-pressed={image === index}><Image src={im.url} alt={im.alt} width={100} height={120} sizes="80px" loading="lazy" /></button>)}</div>}
-          <dialog ref={dialog} className="zoom-dialog" aria-label="صورة المنتج مكبّرة"><button type="button" className="icon-button" onClick={() => dialog.current?.close()} aria-label="إغلاق الصورة المكبّرة"><X /></button><Image unoptimized={preview} src={current.url} alt={current.alt || p.name} width={1200} height={1400} sizes="(max-width: 900px) 95vw, 900px" /></dialog>
-        </> : <div className="main-product-photo preview-no-photo">صورة المنتج لم تُرفع بعد</div>}
+          <button type="button" className="main-product-photo" onClick={() => dialog.current?.showModal()} aria-label="تكبير صورة المنتج"><Image unoptimized src={current.url} alt={current.alt || p.name} width={1122} height={1402} sizes="(max-width: 650px) 92vw, 48vw" fetchPriority="high" /><span className="photo-zoom"><Maximize2 size={19} /></span></button>
+          <dialog ref={dialog} className="zoom-dialog" aria-label="صورة المنتج مكبّرة"><button type="button" className="icon-button" onClick={() => dialog.current?.close()} aria-label="إغلاق الصورة المكبّرة"><X /></button><Image unoptimized src={current.url} alt={current.alt || p.name} width={1122} height={1402} sizes="(max-width: 900px) 95vw, 900px" /></dialog>
+        </> : null}
       </div>
       <div className="product-detail">
         <span className="eyebrow">{p.category.name}</span><h1>{p.name}</h1>
