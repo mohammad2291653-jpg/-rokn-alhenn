@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-29T07:10:24.334Z",
+  "repository": "https://github.com/mohammad2291653-jpg/-rokn-alhenn",
+  "branch": "main",
+  "commit": "3d4490d87017809e0bed7d604363df5fa01b56f9",
+  "result": "passed",
+  "remoteFileCount": 287,
+  "allBlobHashesAndModesMatchLocalCommit": true,
+  "originalProductPhotos": 26,
+  "sourcePdfPresent": true,
+  "noLocalEnvironmentOrDatabaseUploaded": true,
+  "commercialLaunchApproved": false,
+  "cloudStoreDeployed": false
+}

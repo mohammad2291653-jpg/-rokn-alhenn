@@ -1,0 +1,171 @@
+{
+  "recordedAt": "2026-10-29T07:19:43.691Z",
+  "repository": "https://github.com/mohammad2291653-jpg/-rokn-alhenn",
+  "runUrl": "https://github.com/mohammad2291653-jpg/-rokn-alhenn/actions/runs/40833604777",
+  "runId": 40833604777,
+  "jobId": 123313162214,
+  "testedCommit": "3d4490d87017809e0bed7d604363df5fa01b56f9",
+  "trigger": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "checks": {
+    "unitAndIntegrationPassed": 108,
+    "unitAndIntegrationFailed": 0,
+    "browserPassed": 90,
+    "browserFailed": 0,
+    "browserRetries": 0,
+    "dependencyAuditKnownVulnerabilities": 0,
+    "typescript": "passed",
+    "eslint": "passed",
+    "productionBuild": "passed",
+    "migrationsAndSeed": "passed"
+  },
+  "logSummaries": [
+    "2026-10-29T07:10:02.4083412Z found 0 vulnerabilities",
+    "2026-10-29T07:10:22.3918140Z  Test Files  8 passed (8)",
+    "2026-10-29T07:10:22.3919403Z       Tests  108 passed (108)",
+    "2026-10-29T07:11:39.8932604Z Running 90 tests using 1 worker",
+    "2026-10-29T07:18:00.3907844Z   90 passed (6.4m)",
+    "2026-10-29T07:18:01.1831183Z found 0 vulnerabilities"
+  ],
+  "jobs": [
+    {
+      "id": 123313162214,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40833604777,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Initialize containers",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run npm ci",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run npm run db:generate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run npm run db:migrate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run npm run db:seed",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run npm run typecheck",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run npm run lint",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Run npm test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Run npm run build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium firefox webkit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        },
+        {
+          "name": "Run npm run test:e2e",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Run npm audit --audit-level=high",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 30
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 31
+        },
+        {
+          "name": "Stop containers",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 32
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 33
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Hosted GitHub runner verification does not constitute deployment of the shop.",
+    "No physical iPhone/Android devices or production S3, TLS, domain, or managed database were tested.",
+    "Paid hosting and commercial launch remain unapproved and were not activated."
+  ],
+  "rawLogsPublished": false,
+  "commercialLaunchApproved": false,
+  "cloudStoreDeployed": false
+}
