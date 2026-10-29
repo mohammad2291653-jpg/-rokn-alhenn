@@ -18,11 +18,12 @@ export default async function CatalogMediaReviewPage() {
     select: { id: true, slug: true, name: true, images: { select: { url: true }, take: 1, orderBy: { position: 'asc' } } },
   });
   const bySlug = new Map(products.map(product => [product.slug, product]));
+  const synchronized = finalMedia.images.every(entry => bySlug.get(entry.slug)?.images[0]?.url === entry.url);
   return (
     <div className="admin-card" dir="rtl">
       <h1>صور منتجات ركن الحناء النهائية</h1>
       <p>سبع صور أصلية معتمدة، صورة واحدة لكل منتج. لم تُضغط أو تُقصّ الصور عند رفعها، وتُعرض بنسبة أبعادها الأصلية.</p>
-      <p>استُبدلت مراجع الصور القديمة في قاعدة بيانات المعاينة. أسماء المنتجات وأسعارها وأوصافها لم تُغيّر.</p>
+      <p>{synchronized ? 'مراجع قاعدة بيانات المعاينة تطابق الصور النهائية السبع، صورة واحدة لكل منتج.' : 'الصور النهائية موجودة في المشروع، لكن ربط قاعدة بيانات المعاينة ما زال بحاجة إلى مزامنة قبل اعتماد العرض.'} أسماء المنتجات وأسعارها وأوصافها لا تتغير بسبب مزامنة الصور.</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20, marginBlock: 24 }}>
         {finalMedia.images.map(entry => {
           const product = bySlug.get(entry.slug);
