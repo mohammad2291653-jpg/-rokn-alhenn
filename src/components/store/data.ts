@@ -11,7 +11,7 @@ export const publicProductSelect = {
 } satisfies Prisma.ProductSelect;
 export const visibleProducts = { status: 'PUBLISHED' as const, nameNeedsConfirmation: false, images: { some: {} } };
 export async function catalogProductFilter(): Promise<Prisma.ProductWhereInput> {
-  return await requirePreviewReadAccess() ? {} : visibleProducts;
+  return await requirePreviewReadAccess() ? { images: { some: {} } } : visibleProducts;
 }
 export async function getStoreSettings() {
   // Keep administrative source audits out of public-page queries and payloads.
