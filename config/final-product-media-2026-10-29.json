@@ -1,0 +1,75 @@
+{
+  "version": "2026-10-29",
+  "images": [
+    {
+      "slug": "ground-henna",
+      "alt": "الحناء المطحونة",
+      "file": "01_ground_henna.jpeg",
+      "sha256": "2efe08ebf852bfac7e2a67d3953190ef2083a7950a81770920017589c2d1c50b",
+      "sizeBytes": 448137,
+      "width": 1122,
+      "height": 1402,
+      "url": "/final-product-images/2026-10-29/01_ground_henna.jpeg"
+    },
+    {
+      "slug": "sidr-powder",
+      "alt": "بودرة السدر",
+      "file": "02_sidr_powder.jpeg",
+      "sha256": "81cc6c21b27d4cbed69d87368a7e5f84e53a49c79d30e173626cf12ecffa5c25",
+      "sizeBytes": 387273,
+      "width": 1122,
+      "height": 1402,
+      "url": "/final-product-images/2026-10-29/02_sidr_powder.jpeg"
+    },
+    {
+      "slug": "integrated-henna",
+      "alt": "خلطة الحناء المتكاملة",
+      "file": "03_complete_henna_mix.jpeg",
+      "sha256": "523804898971f53de5dc82315f493341e8680658c5fa76c76df0e89372336615",
+      "sizeBytes": 349397,
+      "width": 1122,
+      "height": 1402,
+      "url": "/final-product-images/2026-10-29/03_complete_henna_mix.jpeg"
+    },
+    {
+      "slug": "dark-color-powder",
+      "alt": "بودرة اللون الداكن بعد الحناء",
+      "file": "04_dark_color_powder.jpeg",
+      "sha256": "2b596138362a19c86a8881e795ff76b30c16df97e127534af3acd32381ba050b",
+      "sizeBytes": 361019,
+      "width": 1122,
+      "height": 1402,
+      "url": "/final-product-images/2026-10-29/04_dark_color_powder.jpeg"
+    },
+    {
+      "slug": "red-mashat-mask",
+      "alt": "ماسك المشاط الأحمر",
+      "file": "05_rich_activating_mask.jpeg",
+      "sha256": "e4c19910c46e38160aab9f5d84ad07fece73bab4eb0392e8fa4103398f7f3643",
+      "sizeBytes": 330518,
+      "width": 1122,
+      "height": 1402,
+      "url": "/final-product-images/2026-10-29/05_rich_activating_mask.jpeg"
+    },
+    {
+      "slug": "red-mashat-powder",
+      "alt": "بودرة المشاط الأحمر",
+      "file": "06_mishat_hair_powder.jpeg",
+      "sha256": "006dd5332d476dd4777e4018329cb69ee9d6afd2ecb7ad4f924787b183b17827",
+      "sizeBytes": 449324,
+      "width": 1122,
+      "height": 1402,
+      "url": "/final-product-images/2026-10-29/06_mishat_hair_powder.jpeg"
+    },
+    {
+      "slug": "sidr-mask",
+      "alt": "ماسك السدر",
+      "file": "07_mask_al_sidr_al_moazzaz.jpg",
+      "sha256": "430c228bc6f285ceaf68469cce96f28ec5b56508f8cf37adbe493f3c2da29b08",
+      "sizeBytes": 302518,
+      "width": 1122,
+      "height": 1402,
+      "url": "/final-product-images/2026-10-29/07_mask_al_sidr_al_moazzaz.jpg"
+    }
+  ]
+}
