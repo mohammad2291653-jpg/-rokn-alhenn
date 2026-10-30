@@ -93,12 +93,22 @@ test.describe('authenticated read-only free hosting preview', () => {
 
   test('protects drafts and metadata, then previews real images without purchases or admin authority', async ({ page }) => {
     for (const path of ['/', '/products', `/products/${draft.slug}`, `/products/${draft.slug}?preview=true`]) {
-      const response = await page.request.get(path);
-      expect(response.status()).toBe(404);
+      const response = await page.request.get(path, { maxRedirects: 0 });
+      expect(response.status()).toBe(307);
+      expect(new URL(response.headers().location, 'https://127.0.0.1').pathname).toBe('/preview-login');
       const body = await response.text();
       expect(body.includes(draft.name)).toBe(false);
       expect(body.includes(missingPhoto.name)).toBe(false);
     }
+    const guestPage = await page.goto('/preview-login');
+    expect(guestPage?.status()).toBe(200);
+    await expect(page.getByRole('heading', { name: 'معاينة متجر ركن الحناء' })).toBeVisible();
+    const invalidForm = await page.request.post('/preview-access', {
+      form: { token: 'invalid' }, maxRedirects: 0,
+    });
+    expect(invalidForm.status()).toBe(303);
+    expect(new URL(invalidForm.headers().location, 'https://127.0.0.1').pathname).toBe('/preview-login');
+    expect((await page.context().cookies()).some(cookie => cookie.name === PREVIEW_COOKIE)).toBe(false);
     const anonymousRsc = await page.request.get(`/products/${draft.slug}`, { headers: { RSC: '1' } });
     expect((await anonymousRsc.text()).includes(draft.name)).toBe(false);
     await page.context().clearCookies();
