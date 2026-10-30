@@ -3,7 +3,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 const { cookieValue, findProducts } = vi.hoisted(() => ({ cookieValue: vi.fn(), findProducts: vi.fn() }));
 vi.mock('server-only', () => ({}));
 vi.mock('next/headers', () => ({ cookies: async () => ({ get: cookieValue }) }));
-vi.mock('next/navigation', () => ({ notFound: () => { throw new Error('NOT_FOUND'); } }));
+vi.mock('next/navigation', () => ({ redirect: (path: string) => { throw new Error('REDIRECT:' + path); } }));
 vi.mock('../../src/lib/db', () => ({ db: { product: { findMany: findProducts } } }));
 import { getProducts, visibleProducts } from '../../src/components/store/data';
 import { createPreviewSession } from '../../src/lib/preview-access';
@@ -24,7 +24,7 @@ describe('catalog read capability', () => {
     vi.stubEnv('RENDER_FREE_PREVIEW', 'true');
     vi.stubEnv('PREVIEW_ACCESS_TOKEN', secret);
     cookieValue.mockReturnValue(undefined);
-    await expect(getProducts()).rejects.toThrow('NOT_FOUND');
+    await expect(getProducts()).rejects.toThrow('REDIRECT:/preview-login');
     expect(findProducts).not.toHaveBeenCalled();
   });
 
@@ -32,7 +32,7 @@ describe('catalog read capability', () => {
     vi.stubEnv('RENDER_FREE_PREVIEW', 'true');
     vi.stubEnv('PREVIEW_ACCESS_TOKEN', '');
     cookieValue.mockReturnValue({ value: createPreviewSession(secret) });
-    await expect(getProducts()).rejects.toThrow('NOT_FOUND');
+    await expect(getProducts()).rejects.toThrow('REDIRECT:/preview-login');
     expect(findProducts).not.toHaveBeenCalled();
   });
 
