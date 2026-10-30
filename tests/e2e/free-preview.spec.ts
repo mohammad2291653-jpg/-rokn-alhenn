@@ -125,7 +125,15 @@ test.describe('authenticated read-only free hosting preview', () => {
     expect(duplicated.status()).toBe(404);
     expect((await page.context().cookies()).some(cookie => cookie.name === PREVIEW_COOKIE)).toBe(false);
 
+    // Verify the legacy signed link still works, then test the new password form.
     await enterPreview(page.request);
+    await page.context().clearCookies();
+    const validForm = await page.request.post('/preview-access', {
+      form: { token: process.env.PREVIEW_TEST_ACCESS_TOKEN! }, maxRedirects: 0,
+    });
+    expect(validForm.status()).toBe(303);
+    expect(new URL(validForm.headers().location, 'https://127.0.0.1').pathname).toBe('/');
+    expect(validForm.headers()['cache-control']).toContain('no-store');
     const cookie = (await page.context().cookies()).find(value => value.name === PREVIEW_COOKIE);
     expect(Boolean(cookie)).toBe(true);
     expect(cookie!.httpOnly).toBe(true);
