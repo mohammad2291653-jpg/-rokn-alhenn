@@ -17,3 +17,27 @@ export function GET(request: Request) {
   });
   return response;
 }
+
+/**
+ * Owner entry via POST prevents secret-bearing URLs in browser history,
+ * referrer headers, analytics, and access logs.
+ */
+export async function POST(request: Request) {
+  if (!isFreePreview()) {
+    return new NextResponse('Not found', { status: 404, headers: privateHeaders });
+  }
+  const rejected = () => NextResponse.redirect(new URL('/preview-login?error=invalid', request.url), { status: 303, headers: privateHeaders });
+  const length = Number(request.headers.get('content-length') || 0);
+  if (!Number.isFinite(length) || length > 1024) return rejected();
+  let submitted: FormData;
+  try { submitted = await request.formData(); } catch { return rejected(); }
+  const tokens = submitted.getAll('token');
+  if (tokens.length !== 1 || typeof tokens[0] !== 'string' ||
+      !previewTokenValid(tokens[0], process.env.PREVIEW_ACCESS_TOKEN)) return rejected();
+  const response = NextResponse.redirect(new URL('/', request.url), { status: 303, headers: privateHeaders });
+  response.cookies.set(PREVIEW_COOKIE, createPreviewSession(process.env.PREVIEW_ACCESS_TOKEN!), {
+    httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax',
+    path: '/', maxAge: PREVIEW_SESSION_SECONDS,
+  });
+  return response;
+}
